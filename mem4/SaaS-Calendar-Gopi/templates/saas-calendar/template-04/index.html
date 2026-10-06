@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FlowCal — SaaS Calendar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-orb orb1"></div><div class="bg-orb orb2"></div>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo">✦</div><div><b>FLOWCAL</b><small>SMART WORKSPACE</small></div><button id="closeNav">×</button></div>
+  <button class="create-btn" id="createBtn">＋ Create event</button>
+  <nav>
+    <a class="active" href="#calendar">▣ <span>Calendar</span></a>
+    <a href="#schedule">◇ <span>Schedule</span></a>
+    <a href="#tasks">✓ <span>Tasks</span><em>4</em></a>
+    <a href="#team">◎ <span>Team</span></a>
+    <a href="#analytics">⌁ <span>Analytics</span></a>
+  </nav>
+  <div class="side-title">MY CALENDARS</div>
+  <label><i class="dot personal"></i> Personal <input type="checkbox" checked></label>
+  <label><i class="dot work"></i> Work <input type="checkbox" checked></label>
+  <label><i class="dot marketing"></i> Marketing <input type="checkbox" checked></label>
+  <div class="side-bottom">
+    <button id="aiSide">✦ AI Plan</button>
+    <button id="settingsBtn">⚙ Settings</button>
+    <div class="mini-user"><div class="avatar">G</div><div><b>Gopi</b><small>Workspace owner</small></div></div>
+  </div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <button class="hamb" id="openNav">☰</button>
+  <div class="search" id="searchOpen">⌕ <span>Search events, people or tasks...</span><kbd>⌘ K</kbd></div>
+  <div class="top-actions">
+    <button class="icon" id="themeBtn">☼</button>
+    <button class="icon notify" id="notifyBtn">♢<i></i></button>
+    <button class="profile" id="profileBtn"><div class="avatar">G</div><span>Gopi</span>⌄</button>
+  </div>
+</header>
+
+<section class="welcome">
+ <div><span class="eyebrow">MONDAY · OCTOBER 05, 2026</span><h1>Good morning, <span>Gopi.</span></h1><p>You have <b>6 meetings</b> today. Protect your focus time.</p></div>
+ <div class="welcome-actions"><button class="btn ghost" id="todayBtn">Today</button><button class="btn primary" id="quickEvent">＋ New event</button></div>
+</section>
+
+<section class="stats">
+ <article><span>EVENTS TODAY</span><strong>12</strong><b>↗ 3</b><small>vs last Monday</small></article>
+ <article><span>MEETINGS</span><strong>06</strong><b>− 1</b><small>4h 20m scheduled</small></article>
+ <article><span>FOCUS TIME</span><strong>03<span>h 40m</span></strong><b>↗ 18%</b><small>protected focus</small></article>
+ <article><span>PRODUCTIVITY</span><strong>92<span>%</span></strong><b>↗ 8.4%</b><small>excellent week</small></article>
+</section>
+
+<section class="workspace" id="calendar">
+ <div class="calendar-panel panel">
+  <div class="cal-head">
+   <div><button class="nav-btn" id="prevMonth">‹</button><button class="nav-btn" id="nextMonth">›</button><h2 id="monthTitle">October 2026</h2></div>
+   <div class="views"><button class="view active" data-view="month">Month</button><button class="view" data-view="week">Week</button><button class="view" data-view="day">Day</button><button class="view" data-view="agenda">Agenda</button></div>
+  </div>
+  <div class="calendar-grid" id="calendarGrid"></div>
+ </div>
+
+ <aside class="right-column">
+  <div class="panel agenda" id="schedule">
+   <div class="panel-title"><div><span>UP NEXT</span><h3>Today's agenda</h3></div><button class="more" id="agendaMore">•••</button></div>
+   <div class="event-item"><time>09:00</time><div class="event-line blue"></div><div><b>Product standup</b><small>Team Alpha · 30 min</small></div></div>
+   <div class="event-item"><time>10:30</time><div class="event-line purple"></div><div><b>Design review</b><small>Sarah · Room 4B</small></div></div>
+   <div class="event-item"><time>13:00</time><div class="event-line green"></div><div><b>Client strategy</b><small>Northstar · Zoom</small></div></div>
+   <div class="event-item"><time>15:30</time><div class="event-line orange"></div><div><b>Deep work</b><small>Focus block · 90 min</small></div></div>
+   <button class="text-btn" id="fullAgenda">View full agenda →</button>
+  </div>
+
+  <div class="panel smart">
+   <div class="panel-title"><div><span>✦ SMART SCHEDULING</span><h3>Best time found</h3></div></div>
+   <div class="smart-slot"><strong>Tomorrow · 2:00 PM</strong><small>Everyone is available · 92% match</small><button id="scheduleBest">Schedule it</button></div>
+  </div>
+ </aside>
+</section>
+
+<section class="lower-grid">
+ <article class="panel team" id="team">
+  <div class="panel-title"><div><span>TEAM AVAILABILITY</span><h3>Who's free?</h3></div><button class="more" id="teamMore">•••</button></div>
+  <div class="member"><div class="avatar blueA">A</div><div><b>Alex Morgan</b><small>Product</small></div><span class="availability free">Available</span></div>
+  <div class="member"><div class="avatar purpleA">S</div><div><b>Sarah Chen</b><small>Design</small></div><span class="availability busy">In meeting</span></div>
+  <div class="member"><div class="avatar greenA">R</div><div><b>Rahul Das</b><small>Engineering</small></div><span class="availability free">Available</span></div>
+ </article>
+
+ <article class="panel world">
+  <div class="panel-title"><div><span>WORLD CLOCK</span><h3>Global team</h3></div></div>
+  <div class="clock"><span>🇮🇳 India</span><b id="indiaTime">10:42 PM</b></div>
+  <div class="clock"><span>🇬🇧 London</span><b>5:42 PM</b></div>
+  <div class="clock"><span>🇺🇸 New York</span><b>12:42 PM</b></div>
+  <div class="clock"><span>🇸🇬 Singapore</span><b>1:42 AM</b></div>
+ </article>
+
+ <article class="panel productivity" id="analytics">
+  <div class="panel-title"><div><span>PRODUCTIVITY</span><h3>This week</h3></div><b class="score">92%</b></div>
+  <div class="bars"><i style="height:48%"></i><i style="height:72%"></i><i style="height:61%"></i><i style="height:91%"></i><i style="height:78%"></i><i style="height:55%"></i><i style="height:38%"></i></div>
+  <div class="days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+ </article>
+</section>
+
+<section class="panel focus" id="tasks">
+ <div><span>FOCUS MODE</span><h3>Deep work session</h3><p>Protect 42 minutes from interruptions.</p></div>
+ <div class="timer" id="timer">42:00</div>
+ <button class="btn primary" id="focusBtn">Start focus</button>
+</section>
+</main>
+</div>
+
+<div class="modal-overlay" id="eventModal"><div class="modal"><button class="x" data-close="eventModal">×</button><span class="eyebrow">NEW EVENT</span><h2>Create event</h2>
+<label>Event title<input id="eventTitle" placeholder="Product strategy meeting"></label>
+<div class="two"><label>Date<input id="eventDate" type="date"></label><label>Time<input id="eventTime" type="time"></label></div>
+<label>Participants<input placeholder="+ Add people"></label><label>Location<input placeholder="Zoom / Office / Room"></label>
+<label>Description<textarea placeholder="Add a description..."></textarea></label>
+<div class="modal-actions"><button class="btn ghost" data-close="eventModal">Cancel</button><button class="btn primary" id="saveEvent">Create event</button></div>
+</div></div>
+
+<div class="modal-overlay" id="aiModal"><div class="modal ai-modal"><button class="x" data-close="aiModal">×</button><span class="eyebrow">✦ CALENDAR AI</span><h2>What should I schedule?</h2><p>Ask the assistant to find free time, move meetings, or plan your day.</p><div class="ai-input"><input id="aiInput" placeholder="Find a free 45-minute slot tomorrow..."><button id="aiAsk">→</button></div><div class="ai-answer" id="aiAnswer">Try: “Find my next free slot.”</div></div></div>
+
+<div class="modal-overlay" id="settingsModal"><div class="modal"><button class="x" data-close="settingsModal">×</button><span class="eyebrow">WORKSPACE</span><h2>Calendar settings</h2>
+<label class="setting">Smart scheduling <input type="checkbox" checked></label><label class="setting">Meeting reminders <input type="checkbox" checked></label><label class="setting">Focus protection <input type="checkbox" checked></label><label class="setting">Show weekend <input type="checkbox" checked></label>
+<button class="btn primary wide" id="saveSettings">Save settings</button></div></div>
+
+<div class="modal-overlay" id="notifyModal"><div class="modal"><button class="x" data-close="notifyModal">×</button><span class="eyebrow">NOTIFICATIONS</span><h2>Smart notifications</h2><div class="notification"><b>⚡ Conflict detected</b><small>Design review overlaps with your focus block.</small></div><div class="notification"><b>✦ AI suggestion</b><small>Tomorrow at 2 PM is your best slot for Product Strategy.</small></div><div class="notification"><b>✓ RSVP update</b><small>Alex accepted your 10:30 meeting.</small></div><button class="btn primary wide" id="markRead">Mark all as read</button></div></div>
+
+<div class="modal-overlay" id="profileModal"><div class="modal"><button class="x" data-close="profileModal">×</button><div class="profile-card"><div class="avatar big">G</div><h2>Gopi</h2><p>Workspace owner · FlowCal Pro</p></div><button class="panel-btn">👤 Account profile</button><button class="panel-btn">◇ Workspace preferences</button><button class="panel-btn">↪ Sign out</button></div></div>
+
+<div class="command" id="command"><div class="command-box"><input id="commandInput" placeholder="Search commands..."><button id="closeCommand">×</button><div class="commands"><button data-cmd="Create event">＋ Create event</button><button data-cmd="Ask Calendar AI">✦ Ask Calendar AI</button><button data-cmd="Find free time">◇ Find free time</button><button data-cmd="Open analytics">⌁ Open analytics</button><button data-cmd="Open settings">⚙ Calendar settings</button></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

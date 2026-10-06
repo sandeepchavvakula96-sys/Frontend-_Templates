@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEO Vision — Executive Command Center</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient ambient-1"></div><div class="ambient ambient-2"></div>
+<div class="cursor-glow"></div>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">✦</span><div><b>VISION</b><small>HQ / EXECUTIVE</small></div></div>
+    <button class="mobile-close" id="closeNav">×</button>
+    <nav>
+      <a class="active" href="#overview">◈ <span>Command Center</span></a>
+      <a href="#finance">◫ <span>Finance</span></a>
+      <a href="#performance">⌁ <span>Performance</span></a>
+      <a href="#strategy">◇ <span>Strategy</span></a>
+      <a href="#risks">△ <span>Risk Intelligence</span></a>
+      <a href="#people">◎ <span>People</span></a>
+      <a href="#activity">◌ <span>Activity</span></a>
+    </nav>
+    <div class="side-bottom">
+      <button type="button" class="side-control" id="reportsBtn">▤ <span>Reports</span></button>
+      <button type="button" class="side-control" id="settingsBtn">⚙ <span>Settings</span></button>
+      <div class="profile-mini"><div class="avatar">G</div><div><b>Gopi</b><small>Chief Executive</small></div><span>•••</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="menu" id="openNav">☰</button>
+      <div class="crumb">VISION HQ <span>/</span> EXECUTIVE OVERVIEW</div>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeBtn" title="Toggle theme">☼</button>
+        <button class="icon-btn" id="notifyBtn" title="Notifications">♢<i></i></button>
+        <div class="top-profile"><div class="avatar">G</div><span>Gopi</span>⌄</div>
+      </div>
+    </header>
+
+    <section class="hero" id="overview">
+      <div>
+        <div class="eyebrow">MONDAY · OCTOBER 05, 2026 · LIVE</div>
+        <h1>Good evening, <span>Gopi.</span></h1>
+        <p>Your business is performing above expectations. Here’s the executive view of what matters now.</p>
+      </div>
+      <div class="hero-actions">
+        <button class="btn ghost" id="exportBtn">↥ Export Report</button>
+        <button class="btn primary" id="copilotBtn">✦ Ask CEO Copilot</button>
+      </div>
+    </section>
+
+    <section class="kpis" id="finance">
+      <article class="kpi"><div class="kpi-top"><span>REVENUE</span><b>↗ 18.4%</b></div><strong>$48.2M</strong><div class="spark"><span style="height:35%"></span><span style="height:42%"></span><span style="height:38%"></span><span style="height:55%"></span><span style="height:50%"></span><span style="height:68%"></span><span style="height:82%"></span></div><small>vs $40.7M last year</small></article>
+      <article class="kpi"><div class="kpi-top"><span>NET PROFIT</span><b>↗ 12.7%</b></div><strong>$12.8M</strong><div class="spark"><span style="height:42%"></span><span style="height:48%"></span><span style="height:44%"></span><span style="height:61%"></span><span style="height:58%"></span><span style="height:71%"></span><span style="height:88%"></span></div><small>26.6% profit margin</small></article>
+      <article class="kpi"><div class="kpi-top"><span>CASH POSITION</span><b>↗ 8.2%</b></div><strong>$31.4M</strong><div class="spark"><span style="height:60%"></span><span style="height:54%"></span><span style="height:65%"></span><span style="height:62%"></span><span style="height:72%"></span><span style="height:79%"></span><span style="height:91%"></span></div><small>14.2 months runway</small></article>
+      <article class="kpi accent"><div class="kpi-top"><span>VALUATION</span><b>↗ 21.5%</b></div><strong>$284M</strong><div class="ring"><div>94<span>/100</span></div></div><small>Company health score</small></article>
+    </section>
+
+    <section class="grid-main" id="performance">
+      <article class="panel chart-panel">
+        <div class="panel-head"><div><span class="label">FINANCIAL PERFORMANCE</span><h2>Revenue trajectory</h2></div><select id="period"><option>Last 12 months</option><option>Last 6 months</option><option>Quarterly</option></select></div>
+        <div class="legend"><span><i></i> Actual</span><span><i class="forecast"></i> Forecast</span></div>
+        <div class="chart"><div class="y-labels"><span>$6M</span><span>$4M</span><span>$2M</span><span>$0</span></div><svg viewBox="0 0 800 300" preserveAspectRatio="none"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-opacity=".35"/><stop offset="1" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0 250 L65 225 L130 235 L195 185 L260 205 L325 155 L390 170 L455 120 L520 140 L585 92 L650 105 L720 58 L800 78 L800 300 L0 300Z"/><path class="line" d="M0 250 L65 225 L130 235 L195 185 L260 205 L325 155 L390 170 L455 120 L520 140 L585 92 L650 105 L720 58 L800 78"/></svg><div class="x-labels"><span>JAN</span><span>MAR</span><span>MAY</span><span>JUL</span><span>SEP</span><span>OCT</span></div></div>
+      </article>
+
+      <article class="panel health" id="people">
+        <div class="panel-head"><div><span class="label">COMPANY HEALTH</span><h2>94 <small>/ 100</small></h2></div><span class="status good">EXCELLENT</span></div>
+        <div class="health-ring"><div><b>94</b><span>HEALTH</span></div></div>
+        <div class="health-list"><div><span>Revenue</span><b>96%</b><div><i style="width:96%"></i></div></div><div><span>Operations</span><b>91%</b><div><i style="width:91%"></i></div></div><div><span>People</span><b>94%</b><div><i style="width:94%"></i></div></div></div>
+      </article>
+    </section>
+
+    <section class="grid-3" id="strategy">
+      <article class="panel alerts"><div class="panel-head"><div><span class="label">LIVE INTELLIGENCE</span><h2>Executive alerts</h2></div><button class="text-btn" id="clearAlerts">Clear all</button></div>
+        <div class="alert"><span class="dot green"></span><div><b>Enterprise deal closed</b><p>Northstar Group · $1.8M ARR</p></div><time>8m</time></div>
+        <div class="alert"><span class="dot yellow"></span><div><b>APAC hiring target</b><p>82% of quarterly goal reached</p></div><time>24m</time></div>
+        <div class="alert"><span class="dot red"></span><div><b>Supply chain risk detected</b><p>Medium severity · review required</p></div><time>41m</time></div>
+        <div class="alert"><span class="dot green"></span><div><b>AI platform milestone</b><p>Release candidate approved</p></div><time>1h</time></div>
+      </article>
+      <article class="panel priorities"><div class="panel-head"><div><span class="label">STRATEGY</span><h2>Strategic priorities</h2></div><button class="text-btn" id="addPriority">+ Add</button></div>
+        <div class="priority"><b>01</b><div><strong>Expand APAC</strong><small>Regional growth initiative</small></div><span>82%</span><div class="progress"><i style="width:82%"></i></div></div>
+        <div class="priority"><b>02</b><div><strong>AI Platform</strong><small>Product transformation</small></div><span>67%</span><div class="progress"><i style="width:67%"></i></div></div>
+        <div class="priority"><b>03</b><div><strong>Reduce CAC</strong><small>Efficiency program</small></div><span>54%</span><div class="progress"><i style="width:54%"></i></div></div>
+      </article>
+      <article class="panel quick"><div class="panel-head"><div><span class="label">EXECUTIVE TOOLS</span><h2>Quick actions</h2></div></div><div class="quick-grid"><button data-toast="Financial report opened">▤<span>Financials</span></button><button data-toast="Board report prepared">◈<span>Board report</span></button><button data-toast="Approval center opened">✓<span>Approvals</span></button><button data-toast="Team performance opened">◎<span>People</span></button><button data-toast="Strategy workspace opened">◇<span>Strategy</span></button><button data-toast="Report export started">↥<span>Export</span></button></div></article>
+    </section>
+
+    <section class="grid-main lower" id="risks">
+      <article class="panel risk"><div class="panel-head"><div><span class="label">RISK INTELLIGENCE</span><h2>Enterprise risk profile</h2></div><span class="status low">LOW RISK</span></div><div class="risk-score"><strong>18%</strong><span>Overall exposure</span><div class="risk-bar"><i></i></div></div><div class="risk-items"><div><span>Market risk</span><b>18%</b></div><div><span>Financial risk</span><b>12%</b></div><div><span>Operational risk</span><b>24%</b></div><div><span>Security risk</span><b>9%</b></div></div></article>
+      <article class="panel milestones"><div class="panel-head"><div><span class="label">MILESTONES</span><h2>Company achievements</h2></div></div><div class="milestone"><span>🚀</span><div><b>$50M ARR target</b><small>On track · Q4 2026</small></div><strong>92%</strong></div><div class="milestone"><span>🎯</span><div><b>100K customers</b><small>12,840 remaining</small></div><strong>87%</strong></div><div class="milestone"><span>🌎</span><div><b>APAC expansion</b><small>Singapore office live</small></div><strong>76%</strong></div></article>
+    </section>
+
+    <section class="panel activity" id="activity"><div class="panel-head"><div><span class="label">EXECUTIVE ACTIVITY</span><h2>What changed today</h2></div><button class="text-btn" id="activityBtn">View all</button></div><div class="timeline"><div><span class="tl-dot"></span><p><b>Gopi</b> approved the APAC expansion plan <small>12 min ago</small></p></div><div><span class="tl-dot"></span><p><b>Sales</b> closed a $1.8M enterprise deal <small>28 min ago</small></p></div><div><span class="tl-dot"></span><p><b>Product</b> moved AI Platform to release candidate <small>54 min ago</small></p></div><div><span class="tl-dot"></span><p><b>Finance</b> published September financials <small>2h ago</small></p></div></div></section>
+  </main>
+</div>
+
+<div class="copilot" id="copilot"><div class="copilot-head"><span>✦ CEO COPILOT</span><button id="closeCopilot">×</button></div><p id="copilotText">Revenue is up 18.4% this period. APAC is your fastest-growing region. I recommend reviewing the supply-chain alert before the next executive meeting.</p><div class="copilot-input"><input id="ask" placeholder="Ask about your business..."><button id="askBtn">→</button></div></div>
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div class="modal-card"><button class="modal-close" id="modalClose">×</button><span class="label">EXECUTIVE REPORT</span><h2>Your report is ready.</h2><p>Dashboard data has been compiled into a presentation-ready executive summary.</p><button class="btn primary" id="modalOk">Done</button></div></div>
+
+<div class="overlay-panel" id="reportsPanel">
+  <div class="floating-card">
+    <div class="floating-head">
+      <div><span class="label">EXECUTIVE REPORTS</span><b>Reports Center</b></div>
+      <button type="button" class="close-panel" data-close="reportsPanel">×</button>
+    </div>
+    <button type="button" class="report-option" data-report="CEO Executive Summary">
+      <span>◈</span><div><b>CEO Executive Summary</b><small>KPIs, company health, risks and strategy</small></div><em>Open</em>
+    </button>
+    <button type="button" class="report-option" data-report="Financial Performance">
+      <span>◫</span><div><b>Financial Performance</b><small>Revenue, profit, cash and forecast</small></div><em>Open</em>
+    </button>
+    <button type="button" class="report-option" data-report="Risk Intelligence">
+      <span>△</span><div><b>Risk Intelligence</b><small>Enterprise risk and alerts</small></div><em>Open</em>
+    </button>
+    <button type="button" class="report-option" data-report="People & Operations">
+      <span>◎</span><div><b>People & Operations</b><small>Workforce and operational health</small></div><em>Open</em>
+    </button>
+    <button type="button" class="btn primary wide" id="generateReport">Generate Executive Report</button>
+  </div>
+</div>
+
+<div class="overlay-panel" id="settingsPanel">
+  <div class="floating-card">
+    <div class="floating-head">
+      <div><span class="label">CONTROL CENTER</span><b>Dashboard Settings</b></div>
+      <button type="button" class="close-panel" data-close="settingsPanel">×</button>
+    </div>
+    <label class="setting-row"><span>Live data simulation</span><input type="checkbox" id="liveToggle" checked></label>
+    <label class="setting-row"><span>Motion effects</span><input type="checkbox" id="motionToggle" checked></label>
+    <label class="setting-row"><span>Executive alerts</span><input type="checkbox" id="alertToggle" checked></label>
+    <label class="setting-row"><span>Compact dashboard</span><input type="checkbox" id="compactToggle"></label>
+    <button type="button" class="btn primary wide" id="saveSettings">Save Settings</button>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

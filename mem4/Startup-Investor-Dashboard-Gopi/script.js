@@ -1,0 +1,1 @@
+const t=document.getElementById('toast');function show(x){t.textContent=x;t.classList.add('show');clearTimeout(window.x);window.x=setTimeout(()=>t.classList.remove('show'),2000)}document.getElementById('notify').onclick=()=>show('3 portfolio notifications');
