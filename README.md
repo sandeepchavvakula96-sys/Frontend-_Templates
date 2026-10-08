@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project contains a collection of **16 main web UI projects** developed by **Gopi's Team**.
+This project contains a collection of **16 main web UI projects** developed by **sai Team**.
 
 The project includes a central **`index.html`** at the root of the folder. It works as the main project launcher and provides direct access to all 16 projects.
 
