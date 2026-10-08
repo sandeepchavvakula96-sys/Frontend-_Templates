@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head><title>Dashboard · SohniHire</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SohniHire — modern job search UI template collection">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/animations.css"></head><body><div class="topbar">✨ SohniHire UI Collection · Hackathon Template</div>
+<nav class="nav"><div class="container nav-inner">
+<a class="brand" href="../index.html"><span class="brand-mark">S</span>SohniHire</a>
+<div class="nav-links">
+<a class="" href="jobs.html">Find Jobs</a>
+<a class="" href="companies.html">Companies</a>
+<a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume</a><a href="dashboard.html">Dashboard</a>
+</div>
+<div class="nav-actions"><button class="icon-btn" data-theme-toggle title="Toggle theme · Ctrl/⌘ K opens quick navigation">☾</button><a class="btn btn-primary hide-mobile" href="dashboard.html">My workspace</a><button class="icon-btn mobile-menu">☰</button></div>
+</div></nav>
+<div class="dashboard"><aside class="dash-sidebar"><a class="active" href="dashboard.html">⌂ Overview</a><a href="applications.html">▣ Applications</a><a href="saved-jobs.html">♡ Saved jobs</a><a href="resume-builder.html">CV Resume</a><a href="ai-career-assistant.html">✦ AI Career</a><a href="job-alerts.html">◉ Job alerts</a></aside>
+<main class="dash-main"><div class="dash-head"><div><span class="eyebrow">Welcome back, Sohni</span><h1 style="margin:8px 0">Your career workspace</h1><p class="meta">Everything you need to move your search forward.</p></div><button class="btn btn-primary" data-demo>Update profile</button></div>
+<div class="stat-grid"><div class="stat"><small>Applications</small><strong>24</strong><span class="badge yellow">+6 this week</span></div><div class="stat"><small>Interviews</small><strong>6</strong><span class="badge green">+2 this week</span></div><div class="stat"><small>Profile views</small><strong>148</strong><span class="badge green">+18%</span></div><div class="stat"><small>Match score</small><strong>92%</strong><span class="badge green">Excellent</span></div></div>
+<div class="grid grid-3" style="margin-top:20px"><div class="card" style="grid-column:span 2"><div class="section-head"><div><h2 style="font-size:22px">Application funnel</h2><p>Last 30 days</p></div><span class="pill">Live demo</span></div><div style="display:grid;gap:14px"><div><div style="display:flex;justify-content:space-between"><span>Applied</span><b>24</b></div><div class="progress"><span style="width:100%"></span></div></div><div><div style="display:flex;justify-content:space-between"><span>Screening</span><b>12</b></div><div class="progress"><span style="width:50%"></span></div></div><div><div style="display:flex;justify-content:space-between"><span>Interview</span><b>6</b></div><div class="progress"><span style="width:25%"></span></div></div><div><div style="display:flex;justify-content:space-between"><span>Offer</span><b>2</b></div><div class="progress"><span style="width:9%"></span></div></div></div></div>
+<div class="card"><h2 style="font-size:22px">Profile strength</h2><div style="font-size:42px;font-weight:900;margin:15px 0">86%</div><div class="progress"><span style="width:86%"></span></div><p class="meta">Add 2 projects and a portfolio link to reach 100%.</p><button class="btn btn-soft" data-demo>Improve profile</button></div></div>
+<div class="card" style="margin-top:20px"><div class="section-head"><div><h2 style="font-size:22px">Recommended for you</h2></div><a href="jobs.html" class="btn btn-soft">View all</a></div><div class="grid grid-3" id="dashJobs"></div></div>
+</main></div>
+<footer class="footer"><div class="container footer-grid">
+<div><div class="brand"><span class="brand-mark">S</span>SohniHire</div><p>Modern job search interfaces designed for the UI Template Collection Hackathon.</p></div>
+<div><h4>Explore</h4><a href="jobs.html">Jobs</a><a href="companies.html">Companies</a><a href="job-alerts.html">Alerts</a></div>
+<div><h4>Career</h4><a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume Builder</a><a href="dashboard.html">Dashboard</a></div>
+<div><h4>Project</h4><a href="../README.md">Research</a><a href="../index.html#templates">Templates</a><a href="../index.html#github">GitHub Workflow</a></div>
+</div></footer><div class="toast"></div><script src="../js/data.js"></script><script src="../js/app.js"></script><script src="../js/dashboard.js"></script><script>document.addEventListener("DOMContentLoaded",()=>renderJobs("#dashJobs",window.jobs.slice(0,3)))</script></body></html>

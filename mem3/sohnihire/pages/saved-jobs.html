@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head><title>Saved Jobs · SohniHire</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SohniHire — modern job search UI template collection">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/animations.css"></head><body><div class="topbar">✨ SohniHire UI Collection · Hackathon Template</div>
+<nav class="nav"><div class="container nav-inner">
+<a class="brand" href="../index.html"><span class="brand-mark">S</span>SohniHire</a>
+<div class="nav-links">
+<a class="" href="jobs.html">Find Jobs</a>
+<a class="" href="companies.html">Companies</a>
+<a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume</a><a href="dashboard.html">Dashboard</a>
+</div>
+<div class="nav-actions"><button class="icon-btn" data-theme-toggle title="Toggle theme · Ctrl/⌘ K opens quick navigation">☾</button><a class="btn btn-primary hide-mobile" href="dashboard.html">My workspace</a><button class="icon-btn mobile-menu">☰</button></div>
+</div></nav>
+<section class="page-head"><div class="container"><span class="eyebrow">Your shortlist</span><h1>Saved jobs.</h1><p class="meta">Keep promising opportunities close until you're ready to apply.</p></div></section>
+<main class="section" style="padding-top:25px"><div class="container"><div class="card"><div class="section-head"><div><h2 style="font-size:22px" id="savedTitle">Your saved opportunities</h2><p>Stored locally in this demo.</p></div><a href="jobs.html" class="btn btn-primary">Find more jobs</a></div><div class="grid grid-3" id="savedJobs"></div></div></div></main>
+<footer class="footer"><div class="container footer-grid">
+<div><div class="brand"><span class="brand-mark">S</span>SohniHire</div><p>Modern job search interfaces designed for the UI Template Collection Hackathon.</p></div>
+<div><h4>Explore</h4><a href="jobs.html">Jobs</a><a href="companies.html">Companies</a><a href="job-alerts.html">Alerts</a></div>
+<div><h4>Career</h4><a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume Builder</a><a href="dashboard.html">Dashboard</a></div>
+<div><h4>Project</h4><a href="../README.md">Research</a><a href="../index.html#templates">Templates</a><a href="../index.html#github">GitHub Workflow</a></div>
+</div></footer><div class="toast"></div><script src="../js/data.js"></script><script src="../js/app.js"></script><script>document.addEventListener("DOMContentLoaded",()=>{const ids=JSON.parse(localStorage.getItem("savedJobs")||"[]");const list=window.jobs.filter(j=>ids.includes(j.id));document.querySelector("#savedTitle").textContent=`${list.length} saved ${list.length===1?"job":"jobs"}`;if(list.length)renderJobs("#savedJobs",list);else document.querySelector("#savedJobs").innerHTML='<div class="empty" style="grid-column:1/-1">No saved jobs yet. Explore the job search and tap ♡ on a role you like.</div>'})</script></body></html>

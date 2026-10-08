@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><title>Nova Labs · SohniHire</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SohniHire — modern job search UI template collection">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/animations.css"></head><body><div class="topbar">✨ SohniHire UI Collection · Hackathon Template</div>
+<nav class="nav"><div class="container nav-inner">
+<a class="brand" href="../index.html"><span class="brand-mark">S</span>SohniHire</a>
+<div class="nav-links">
+<a class="" href="jobs.html">Find Jobs</a>
+<a class="active" href="companies.html">Companies</a>
+<a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume</a><a href="dashboard.html">Dashboard</a>
+</div>
+<div class="nav-actions"><button class="icon-btn" data-theme-toggle title="Toggle theme · Ctrl/⌘ K opens quick navigation">☾</button><a class="btn btn-primary hide-mobile" href="dashboard.html">My workspace</a><button class="icon-btn mobile-menu">☰</button></div>
+</div></nav>
+<section class="page-head"><div class="container"></div></section>
+<main class="section" style="padding-top:20px"><div class="container"><div class="card detail-hero"><div style="display:flex;gap:18px;align-items:center"><div class="company-logo" style="width:82px;height:82px">NL</div><div><span class="pill green">Top rated</span><h1 class="detail-title">Nova Labs</h1><div class="meta">Product Technology · Bengaluru · 120 employees</div></div></div><button class="btn btn-primary" id="followCompany">Follow company</button></div>
+<div class="grid grid-3" style="margin-top:20px"><div class="card"><small class="meta">Open roles</small><strong style="font-size:28px;display:block">18</strong></div><div class="card"><small class="meta">Team rating</small><strong style="font-size:28px;display:block">4.8 ★</strong></div><div class="card"><small class="meta">Remote friendly</small><strong style="font-size:28px;display:block">82%</strong></div></div>
+<div class="detail-grid" style="margin-top:20px"><div class="card prose"><h2>About Nova Labs</h2><p class="meta">Nova Labs is a fictional product company creating elegant workflow software for modern teams. This page demonstrates a company profile template for the hackathon collection.</p><h2>Life at Nova</h2><div class="grid grid-3"><div class="card"><b>🧠 Learn</b><p class="meta">Annual learning budget.</p></div><div class="card"><b>🌍 Flexible</b><p class="meta">Hybrid-first teams.</p></div><div class="card"><b>✨ Create</b><p class="meta">High ownership culture.</p></div></div></div>
+<aside class="card"><h3>Open positions</h3><a class="card" style="display:block;margin:10px 0" href="job-details.html"><b>Product Designer</b><div class="meta">₹12–18 LPA · Hybrid</div></a><a class="card" style="display:block;margin:10px 0" href="job-details.html"><b>Frontend Engineer</b><div class="meta">₹10–16 LPA · Remote</div></a><a class="card" style="display:block;margin:10px 0" href="job-details.html"><b>Product Manager</b><div class="meta">₹18–25 LPA · Hybrid</div></a></aside></div></div></main>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+ const b=document.querySelector("#followCompany"); if(!b)return;
+ const followed=localStorage.getItem("followNova")==="1";
+ b.textContent=followed?"✓ Following":"Follow company";
+ b.addEventListener("click",()=>{const next=localStorage.getItem("followNova")!=="1";localStorage.setItem("followNova",next?"1":"0");b.textContent=next?"✓ Following":"Follow company";toast(next?"Company followed":"Company unfollowed")});
+});
+</script>
+<footer class="footer"><div class="container footer-grid">
+<div><div class="brand"><span class="brand-mark">S</span>SohniHire</div><p>Modern job search interfaces designed for the UI Template Collection Hackathon.</p></div>
+<div><h4>Explore</h4><a href="jobs.html">Jobs</a><a href="companies.html">Companies</a><a href="job-alerts.html">Alerts</a></div>
+<div><h4>Career</h4><a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume Builder</a><a href="dashboard.html">Dashboard</a></div>
+<div><h4>Project</h4><a href="../README.md">Research</a><a href="../index.html#templates">Templates</a><a href="../index.html#github">GitHub Workflow</a></div>
+</div></footer><div class="toast"></div><script src="../js/data.js"></script><script src="../js/app.js"></script></body></html>

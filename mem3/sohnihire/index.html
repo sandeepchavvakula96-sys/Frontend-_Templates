@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><title>Home · SohniHire</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SohniHire — modern job search UI template collection">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/animations.css"></head><body><div class="topbar">✨ SohniHire UI Collection · Hackathon Template</div>
+<nav class="nav"><div class="container nav-inner">
+<a class="brand" href="index.html"><span class="brand-mark">S</span>SohniHire</a>
+<div class="nav-links">
+<a class="" href="pages/jobs.html">Find Jobs</a>
+<a class="" href="pages/companies.html">Companies</a>
+<a href="pages/ai-career-assistant.html">AI Career</a><a href="pages/resume-builder.html">Resume</a><a href="pages/dashboard.html">Dashboard</a>
+</div>
+<div class="nav-actions"><button class="icon-btn" data-theme-toggle title="Toggle theme">☾</button><a class="btn btn-primary hide-mobile" href="pages/dashboard.html">My workspace</a><button class="icon-btn mobile-menu">☰</button></div>
+</div></nav>
+<header class="hero"><div class="container hero-grid">
+<div><span class="eyebrow">● 24,800+ fresh opportunities</span>
+<h1>Find work that feels <span class="gradient-text">worth it.</span></h1>
+<p>A premium job discovery experience for ambitious people. Search smarter, track applications, build your resume, and use AI to plan your next move.</p>
+<div class="search-box"><div class="search-field">⌕ <input id="homeQuery" placeholder="Job title, skill, or company"></div><div class="search-field">⌖ <input id="homeLocation" placeholder="City or remote"></div><button class="btn btn-primary" onclick="location.href='pages/jobs.html'">Search jobs</button></div>
+<div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:15px"><span class="pill">Remote</span><span class="pill">Product Design</span><span class="pill">AI / ML</span><span class="pill">Frontend</span></div></div>
+<div class="hero-card"><div class="mini-profile"><div class="avatar">SK</div><div><b>Sohni's career match</b><div class="muted">Updated just now</div></div></div>
+<div class="job-preview"><span class="pill green">98% match</span><h3>Product Designer</h3><div class="muted">Nova Labs · Bengaluru</div><div style="margin-top:13px;display:flex;justify-content:space-between"><b>₹12–18 LPA</b><span>Hybrid</span></div></div>
+<div class="job-preview"><span class="pill purple">AI pick</span><h3>AI Product Intern</h3><div class="muted">MindForge AI · Remote</div></div></div>
+</div></header>
+<section class="section"><div class="container"><div class="card reveal" style="display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:35px;background:linear-gradient(120deg,rgba(113,87,255,.08),rgba(23,201,180,.07))">
+<div><span class="eyebrow">⌘ Quick navigation</span><h3 style="margin:9px 0 3px">Jump anywhere in SohniHire</h3><p class="meta">Press Ctrl/⌘ K or choose a workspace.</p></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-soft" href="pages/jobs.html">Jobs</a><a class="btn btn-soft" href="pages/dashboard.html">Dashboard</a><a class="btn btn-soft" href="pages/ai-career-assistant.html">AI</a><a class="btn btn-primary" href="pages/resume-builder.html">Build Resume</a></div>
+</div><div class="section-head"><div><h2>Built for the whole job journey</h2><p>Ten connected templates covering discovery, applications, AI, and career growth.</p></div><a class="btn btn-soft" href="pages/jobs.html">Explore jobs →</a></div>
+<div class="grid grid-4" id="templates">
+<div class="card reveal"><div class="company-logo">⌕</div><h3>Smart Job Search</h3><p class="meta">Advanced filters, saved jobs, recommendations.</p><a class="btn btn-soft" href="pages/jobs.html">Open template</a></div>
+<div class="card reveal"><div class="company-logo">▦</div><h3>Career Dashboard</h3><p class="meta">Applications, analytics, profile health.</p><a class="btn btn-soft" href="pages/dashboard.html">Open template</a></div>
+<div class="card reveal"><div class="company-logo">✦</div><h3>AI Career Assistant</h3><p class="meta">Resume, interview and career guidance.</p><a class="btn btn-soft" href="pages/ai-career-assistant.html">Open template</a></div>
+<div class="card reveal"><div class="company-logo">CV</div><h3>Resume Builder</h3><p class="meta">Live editing with instant preview.</p><a class="btn btn-soft" href="pages/resume-builder.html">Open template</a></div>
+</div></div></section>
+<section class="section" style="padding-top:10px"><div class="container"><div class="section-head"><div><h2>Trending opportunities</h2><p>Curated sample data for the template demo.</p></div></div><div class="grid grid-3" id="homeJobs"></div></div></section>
+<section class="section" id="github"><div class="container"><div class="card" style="background:linear-gradient(120deg,#17142a,#2e2459);color:white;padding:38px"><div style="max-width:760px"><span class="eyebrow">GitHub-first project</span><h2 style="font-size:34px">Designed for collaboration, not just screenshots.</h2><p style="color:#c5c1d8">Every template is separated into readable HTML, CSS and JavaScript so team members can work independently through Fork → Branch → PR → Review → Merge.</p><a class="btn btn-primary" href="README.md">Read project documentation</a></div></div></div></section>
+<footer class="footer"><div class="container footer-grid">
+<div><div class="brand"><span class="brand-mark">S</span>SohniHire</div><p>Modern job search interfaces designed for the UI Template Collection Hackathon.</p></div>
+<div><h4>Explore</h4><a href="pages/jobs.html">Jobs</a><a href="pages/companies.html">Companies</a><a href="pages/job-alerts.html">Alerts</a></div>
+<div><h4>Career</h4><a href="pages/ai-career-assistant.html">AI Career</a><a href="pages/resume-builder.html">Resume Builder</a><a href="pages/dashboard.html">Dashboard</a></div>
+<div><h4>Project</h4><a href="README.md">Research</a><a href="index.html#templates">Templates</a><a href="index.html#github">GitHub Workflow</a></div>
+</div></footer><div class="toast"></div><script src="js/data.js"></script><script src="js/app.js"></script><script>document.addEventListener("DOMContentLoaded",()=>renderJobs("#homeJobs",jobs.slice(0,6)))</script></body></html>
