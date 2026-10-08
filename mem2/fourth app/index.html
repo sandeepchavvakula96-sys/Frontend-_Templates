@@ -1,0 +1,2717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070b16">
+    <title>TripPilot AI — Travel Agent Command Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= ECLIPSE BACKGROUND ================= -->
+
+    <div class="eclipse-bg">
+        <div class="eclipse-glow"></div>
+        <div class="eclipse-ring"></div>
+        <div class="eclipse-core"></div>
+    </div>
+
+    <div class="stars"></div>
+
+    <!-- ================= APP ================= -->
+
+    <div class="app">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+                <div class="brand-logo">✈</div>
+                <div>
+                    <h2>TripPilot</h2>
+                    <span>AI TRAVEL OS</span>
+                </div>
+            </div>
+
+            <div class="workspace">
+                <div class="workspace-icon">TP</div>
+                <div>
+                    <strong>Travel Operations</strong>
+                    <small>Enterprise Workspace</small>
+                </div>
+                <span class="chevron">⌄</span>
+            </div>
+
+            <div class="menu-section">
+                <span>COMMAND CENTER</span>
+            </div>
+
+            <button class="nav active" data-page="dashboard">
+                <span class="nav-icon">▦</span>
+                <span>AI Dashboard</span>
+                <b>⌂</b>
+            </button>
+
+            <button class="nav" data-page="agents">
+                <span class="nav-icon">◈</span>
+                <span>AI Agents</span>
+                <b class="count">12</b>
+            </button>
+
+            <button class="nav" data-page="monitor">
+                <span class="nav-icon">◉</span>
+                <span>Live Monitoring</span>
+                <i class="live-dot"></i>
+            </button>
+
+            <button class="nav" data-page="tasks">
+                <span class="nav-icon">☷</span>
+                <span>Task Queue</span>
+                <b class="count">27</b>
+            </button>
+
+            <div class="menu-section">
+                <span>INTELLIGENCE</span>
+            </div>
+
+            <button class="nav" data-page="profiles">
+                <span class="nav-icon">♙</span>
+                <span>Agent Profiles</span>
+            </button>
+
+            <button class="nav" data-page="builder">
+                <span class="nav-icon">✦</span>
+                <span>Agent Builder</span>
+            </button>
+
+            <button class="nav" data-page="workflow">
+                <span class="nav-icon">⌘</span>
+                <span>Workflows</span>
+            </button>
+
+            <button class="nav" data-page="multi">
+                <span class="nav-icon">♢</span>
+                <span>Multi-Agent</span>
+            </button>
+
+            <div class="menu-section">
+                <span>AUTOMATION</span>
+            </div>
+
+            <button class="nav" data-page="automation">
+                <span class="nav-icon">⚡</span>
+                <span>Automation Center</span>
+            </button>
+
+            <button class="nav" data-page="triggers">
+                <span class="nav-icon">◌</span>
+                <span>Triggers & Actions</span>
+            </button>
+
+            <button class="nav" data-page="approvals">
+                <span class="nav-icon">✓</span>
+                <span>Human Approvals</span>
+                <b class="warning-count">3</b>
+            </button>
+
+            <div class="menu-section">
+                <span>OPERATIONS</span>
+            </div>
+
+            <button class="nav" data-page="activity">
+                <span class="nav-icon">◷</span>
+                <span>Activity Log</span>
+            </button>
+
+            <button class="nav" data-page="history">
+                <span class="nav-icon">◴</span>
+                <span>Execution History</span>
+            </button>
+
+            <button class="nav" data-page="errors">
+                <span class="nav-icon">△</span>
+                <span>Errors & Retry</span>
+                <b class="error-count">2</b>
+            </button>
+
+            <button class="nav" data-page="permissions">
+                <span class="nav-icon">◇</span>
+                <span>Permissions</span>
+            </button>
+
+            <div class="sidebar-footer">
+                <div class="admin-profile">
+                    <div class="admin-avatar">VG</div>
+                    <div>
+                        <strong>Workspace Admin</strong>
+                        <small>admin@trippilot.ai</small>
+                    </div>
+                    <span>•••</span>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main">
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <div class="mobile-menu" id="mobileMenu">☰</div>
+
+                <div class="top-search">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="globalSearch"
+                        placeholder="Search agents, trips, workflows..."
+                    >
+                    <kbd>CTRL K</kbd>
+                </div>
+
+                <div class="top-right">
+
+                    <div class="trip-status">
+                        <span></span>
+                        All systems operational
+                    </div>
+
+                    <button class="top-icon" id="notificationButton">
+                        🔔
+                        <em></em>
+                    </button>
+
+                    <button class="top-icon">?</button>
+
+                    <button class="create-agent" id="createAgentButton">
+                        <span>+</span>
+                        Create Agent
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= CONTENT ================= -->
+
+            <div class="content">
+
+
+                <!-- ================================================= -->
+                <!-- DASHBOARD -->
+                <!-- ================================================= -->
+
+                <section class="page active" id="dashboard">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">TRAVEL AI / COMMAND CENTER</div>
+
+                            <h1>
+                                Good evening, <span>Traveler.</span>
+                            </h1>
+
+                            <p>
+                                Your intelligent travel workforce is running
+                                <strong>24/7.</strong>
+                            </p>
+                        </div>
+
+                        <div class="heading-actions">
+                            <button class="outline-button" onclick="showToast('Report generated successfully')">
+                                ↓ Export Report
+                            </button>
+
+                            <button class="primary-button" onclick="openPage('builder')">
+                                ✦ Build Agent
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- HERO -->
+
+                    <div class="travel-hero">
+
+                        <div class="hero-overlay"></div>
+
+                        <div class="hero-text">
+
+                            <div class="hero-label">
+                                <span>✈</span>
+                                SMART TRAVEL OPERATIONS
+                            </div>
+
+                            <h2>
+                                Let AI handle<br>
+                                the journey.
+                            </h2>
+
+                            <p>
+                                Plan trips, compare flights, discover hotels,
+                                automate bookings and assist travelers —
+                                all from one intelligent command center.
+                            </p>
+
+                            <div class="hero-buttons">
+
+                                <button
+                                    class="hero-primary"
+                                    onclick="openPage('agents')"
+                                >
+                                    Explore AI Agents →
+                                </button>
+
+                                <button
+                                    class="hero-secondary"
+                                    onclick="openPage('workflow')"
+                                >
+                                    View Workflows
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hero-map">
+
+                            <div class="map-grid"></div>
+
+                            <div class="route-line line-a"></div>
+                            <div class="route-line line-b"></div>
+                            <div class="route-line line-c"></div>
+
+                            <div class="map-point point-a">DEL</div>
+                            <div class="map-point point-b">BOM</div>
+                            <div class="map-point point-c">GOI</div>
+
+                            <div class="floating-flight">
+                                ✈
+                            </div>
+
+                            <div class="destination-card">
+
+                                <span>AI RECOMMENDED</span>
+
+                                <strong>Goa, India</strong>
+
+                                <small>
+                                    4.8 ★ · Beach · Adventure
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- KPI -->
+
+                    <div class="kpi-grid">
+
+                        <div class="kpi-card">
+
+                            <div class="kpi-top">
+                                <span>Total Agents</span>
+                                <div class="kpi-icon purple">◈</div>
+                            </div>
+
+                            <strong>24</strong>
+
+                            <div class="kpi-bottom positive">
+                                ↑ 12.5%
+                                <span>vs last month</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="kpi-card">
+
+                            <div class="kpi-top">
+                                <span>Active Now</span>
+                                <div class="kpi-icon green">●</div>
+                            </div>
+
+                            <strong>18</strong>
+
+                            <div class="kpi-bottom positive">
+                                ● Live
+                                <span>75% utilization</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="kpi-card">
+
+                            <div class="kpi-top">
+                                <span>Tasks Executed</span>
+                                <div class="kpi-icon blue">⚡</div>
+                            </div>
+
+                            <strong>12,842</strong>
+
+                            <div class="kpi-bottom positive">
+                                ↑ 18.4%
+                                <span>this week</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="kpi-card">
+
+                            <div class="kpi-top">
+                                <span>Success Rate</span>
+                                <div class="kpi-icon orange">✓</div>
+                            </div>
+
+                            <strong>98.7%</strong>
+
+                            <div class="kpi-bottom positive">
+                                ↑ 2.1%
+                                <span>improvement</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="kpi-card">
+
+                            <div class="kpi-top">
+                                <span>Avg Response</span>
+                                <div class="kpi-icon cyan">◷</div>
+                            </div>
+
+                            <strong>1.8s</strong>
+
+                            <div class="kpi-bottom positive">
+                                ↓ 24%
+                                <span>faster</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MAIN ANALYTICS -->
+
+                    <div class="analytics-layout">
+
+                        <div class="panel performance-panel">
+
+                            <div class="panel-heading">
+
+                                <div>
+                                    <h3>Agent Performance</h3>
+                                    <p>Execution volume across your AI workforce</p>
+                                </div>
+
+                                <select id="performancePeriod">
+                                    <option>Last 7 days</option>
+                                    <option>Last 30 days</option>
+                                    <option>Last 90 days</option>
+                                </select>
+
+                            </div>
+
+                            <div class="chart-area">
+
+                                <div class="chart-y">
+                                    <span>2.5k</span>
+                                    <span>2k</span>
+                                    <span>1.5k</span>
+                                    <span>1k</span>
+                                    <span>500</span>
+                                    <span>0</span>
+                                </div>
+
+                                <div class="chart-main">
+
+                                    <div class="chart-lines">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+
+                                    <div class="bars">
+
+                                        <div class="bar-group">
+                                            <b style="height:45%"></b>
+                                            <span>Mon</span>
+                                        </div>
+
+                                        <div class="bar-group">
+                                            <b style="height:62%"></b>
+                                            <span>Tue</span>
+                                        </div>
+
+                                        <div class="bar-group">
+                                            <b style="height:54%"></b>
+                                            <span>Wed</span>
+                                        </div>
+
+                                        <div class="bar-group">
+                                            <b style="height:78%"></b>
+                                            <span>Thu</span>
+                                        </div>
+
+                                        <div class="bar-group">
+                                            <b style="height:68%"></b>
+                                            <span>Fri</span>
+                                        </div>
+
+                                        <div class="bar-group">
+                                            <b style="height:88%"></b>
+                                            <span>Sat</span>
+                                        </div>
+
+                                        <div class="bar-group">
+                                            <b style="height:96%"></b>
+                                            <span>Sun</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="chart-legend">
+                                <span><i class="legend-orange"></i> Successful executions</span>
+                                <span><i class="legend-blue"></i> Automated tasks</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="panel live-panel">
+
+                            <div class="panel-heading">
+
+                                <div>
+                                    <h3>Live Agent Status</h3>
+                                    <p>Real-time workforce health</p>
+                                </div>
+
+                                <button
+                                    class="link-button"
+                                    onclick="openPage('monitor')"
+                                >
+                                    View all →
+                                </button>
+
+                            </div>
+
+                            <div class="agent-mini-list">
+
+                                <div class="mini-agent">
+
+                                    <div class="mini-icon flight">✈</div>
+
+                                    <div class="mini-info">
+                                        <strong>Travel Planner</strong>
+                                        <span>Planning trip #84291</span>
+                                    </div>
+
+                                    <div class="mini-state online">
+                                        <i></i> Online
+                                    </div>
+
+                                </div>
+
+
+                                <div class="mini-agent">
+
+                                    <div class="mini-icon hotel">🏨</div>
+
+                                    <div class="mini-info">
+                                        <strong>Hotel Assistant</strong>
+                                        <span>Searching 42 properties</span>
+                                    </div>
+
+                                    <div class="mini-state online">
+                                        <i></i> Online
+                                    </div>
+
+                                </div>
+
+
+                                <div class="mini-agent">
+
+                                    <div class="mini-icon booking">🎫</div>
+
+                                    <div class="mini-info">
+                                        <strong>Booking Agent</strong>
+                                        <span>Processing reservation</span>
+                                    </div>
+
+                                    <div class="mini-state busy">
+                                        <i></i> Busy
+                                    </div>
+
+                                </div>
+
+
+                                <div class="mini-agent">
+
+                                    <div class="mini-icon support">💬</div>
+
+                                    <div class="mini-info">
+                                        <strong>Support Agent</strong>
+                                        <span>7 conversations active</span>
+                                    </div>
+
+                                    <div class="mini-state online">
+                                        <i></i> Online
+                                    </div>
+
+                                </div>
+
+
+                                <div class="mini-agent">
+
+                                    <div class="mini-icon recommendation">✦</div>
+
+                                    <div class="mini-info">
+                                        <strong>Recommendation AI</strong>
+                                        <span>Generating suggestions</span>
+                                    </div>
+
+                                    <div class="mini-state online">
+                                        <i></i> Online
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOWER DASHBOARD -->
+
+                    <div class="lower-grid">
+
+                        <div class="panel activity-panel">
+
+                            <div class="panel-heading">
+
+                                <div>
+                                    <h3>Recent Agent Activity</h3>
+                                    <p>Latest events from your AI workforce</p>
+                                </div>
+
+                                <button
+                                    class="link-button"
+                                    onclick="openPage('activity')"
+                                >
+                                    Full log →
+                                </button>
+
+                            </div>
+
+
+                            <div class="activity-list">
+
+                                <div class="activity-item">
+
+                                    <div class="activity-icon success">✓</div>
+
+                                    <div>
+                                        <strong>Travel Planner completed itinerary</strong>
+                                        <p>5-day Goa itinerary generated for customer #TR-8291</p>
+                                    </div>
+
+                                    <time>2m ago</time>
+
+                                </div>
+
+
+                                <div class="activity-item">
+
+                                    <div class="activity-icon blue">⌕</div>
+
+                                    <div>
+                                        <strong>Hotel Assistant started search</strong>
+                                        <p>Searching hotels in North Goa under ₹8,000/night</p>
+                                    </div>
+
+                                    <time>6m ago</time>
+
+                                </div>
+
+
+                                <div class="activity-item">
+
+                                    <div class="activity-icon purple">✓</div>
+
+                                    <div>
+                                        <strong>Booking Agent requested approval</strong>
+                                        <p>Flight reservation requires human confirmation</p>
+                                    </div>
+
+                                    <time>11m ago</time>
+
+                                </div>
+
+
+                                <div class="activity-item">
+
+                                    <div class="activity-icon orange">⚡</div>
+
+                                    <div>
+                                        <strong>Workflow triggered</strong>
+                                        <p>New customer trip request received</p>
+                                    </div>
+
+                                    <time>16m ago</time>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="panel destination-panel">
+
+                            <div class="panel-heading">
+
+                                <div>
+                                    <h3>Popular AI Destinations</h3>
+                                    <p>Most requested this week</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="destination-list">
+
+                                <div class="destination">
+
+                                    <div class="destination-image goa">
+                                        🌴
+                                    </div>
+
+                                    <div>
+                                        <strong>Goa</strong>
+                                        <span>India · 2,841 requests</span>
+                                    </div>
+
+                                    <b>+24%</b>
+
+                                </div>
+
+
+                                <div class="destination">
+
+                                    <div class="destination-image dubai">
+                                        🏙️
+                                    </div>
+
+                                    <div>
+                                        <strong>Dubai</strong>
+                                        <span>UAE · 1,942 requests</span>
+                                    </div>
+
+                                    <b>+18%</b>
+
+                                </div>
+
+
+                                <div class="destination">
+
+                                    <div class="destination-image bali">
+                                        🌊
+                                    </div>
+
+                                    <div>
+                                        <strong>Bali</strong>
+                                        <span>Indonesia · 1,623 requests</span>
+                                    </div>
+
+                                    <b>+15%</b>
+
+                                </div>
+
+
+                                <div class="destination">
+
+                                    <div class="destination-image paris">
+                                        🗼
+                                    </div>
+
+                                    <div>
+                                        <strong>Paris</strong>
+                                        <span>France · 1,201 requests</span>
+                                    </div>
+
+                                    <b>+11%</b>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUICK ACTIONS -->
+
+                    <div class="panel quick-actions-panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3>Quick Actions</h3>
+                                <p>Jump directly into your travel operations</p>
+                            </div>
+
+                        </div>
+
+                        <div class="quick-actions">
+
+                            <button onclick="openPage('builder')">
+                                <span>✦</span>
+                                <strong>Create Agent</strong>
+                                <small>Build intelligent agent</small>
+                            </button>
+
+                            <button onclick="openPage('workflow')">
+                                <span>⌘</span>
+                                <strong>New Workflow</strong>
+                                <small>Connect AI agents</small>
+                            </button>
+
+                            <button onclick="openPage('approvals')">
+                                <span>✓</span>
+                                <strong>Review Approvals</strong>
+                                <small>3 pending requests</small>
+                            </button>
+
+                            <button onclick="openPage('tasks')">
+                                <span>☷</span>
+                                <strong>Task Queue</strong>
+                                <small>27 tasks waiting</small>
+                            </button>
+
+                            <button onclick="openPage('monitor')">
+                                <span>◉</span>
+                                <strong>Live Monitor</strong>
+                                <small>18 agents online</small>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- AGENTS -->
+                <!-- ================================================= -->
+
+                <section class="page" id="agents">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">INTELLIGENCE / AGENTS</div>
+                            <h1>AI Agent Workforce</h1>
+                            <p>Manage your specialized travel intelligence.</p>
+                        </div>
+
+                        <button
+                            class="primary-button"
+                            onclick="openPage('builder')"
+                        >
+                            + Create Agent
+                        </button>
+
+                    </div>
+
+
+                    <div class="agent-filter-bar">
+
+                        <button class="filter active">All Agents <b>24</b></button>
+                        <button class="filter">Online <b>18</b></button>
+                        <button class="filter">Busy <b>4</b></button>
+                        <button class="filter">Offline <b>2</b></button>
+
+                        <select>
+                            <option>Sort: Performance</option>
+                            <option>Sort: Name</option>
+                            <option>Sort: Recent Activity</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="full-agent-grid">
+
+                        <article class="full-agent-card">
+
+                            <div class="full-agent-header">
+
+                                <div class="full-agent-icon flight">✈</div>
+
+                                <span class="agent-online">● Online</span>
+
+                            </div>
+
+                            <h3>Travel Planner</h3>
+
+                            <p>
+                                Creates personalized travel itineraries
+                                based on budget, interests and schedule.
+                            </p>
+
+                            <div class="agent-tags">
+                                <span>Planning</span>
+                                <span>Recommendations</span>
+                            </div>
+
+                            <div class="agent-metrics">
+                                <div>
+                                    <small>Tasks</small>
+                                    <strong>2,482</strong>
+                                </div>
+                                <div>
+                                    <small>Success</small>
+                                    <strong>98.9%</strong>
+                                </div>
+                                <div>
+                                    <small>Latency</small>
+                                    <strong>1.2s</strong>
+                                </div>
+                            </div>
+
+                            <button
+                                class="agent-view"
+                                onclick="openPage('profiles')"
+                            >
+                                Open Agent Profile →
+                            </button>
+
+                        </article>
+
+
+                        <article class="full-agent-card">
+
+                            <div class="full-agent-header">
+
+                                <div class="full-agent-icon hotel">🏨</div>
+
+                                <span class="agent-online">● Online</span>
+
+                            </div>
+
+                            <h3>Hotel Assistant</h3>
+
+                            <p>
+                                Finds, compares and recommends hotels
+                                based on traveler preferences.
+                            </p>
+
+                            <div class="agent-tags">
+                                <span>Hotels</span>
+                                <span>Search</span>
+                            </div>
+
+                            <div class="agent-metrics">
+                                <div>
+                                    <small>Tasks</small>
+                                    <strong>1,923</strong>
+                                </div>
+                                <div>
+                                    <small>Success</small>
+                                    <strong>99.1%</strong>
+                                </div>
+                                <div>
+                                    <small>Latency</small>
+                                    <strong>1.5s</strong>
+                                </div>
+                            </div>
+
+                            <button class="agent-view" onclick="openPage('profiles')">
+                                Open Agent Profile →
+                            </button>
+
+                        </article>
+
+
+                        <article class="full-agent-card">
+
+                            <div class="full-agent-header">
+
+                                <div class="full-agent-icon booking">🎫</div>
+
+                                <span class="agent-busy">● Busy</span>
+
+                            </div>
+
+                            <h3>Booking Agent</h3>
+
+                            <p>
+                                Handles booking workflows and coordinates
+                                approval before final actions.
+                            </p>
+
+                            <div class="agent-tags">
+                                <span>Booking</span>
+                                <span>Payments</span>
+                            </div>
+
+                            <div class="agent-metrics">
+                                <div>
+                                    <small>Tasks</small>
+                                    <strong>3,821</strong>
+                                </div>
+                                <div>
+                                    <small>Success</small>
+                                    <strong>97.8%</strong>
+                                </div>
+                                <div>
+                                    <small>Latency</small>
+                                    <strong>2.4s</strong>
+                                </div>
+                            </div>
+
+                            <button class="agent-view" onclick="openPage('profiles')">
+                                Open Agent Profile →
+                            </button>
+
+                        </article>
+
+
+                        <article class="full-agent-card">
+
+                            <div class="full-agent-header">
+
+                                <div class="full-agent-icon support">💬</div>
+
+                                <span class="agent-online">● Online</span>
+
+                            </div>
+
+                            <h3>Customer Support AI</h3>
+
+                            <p>
+                                Answers travel questions and resolves
+                                customer support conversations.
+                            </p>
+
+                            <div class="agent-tags">
+                                <span>Support</span>
+                                <span>Chat</span>
+                            </div>
+
+                            <div class="agent-metrics">
+                                <div>
+                                    <small>Tasks</small>
+                                    <strong>4,616</strong>
+                                </div>
+                                <div>
+                                    <small>Success</small>
+                                    <strong>99.4%</strong>
+                                </div>
+                                <div>
+                                    <small>Latency</small>
+                                    <strong>0.9s</strong>
+                                </div>
+                            </div>
+
+                            <button class="agent-view" onclick="openPage('profiles')">
+                                Open Agent Profile →
+                            </button>
+
+                        </article>
+
+
+                        <article class="full-agent-card">
+
+                            <div class="full-agent-header">
+
+                                <div class="full-agent-icon recommendation">✦</div>
+
+                                <span class="agent-online">● Online</span>
+
+                            </div>
+
+                            <h3>Recommendation AI</h3>
+
+                            <p>
+                                Suggests destinations, activities and
+                                personalized experiences.
+                            </p>
+
+                            <div class="agent-tags">
+                                <span>AI Search</span>
+                                <span>Discovery</span>
+                            </div>
+
+                            <div class="agent-metrics">
+                                <div>
+                                    <small>Tasks</small>
+                                    <strong>1,762</strong>
+                                </div>
+                                <div>
+                                    <small>Success</small>
+                                    <strong>98.4%</strong>
+                                </div>
+                                <div>
+                                    <small>Latency</small>
+                                    <strong>1.7s</strong>
+                                </div>
+                            </div>
+
+                            <button class="agent-view" onclick="openPage('profiles')">
+                                Open Agent Profile →
+                            </button>
+
+                        </article>
+
+
+                        <article class="full-agent-card">
+
+                            <div class="full-agent-header">
+
+                                <div class="full-agent-icon transport">🚕</div>
+
+                                <span class="agent-online">● Online</span>
+
+                            </div>
+
+                            <h3>Transport Agent</h3>
+
+                            <p>
+                                Coordinates airport transfers and local
+                                transportation.
+                            </p>
+
+                            <div class="agent-tags">
+                                <span>Transport</span>
+                                <span>Mobility</span>
+                            </div>
+
+                            <div class="agent-metrics">
+                                <div>
+                                    <small>Tasks</small>
+                                    <strong>1,348</strong>
+                                </div>
+                                <div>
+                                    <small>Success</small>
+                                    <strong>98.1%</strong>
+                                </div>
+                                <div>
+                                    <small>Latency</small>
+                                    <strong>1.3s</strong>
+                                </div>
+                            </div>
+
+                            <button class="agent-view" onclick="openPage('profiles')">
+                                Open Agent Profile →
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- MONITOR -->
+                <!-- ================================================= -->
+
+                <section class="page" id="monitor">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">OPERATIONS / MONITORING</div>
+                            <h1>Live Agent Monitoring</h1>
+                            <p>Real-time health, load and execution status.</p>
+                        </div>
+
+                        <div class="live-now">
+                            <i></i> LIVE DATA
+                        </div>
+
+                    </div>
+
+
+                    <div class="monitor-kpis">
+
+                        <div>
+                            <span>Online</span>
+                            <strong>18</strong>
+                            <small>75% of workforce</small>
+                        </div>
+
+                        <div>
+                            <span>Busy</span>
+                            <strong>4</strong>
+                            <small>Processing tasks</small>
+                        </div>
+
+                        <div>
+                            <span>Idle</span>
+                            <strong>0</strong>
+                            <small>Ready to work</small>
+                        </div>
+
+                        <div>
+                            <span>Attention</span>
+                            <strong>2</strong>
+                            <small>Requires review</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Live Workforce</h3>
+                                <p>Current execution state of every agent</p>
+                            </div>
+                        </div>
+
+                        <div class="monitor-table">
+
+                            <div class="monitor-head">
+                                <span>Agent</span>
+                                <span>Status</span>
+                                <span>CPU</span>
+                                <span>Memory</span>
+                                <span>Tasks</span>
+                                <span>Latency</span>
+                            </div>
+
+                            <div class="monitor-row">
+                                <span>✈ Travel Planner</span>
+                                <b class="table-online">Online</b>
+                                <span>42%</span>
+                                <span>58%</span>
+                                <span>2,482</span>
+                                <span>180ms</span>
+                            </div>
+
+                            <div class="monitor-row">
+                                <span>🏨 Hotel Assistant</span>
+                                <b class="table-online">Online</b>
+                                <span>37%</span>
+                                <span>44%</span>
+                                <span>1,923</span>
+                                <span>220ms</span>
+                            </div>
+
+                            <div class="monitor-row">
+                                <span>🎫 Booking Agent</span>
+                                <b class="table-busy">Busy</b>
+                                <span>76%</span>
+                                <span>72%</span>
+                                <span>3,821</span>
+                                <span>310ms</span>
+                            </div>
+
+                            <div class="monitor-row">
+                                <span>💬 Support AI</span>
+                                <b class="table-online">Online</b>
+                                <span>29%</span>
+                                <span>36%</span>
+                                <span>4,616</span>
+                                <span>140ms</span>
+                            </div>
+
+                            <div class="monitor-row">
+                                <span>✦ Recommendation AI</span>
+                                <b class="table-online">Online</b>
+                                <span>51%</span>
+                                <span>48%</span>
+                                <span>1,762</span>
+                                <span>190ms</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- TASKS -->
+                <!-- ================================================= -->
+
+                <section class="page" id="tasks">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">OPERATIONS / TASKS</div>
+                            <h1>Agent Task Queue</h1>
+                            <p>Manage every pending, active and completed AI task.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="task-summary">
+
+                        <div>
+                            <strong>27</strong>
+                            <span>Pending</span>
+                        </div>
+
+                        <div>
+                            <strong>14</strong>
+                            <span>Running</span>
+                        </div>
+
+                        <div>
+                            <strong>842</strong>
+                            <span>Completed Today</span>
+                        </div>
+
+                        <div>
+                            <strong>6</strong>
+                            <span>Failed</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+                                <h3>Current Queue</h3>
+                                <p>Priority-based AI task processing</p>
+                            </div>
+
+                            <button
+                                class="outline-button"
+                                onclick="showToast('Queue refreshed')"
+                            >
+                                ↻ Refresh
+                            </button>
+
+                        </div>
+
+
+                        <div class="task-table">
+
+                            <div class="task-head">
+                                <span>Task</span>
+                                <span>Agent</span>
+                                <span>Priority</span>
+                                <span>Status</span>
+                                <span>Created</span>
+                            </div>
+
+                            <div class="task-row">
+
+                                <div>
+                                    <strong>Build Goa itinerary</strong>
+                                    <small>#TR-84291</small>
+                                </div>
+
+                                <span>Travel Planner</span>
+                                <b class="priority-high">HIGH</b>
+                                <b class="task-running">Running</b>
+                                <span>2m ago</span>
+
+                            </div>
+
+
+                            <div class="task-row">
+
+                                <div>
+                                    <strong>Find Mumbai hotels</strong>
+                                    <small>#TR-84288</small>
+                                </div>
+
+                                <span>Hotel Assistant</span>
+                                <b class="priority-normal">NORMAL</b>
+                                <b class="task-pending">Pending</b>
+                                <span>4m ago</span>
+
+                            </div>
+
+
+                            <div class="task-row">
+
+                                <div>
+                                    <strong>Verify flight reservation</strong>
+                                    <small>#TR-84286</small>
+                                </div>
+
+                                <span>Booking Agent</span>
+                                <b class="priority-high">HIGH</b>
+                                <b class="task-running">Running</b>
+                                <span>7m ago</span>
+
+                            </div>
+
+
+                            <div class="task-row">
+
+                                <div>
+                                    <strong>Recommend Bali activities</strong>
+                                    <small>#TR-84283</small>
+                                </div>
+
+                                <span>Recommendation AI</span>
+                                <b class="priority-low">LOW</b>
+                                <b class="task-pending">Pending</b>
+                                <span>9m ago</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- PROFILE -->
+                <!-- ================================================= -->
+
+                <section class="page" id="profiles">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">AGENTS / PROFILE</div>
+                            <h1>Travel Planner Agent</h1>
+                            <p>Detailed agent profile and intelligence metrics.</p>
+                        </div>
+
+                        <button
+                            class="primary-button"
+                            onclick="openPage('config')"
+                        >
+                            ⚙ Configure
+                        </button>
+
+                    </div>
+
+
+                    <div class="profile-layout">
+
+                        <div class="profile-main panel">
+
+                            <div class="profile-top">
+
+                                <div class="profile-big-icon">✈</div>
+
+                                <div>
+                                    <div class="profile-status">
+                                        <i></i> Online
+                                    </div>
+
+                                    <h2>Travel Planner</h2>
+
+                                    <p>AI itinerary planning specialist</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-description">
+
+                                <h3>Agent Purpose</h3>
+
+                                <p>
+                                    Travel Planner is a specialized AI agent
+                                    designed to create personalized journeys
+                                    by understanding destination preferences,
+                                    budget, dates, activities and traveler
+                                    requirements.
+                                </p>
+
+                            </div>
+
+
+                            <div class="profile-stat-grid">
+
+                                <div>
+                                    <small>MODEL</small>
+                                    <strong>GPT Travel v4</strong>
+                                </div>
+
+                                <div>
+                                    <small>VERSION</small>
+                                    <strong>2.4.1</strong>
+                                </div>
+
+                                <div>
+                                    <small>CREATED</small>
+                                    <strong>18 Aug 2026</strong>
+                                </div>
+
+                                <div>
+                                    <small>OWNER</small>
+                                    <strong>Travel Ops</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="panel">
+
+                            <div class="panel-heading">
+
+                                <div>
+                                    <h3>Performance</h3>
+                                    <p>Last 30 days</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="performance-number">
+                                98.9%
+                                <span>success rate</span>
+                            </div>
+
+
+                            <div class="progress-line">
+                                <span style="width:98.9%"></span>
+                            </div>
+
+
+                            <div class="profile-metric">
+                                <span>Task completion</span>
+                                <strong>94%</strong>
+                            </div>
+
+                            <div class="profile-metric">
+                                <span>Average latency</span>
+                                <strong>1.2 sec</strong>
+                            </div>
+
+                            <div class="profile-metric">
+                                <span>Customer satisfaction</span>
+                                <strong>96.8%</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- BUILDER -->
+                <!-- ================================================= -->
+
+                <section class="page" id="builder">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">INTELLIGENCE / BUILDER</div>
+                            <h1>Build Your AI Travel Agent</h1>
+                            <p>Design an intelligent agent without writing code.</p>
+                        </div>
+
+                        <button class="primary-button" id="deployButton">
+                            🚀 Deploy Agent
+                        </button>
+
+                    </div>
+
+
+                    <div class="builder-layout">
+
+                        <div class="builder-form panel">
+
+                            <div class="builder-tabs">
+                                <button class="active">General</button>
+                                <button>Instructions</button>
+                                <button>Tools</button>
+                                <button>Permissions</button>
+                            </div>
+
+
+                            <label>Agent Name</label>
+
+                            <input
+                                type="text"
+                                id="agentName"
+                                placeholder="e.g. Weekend Trip Planner"
+                            >
+
+
+                            <label>Agent Description</label>
+
+                            <textarea
+                                placeholder="What should this agent help travelers with?"
+                            ></textarea>
+
+
+                            <label>Agent Role</label>
+
+                            <select>
+                                <option>Travel Planning Specialist</option>
+                                <option>Flight Booking Specialist</option>
+                                <option>Hotel Recommendation Agent</option>
+                                <option>Customer Support Agent</option>
+                                <option>Travel Recommendation Agent</option>
+                            </select>
+
+
+                            <label>AI Model</label>
+
+                            <select>
+                                <option>TripPilot Reasoning v4</option>
+                                <option>TripPilot Fast v3</option>
+                                <option>TripPilot Balanced v3</option>
+                            </select>
+
+
+                            <label>System Instructions</label>
+
+                            <textarea
+                                class="large-textarea"
+                                placeholder="Define the behavior, personality, responsibilities and constraints..."
+                            ></textarea>
+
+
+                            <div class="builder-options">
+
+                                <label class="check-option">
+                                    <input type="checkbox" checked>
+                                    <span>Enable memory</span>
+                                </label>
+
+                                <label class="check-option">
+                                    <input type="checkbox" checked>
+                                    <span>Require human approval</span>
+                                </label>
+
+                                <label class="check-option">
+                                    <input type="checkbox" checked>
+                                    <span>Automatic retry</span>
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="builder-preview panel">
+
+                            <span class="preview-title">LIVE PREVIEW</span>
+
+                            <div class="preview-orb">
+                                <div>🤖</div>
+                            </div>
+
+                            <h2 id="previewAgentName">Your New Agent</h2>
+
+                            <p>
+                                Your agent preview will appear here as
+                                you configure its behavior.
+                            </p>
+
+                            <div class="preview-capabilities">
+
+                                <span>✈ Travel Planning</span>
+                                <span>🏨 Hotel Search</span>
+                                <span>🎫 Booking</span>
+                                <span>💬 Customer Support</span>
+
+                            </div>
+
+                            <div class="preview-ready">
+                                <i></i>
+                                Ready to configure
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- WORKFLOW -->
+                <!-- ================================================= -->
+
+                <section class="page" id="workflow">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">AUTOMATION / WORKFLOWS</div>
+                            <h1>Agent Workflow Studio</h1>
+                            <p>Connect agents, approvals and actions into one journey.</p>
+                        </div>
+
+                        <button
+                            class="primary-button"
+                            onclick="showToast('Workflow saved successfully')"
+                        >
+                            Save Workflow
+                        </button>
+
+                    </div>
+
+
+                    <div class="workflow-toolbar">
+
+                        <button class="active">Visual Builder</button>
+                        <button>Execution View</button>
+                        <button>History</button>
+
+                    </div>
+
+
+                    <div class="workflow-canvas">
+
+                        <div class="workflow-node trigger">
+
+                            <span class="node-icon">⚡</span>
+
+                            <small>TRIGGER</small>
+
+                            <strong>New Trip Request</strong>
+
+                            <p>Customer submits a trip request.</p>
+
+                        </div>
+
+
+                        <div class="workflow-connector">
+                            <span>→</span>
+                        </div>
+
+
+                        <div class="workflow-node">
+
+                            <span class="node-icon blue-node">✈</span>
+
+                            <small>AI AGENT</small>
+
+                            <strong>Travel Planner</strong>
+
+                            <p>Create personalized itinerary.</p>
+
+                        </div>
+
+
+                        <div class="workflow-connector">
+                            <span>→</span>
+                        </div>
+
+
+                        <div class="workflow-node">
+
+                            <span class="node-icon purple-node">🏨</span>
+
+                            <small>AI AGENT</small>
+
+                            <strong>Hotel Assistant</strong>
+
+                            <p>Search matching hotels.</p>
+
+                        </div>
+
+
+                        <div class="workflow-connector">
+                            <span>→</span>
+                        </div>
+
+
+                        <div class="workflow-node approval-node">
+
+                            <span class="node-icon">✓</span>
+
+                            <small>HUMAN</small>
+
+                            <strong>Approval</strong>
+
+                            <p>Review before booking.</p>
+
+                        </div>
+
+
+                        <div class="workflow-connector">
+                            <span>→</span>
+                        </div>
+
+
+                        <div class="workflow-node success-node">
+
+                            <span class="node-icon">🎯</span>
+
+                            <small>ACTION</small>
+
+                            <strong>Complete Booking</strong>
+
+                            <p>Confirm customer journey.</p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- MULTI AGENT -->
+                <!-- ================================================= -->
+
+                <section class="page" id="multi">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">INTELLIGENCE / ORCHESTRATION</div>
+                            <h1>Multi-Agent Command Network</h1>
+                            <p>Coordinate multiple specialist agents through one orchestrator.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="network">
+
+                        <div class="network-line n1"></div>
+                        <div class="network-line n2"></div>
+                        <div class="network-line n3"></div>
+                        <div class="network-line n4"></div>
+
+                        <div class="orchestrator">
+
+                            <div>🧠</div>
+
+                            <strong>Trip Orchestrator</strong>
+
+                            <span>MASTER AGENT</span>
+
+                        </div>
+
+
+                        <div class="network-agent na1">
+
+                            <div>✈</div>
+
+                            <strong>Flight AI</strong>
+
+                            <small>Flight research</small>
+
+                        </div>
+
+
+                        <div class="network-agent na2">
+
+                            <div>🏨</div>
+
+                            <strong>Hotel AI</strong>
+
+                            <small>Hotel search</small>
+
+                        </div>
+
+
+                        <div class="network-agent na3">
+
+                            <div>🚕</div>
+
+                            <strong>Transport AI</strong>
+
+                            <small>Transfers</small>
+
+                        </div>
+
+
+                        <div class="network-agent na4">
+
+                            <div>🎯</div>
+
+                            <strong>Activity AI</strong>
+
+                            <small>Experiences</small>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- AUTOMATION -->
+                <!-- ================================================= -->
+
+                <section class="page" id="automation">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">AUTOMATION CENTER</div>
+                            <h1>Automation Workflow Builder</h1>
+                            <p>Build powerful no-code travel automations.</p>
+                        </div>
+
+                        <button
+                            class="primary-button"
+                            onclick="showToast('Automation created')"
+                        >
+                            + New Automation
+                        </button>
+
+                    </div>
+
+
+                    <div class="automation-builder">
+
+                        <div class="automation-card">
+
+                            <div class="step-number">01</div>
+
+                            <div>
+                                <small>TRIGGER</small>
+                                <h3>New customer trip request</h3>
+                                <p>Starts when a customer submits a new itinerary request.</p>
+                            </div>
+
+                            <button onclick="showToast('Trigger editor opened')">
+                                Edit
+                            </button>
+
+                        </div>
+
+
+                        <div class="automation-arrow">↓</div>
+
+
+                        <div class="automation-card">
+
+                            <div class="step-number">02</div>
+
+                            <div>
+                                <small>AI AGENT</small>
+                                <h3>Travel Planner</h3>
+                                <p>Analyze destination, budget, dates and preferences.</p>
+                            </div>
+
+                            <button onclick="showToast('Agent selector opened')">
+                                Edit
+                            </button>
+
+                        </div>
+
+
+                        <div class="automation-arrow">↓</div>
+
+
+                        <div class="automation-card">
+
+                            <div class="step-number">03</div>
+
+                            <div>
+                                <small>ACTION</small>
+                                <h3>Generate travel proposal</h3>
+                                <p>Create itinerary and send the proposal to the traveler.</p>
+                            </div>
+
+                            <button onclick="showToast('Action editor opened')">
+                                Edit
+                            </button>
+
+                        </div>
+
+
+                        <div class="automation-arrow">↓</div>
+
+
+                        <div class="automation-card">
+
+                            <div class="step-number">04</div>
+
+                            <div>
+                                <small>FINISH</small>
+                                <h3>Wait for customer approval</h3>
+                                <p>Continue workflow when the customer approves.</p>
+                            </div>
+
+                            <button onclick="showToast('Approval editor opened')">
+                                Edit
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- TRIGGERS -->
+                <!-- ================================================= -->
+
+                <section class="page" id="triggers">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">AUTOMATION / TRIGGERS</div>
+                            <h1>Triggers & Actions</h1>
+                            <p>Define events that activate your AI workforce.</p>
+                        </div>
+
+                        <button
+                            class="primary-button"
+                            onclick="showToast('New trigger created')"
+                        >
+                            + Add Trigger
+                        </button>
+
+                    </div>
+
+
+                    <div class="trigger-grid">
+
+                        <div class="trigger-card">
+
+                            <div class="trigger-symbol">⚡</div>
+
+                            <h3>New Booking</h3>
+
+                            <p>
+                                Runs whenever a new booking is created.
+                            </p>
+
+                            <div class="trigger-flow">
+                                Event → Booking Agent
+                            </div>
+
+                            <button class="active-trigger">
+                                Active
+                            </button>
+
+                        </div>
+
+
+                        <div class="trigger-card">
+
+                            <div class="trigger-symbol">💬</div>
+
+                            <h3>Customer Message</h3>
+
+                            <p>
+                                Starts support AI when a traveler sends a message.
+                            </p>
+
+                            <div class="trigger-flow">
+                                Message → Support AI
+                            </div>
+
+                            <button class="active-trigger">
+                                Active
+                            </button>
+
+                        </div>
+
+
+                        <div class="trigger-card">
+
+                            <div class="trigger-symbol">⏰</div>
+
+                            <h3>Scheduled Event</h3>
+
+                            <p>
+                                Automatically execute agents at a defined time.
+                            </p>
+
+                            <div class="trigger-flow">
+                                Schedule → Travel Planner
+                            </div>
+
+                            <button class="active-trigger">
+                                Active
+                            </button>
+
+                        </div>
+
+
+                        <div class="trigger-card">
+
+                            <div class="trigger-symbol">△</div>
+
+                            <h3>Error Recovery</h3>
+
+                            <p>
+                                Automatically retry failed agent executions.
+                            </p>
+
+                            <div class="trigger-flow">
+                                Error → Retry Agent
+                            </div>
+
+                            <button class="paused-trigger">
+                                Paused
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- APPROVALS -->
+                <!-- ================================================= -->
+
+                <section class="page" id="approvals">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">HUMAN IN THE LOOP</div>
+                            <h1>Human Approval Center</h1>
+                            <p>Review actions that require human decision.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="approval-banner">
+
+                        <div class="approval-banner-icon">✓</div>
+
+                        <div>
+                            <strong>Human-in-the-loop is active</strong>
+                            <p>
+                                Sensitive travel actions require approval
+                                before execution.
+                            </p>
+                        </div>
+
+                        <span>3 pending</span>
+
+                    </div>
+
+
+                    <div class="approval-list">
+
+                        <div class="approval-card">
+
+                            <div class="approval-type">✈</div>
+
+                            <div class="approval-details">
+
+                                <small>BOOKING AGENT · 4 MIN AGO</small>
+
+                                <h3>Flight booking approval</h3>
+
+                                <p>
+                                    Hyderabad → Delhi · 18 Oct ·
+                                    Traveler #TR-8291
+                                </p>
+
+                                <div class="approval-price">
+                                    ₹8,450
+                                </div>
+
+                            </div>
+
+                            <div class="approval-buttons">
+
+                                <button
+                                    class="approve-button"
+                                    onclick="approveRequest(this)"
+                                >
+                                    ✓ Approve
+                                </button>
+
+                                <button
+                                    class="reject-button"
+                                    onclick="rejectRequest(this)"
+                                >
+                                    Reject
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="approval-card">
+
+                            <div class="approval-type hotel-type">🏨</div>
+
+                            <div class="approval-details">
+
+                                <small>HOTEL AI · 9 MIN AGO</small>
+
+                                <h3>Hotel reservation approval</h3>
+
+                                <p>
+                                    Goa · 3 nights · Ocean-view room
+                                </p>
+
+                                <div class="approval-price">
+                                    ₹17,200
+                                </div>
+
+                            </div>
+
+                            <div class="approval-buttons">
+
+                                <button
+                                    class="approve-button"
+                                    onclick="approveRequest(this)"
+                                >
+                                    ✓ Approve
+                                </button>
+
+                                <button
+                                    class="reject-button"
+                                    onclick="rejectRequest(this)"
+                                >
+                                    Reject
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- ACTIVITY -->
+                <!-- ================================================= -->
+
+                <section class="page" id="activity">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">OPERATIONS / LOGS</div>
+                            <h1>Agent Activity Log</h1>
+                            <p>Complete chronological history of AI actions.</p>
+                        </div>
+
+                        <button
+                            class="outline-button"
+                            onclick="showToast('Activity log exported')"
+                        >
+                            ↓ Export Log
+                        </button>
+
+                    </div>
+
+
+                    <div class="panel log-panel">
+
+                        <div class="log-filter">
+
+                            <button class="active">All Events</button>
+                            <button>Success</button>
+                            <button>Warnings</button>
+                            <button>Errors</button>
+
+                        </div>
+
+
+                        <div class="log-list">
+
+                            <div class="log-item">
+                                <time>22:28:14</time>
+                                <span class="log-success">SUCCESS</span>
+                                <strong>Travel Planner</strong>
+                                <p>Generated 5-day Goa itinerary</p>
+                                <small>#TR-84291</small>
+                            </div>
+
+                            <div class="log-item">
+                                <time>22:26:41</time>
+                                <span class="log-success">SUCCESS</span>
+                                <strong>Hotel Assistant</strong>
+                                <p>Completed hotel search</p>
+                                <small>42 properties found</small>
+                            </div>
+
+                            <div class="log-item">
+                                <time>22:23:08</time>
+                                <span class="log-warning">WAITING</span>
+                                <strong>Booking Agent</strong>
+                                <p>Waiting for human approval</p>
+                                <small>Booking #BK-8291</small>
+                            </div>
+
+                            <div class="log-item">
+                                <time>22:20:55</time>
+                                <span class="log-success">SUCCESS</span>
+                                <strong>Support AI</strong>
+                                <p>Customer conversation resolved</p>
+                                <small>Session #CS-721</small>
+                            </div>
+
+                            <div class="log-item">
+                                <time>22:17:32</time>
+                                <span class="log-error">ERROR</span>
+                                <strong>Recommendation AI</strong>
+                                <p>External recommendation API timeout</p>
+                                <small>Retry scheduled</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- HISTORY -->
+                <!-- ================================================= -->
+
+                <section class="page" id="history">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">OPERATIONS / EXECUTIONS</div>
+                            <h1>Execution History</h1>
+                            <p>Review previous agent workflow executions.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="history-grid">
+
+                        <div class="history-card">
+
+                            <div class="execution-id">#EX-84291</div>
+
+                            <h3>Complete Goa Trip Planning</h3>
+
+                            <p>
+                                Travel Planner → Hotel AI → Approval → Booking
+                            </p>
+
+                            <div class="execution-footer">
+                                <span class="completed">● Completed</span>
+                                <span>2m 41s</span>
+                                <span>22:28</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="history-card">
+
+                            <div class="execution-id">#EX-84290</div>
+
+                            <h3>Flight Search Workflow</h3>
+
+                            <p>
+                                Flight AI → Recommendation AI
+                            </p>
+
+                            <div class="execution-footer">
+                                <span class="completed">● Completed</span>
+                                <span>1m 18s</span>
+                                <span>22:21</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="history-card">
+
+                            <div class="execution-id">#EX-84289</div>
+
+                            <h3>Customer Support Session</h3>
+
+                            <p>
+                                Support AI → Knowledge Agent
+                            </p>
+
+                            <div class="execution-footer">
+                                <span class="completed">● Completed</span>
+                                <span>32s</span>
+                                <span>22:18</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="history-card">
+
+                            <div class="execution-id">#EX-84288</div>
+
+                            <h3>Hotel Recommendation</h3>
+
+                            <p>
+                                Hotel AI → Recommendation AI
+                            </p>
+
+                            <div class="execution-footer">
+                                <span class="completed">● Completed</span>
+                                <span>1m 04s</span>
+                                <span>22:12</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- ERRORS -->
+                <!-- ================================================= -->
+
+                <section class="page" id="errors">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">OPERATIONS / RELIABILITY</div>
+                            <h1>Error & Retry Center</h1>
+                            <p>Monitor failures and restart unsuccessful executions.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="error-summary">
+
+                        <div>
+                            <strong>6</strong>
+                            <span>Total Errors</span>
+                        </div>
+
+                        <div>
+                            <strong>4</strong>
+                            <span>Auto Resolved</span>
+                        </div>
+
+                        <div>
+                            <strong>2</strong>
+                            <span>Needs Review</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel error-panel">
+
+                        <div class="error-item">
+
+                            <div class="error-icon">!</div>
+
+                            <div class="error-details">
+
+                                <small>8 MINUTES AGO · ATTEMPT 1/3</small>
+
+                                <h3>Recommendation AI</h3>
+
+                                <p>
+                                    External destination recommendation
+                                    service timed out while processing request.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="retry-button"
+                                onclick="retryExecution(this)"
+                            >
+                                ↻ Retry
+                            </button>
+
+                        </div>
+
+
+                        <div class="error-item">
+
+                            <div class="error-icon">!</div>
+
+                            <div class="error-details">
+
+                                <small>15 MINUTES AGO · ATTEMPT 2/3</small>
+
+                                <h3>Booking Agent</h3>
+
+                                <p>
+                                    Booking provider temporarily returned
+                                    an unavailable response.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="retry-button"
+                                onclick="retryExecution(this)"
+                            >
+                                ↻ Retry
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================================= -->
+                <!-- PERMISSIONS -->
+                <!-- ================================================= -->
+
+                <section class="page" id="permissions">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <div class="eyebrow">SECURITY / ACCESS</div>
+                            <h1>Agent Permissions</h1>
+                            <p>Control what your AI workforce can access.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="permission-grid">
+
+                        <div class="permission-card">
+
+                            <div>✈</div>
+
+                            <h3>Flight Search</h3>
+
+                            <p>
+                                Search schedules, routes and available flights.
+                            </p>
+
+                            <button
+                                class="permission allowed"
+                                onclick="togglePermission(this)"
+                            >
+                                Allowed ✓
+                            </button>
+
+                        </div>
+
+
+                        <div class="permission-card">
+
+                            <div>🏨</div>
+
+                            <h3>Hotel Search</h3>
+
+                            <p>
+                                Search hotel properties and availability.
+                            </p>
+
+                            <button
+                                class="permission allowed"
+                                onclick="togglePermission(this)"
+                            >
+                                Allowed ✓
+                            </button>
+
+                        </div>
+
+
+                        <div class="permission-card">
+
+                            <div>💳</div>
+
+                            <h3>Payments</h3>
+
+                            <p>
+                                Execute payment-related travel actions.
+                            </p>
+
+                            <button
+                                class="permission restricted"
+                                onclick="togglePermission(this)"
+                            >
+                                Restricted
+                            </button>
+
+                        </div>
+
+
+                        <div class="permission-card">
+
+                            <div>📧</div>
+
+                            <h3>Email</h3>
+
+                            <p>
+                                Send booking confirmations and notifications.
+                            </p>
+
+                            <button
+                                class="permission allowed"
+                                onclick="togglePermission(this)"
+                            >
+                                Allowed ✓
+                            </button>
+
+                        </div>
+
+
+                        <div class="permission-card">
+
+                            <div>📍</div>
+
+                            <h3>Location</h3>
+
+                            <p>
+                                Access approximate traveler destination data.
+                            </p>
+
+                            <button
+                                class="permission allowed"
+                                onclick="togglePermission(this)"
+                            >
+                                Allowed ✓
+                            </button>
+
+                        </div>
+
+
+                        <div class="permission-card">
+
+                            <div>📊</div>
+
+                            <h3>Analytics</h3>
+
+                            <p>
+                                Read travel performance and operational data.
+                            </p>
+
+                            <button
+                                class="permission allowed"
+                                onclick="togglePermission(this)"
+                            >
+                                Allowed ✓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= CREATE AGENT MODAL ================= -->
+
+    <div class="modal" id="agentModal">
+
+        <div class="modal-box">
+
+            <button class="modal-close" id="closeModal">×</button>
+
+            <div class="modal-symbol">✦</div>
+
+            <div class="eyebrow">NEW AI AGENT</div>
+
+            <h2>Create Travel Agent</h2>
+
+            <p>
+                Start building a specialized AI assistant for your
+                travel operations.
+            </p>
+
+            <label>Agent Name</label>
+
+            <input
+                id="modalAgentName"
+                type="text"
+                placeholder="e.g. Weekend Travel Planner"
+            >
+
+            <label>Agent Type</label>
+
+            <select>
+                <option>Travel Planning</option>
+                <option>Flight Assistant</option>
+                <option>Hotel Assistant</option>
+                <option>Customer Support</option>
+                <option>Recommendation AI</option>
+            </select>
+
+            <button
+                class="primary-button modal-create"
+                id="modalCreate"
+            >
+                Create Agent →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">✓</div>
+
+        <div>
+            <strong>Success</strong>
+            <p>Action completed successfully.</p>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

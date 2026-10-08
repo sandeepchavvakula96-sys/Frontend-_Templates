@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodFlow - Food Delivery</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#080b14;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND EFFECTS ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#ff5a00;
+    border-radius:50%;
+    filter:blur(150px);
+    opacity:.15;
+    top:-180px;
+    left:-150px;
+    z-index:-2;
+    animation:moveBlob 8s infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#7c3aed;
+    border-radius:50%;
+    filter:blur(150px);
+    opacity:.16;
+    right:-150px;
+    bottom:-100px;
+    z-index:-2;
+    animation:moveBlob2 10s infinite alternate;
+}
+
+@keyframes moveBlob{
+    from{transform:translate(0,0)}
+    to{transform:translate(150px,100px)}
+}
+
+@keyframes moveBlob2{
+    from{transform:translate(0,0)}
+    to{transform:translate(-120px,-100px)}
+}
+
+/* animated grid */
+
+.grid-bg{
+    position:fixed;
+    inset:0;
+    z-index:-3;
+    opacity:.12;
+    background-image:
+    linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px);
+    background-size:50px 50px;
+    animation:gridMove 15s linear infinite;
+}
+
+@keyframes gridMove{
+    from{background-position:0 0}
+    to{background-position:50px 50px}
+}
+
+/* floating particles */
+
+.particle{
+    position:fixed;
+    width:5px;
+    height:5px;
+    background:#ff6b00;
+    border-radius:50%;
+    opacity:.6;
+    z-index:-1;
+    animation:floatParticle 8s infinite ease-in-out;
+}
+
+.p1{left:10%;top:25%}
+.p2{left:25%;top:70%;animation-delay:2s}
+.p3{left:70%;top:20%;animation-delay:1s}
+.p4{left:85%;top:65%;animation-delay:3s}
+.p5{left:50%;top:45%;animation-delay:4s}
+
+@keyframes floatParticle{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-80px)}
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 7%;
+    background:rgba(8,11,20,.82);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:26px;
+    font-weight:800;
+    color:#ff6b00;
+    animation:logoPulse 2s infinite;
+}
+
+@keyframes logoPulse{
+    50%{
+        text-shadow:0 0 20px rgba(255,107,0,.7);
+    }
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:28px;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff6b00;
+}
+
+.nav-btn{
+    padding:10px 18px;
+}
+
+/* ================= BUTTONS ================= */
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+.btn{
+    position:relative;
+    overflow:hidden;
+    padding:13px 24px;
+    border-radius:12px;
+    font-weight:bold;
+    color:white;
+    transition:.3s;
+}
+
+.primary{
+    background:linear-gradient(135deg,#ff7200,#ff3d00);
+    box-shadow:0 8px 25px rgba(255,90,0,.25);
+    animation:buttonPulse 2.5s infinite;
+}
+
+.secondary{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 15px 35px rgba(255,100,0,.35);
+}
+
+.btn:active{
+    transform:scale(.94);
+}
+
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:70%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+    transform:skewX(-25deg);
+    transition:.6s;
+}
+
+.btn:hover::before{
+    left:140%;
+}
+
+@keyframes buttonPulse{
+    50%{
+        box-shadow:0 0 25px rgba(255,100,0,.4);
+    }
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:80px 7%;
+    gap:50px;
+}
+
+.hero-text{
+    max-width:650px;
+    animation:fadeUp 1s ease;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border-radius:30px;
+    background:rgba(255,107,0,.12);
+    color:#ff8a3d;
+    border:1px solid rgba(255,107,0,.25);
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,80px);
+    line-height:1.02;
+    margin-bottom:25px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#ff8a00,#ff3d00,#ff9d52);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:#aaa;
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.hero-food{
+    width:390px;
+    height:390px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:180px;
+    background:radial-gradient(
+        circle,
+        rgba(255,107,0,.3),
+        rgba(255,107,0,.02)
+    );
+    box-shadow:0 0 80px rgba(255,107,0,.15);
+    animation:foodFloat 4s ease-in-out infinite;
+}
+
+@keyframes foodFloat{
+    0%,100%{transform:translateY(0) rotate(0)}
+    50%{transform:translateY(-20px) rotate(3deg)}
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:80px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#999;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    padding:10px;
+}
+
+.category{
+    min-width:130px;
+    padding:25px 15px;
+    text-align:center;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    transition:.3s;
+}
+
+.category:hover{
+    transform:translateY(-8px);
+    border-color:#ff6b00;
+    box-shadow:0 15px 30px rgba(255,107,0,.15);
+}
+
+.category span{
+    display:block;
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+/* ================= FOOD CARDS ================= */
+
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:15px;
+    backdrop-filter:blur(15px);
+    transition:.35s;
+    animation:cardAppear .7s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(255,107,0,.5);
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+.food-image{
+    height:180px;
+    border-radius:15px;
+    background:linear-gradient(135deg,#1c2230,#111620);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:90px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:7px;
+}
+
+.card p{
+    color:#999;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.price-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.price{
+    color:#ff7b22;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.add-btn{
+    padding:9px 15px;
+    border-radius:9px;
+    background:#ff6b00;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.add-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 18px rgba(255,107,0,.5);
+}
+
+@keyframes cardAppear{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= OFFERS ================= */
+
+.offer-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.offer{
+    padding:30px;
+    border-radius:22px;
+    background:linear-gradient(
+        135deg,
+        rgba(255,107,0,.15),
+        rgba(255,255,255,.05)
+    );
+    border:1px solid rgba(255,107,0,.2);
+    transition:.3s;
+}
+
+.offer:hover{
+    transform:scale(1.03);
+    box-shadow:0 20px 40px rgba(255,107,0,.12);
+}
+
+.offer-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.offer h3{
+    margin-bottom:10px;
+}
+
+.offer p{
+    color:#aaa;
+    margin-bottom:20px;
+}
+
+/* ================= TRACKING ================= */
+
+.tracking{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:25px;
+    padding:35px;
+}
+
+.track-line{
+    height:6px;
+    background:#252b38;
+    border-radius:10px;
+    margin:40px 0;
+    position:relative;
+}
+
+.track-progress{
+    position:absolute;
+    height:100%;
+    width:72%;
+    background:linear-gradient(90deg,#ff6b00,#ffb000);
+    border-radius:10px;
+    animation:progress 2s ease;
+}
+
+@keyframes progress{
+    from{width:0}
+    to{width:72%}
+}
+
+.track-steps{
+    display:flex;
+    justify-content:space-between;
+}
+
+.step{
+    text-align:center;
+    color:#888;
+}
+
+.step.active{
+    color:#ff7b22;
+}
+
+.step-icon{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto auto 10px;
+    border-radius:50%;
+    background:#252b38;
+}
+
+.step.active .step-icon{
+    background:#ff6b00;
+    box-shadow:0 0 20px rgba(255,107,0,.5);
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.stat{
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.stat small{
+    color:#999;
+}
+
+.stat h2{
+    margin-top:10px;
+    font-size:32px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:50px 7%;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    color:#888;
+}
+
+footer .logo{
+    margin-bottom:15px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+    .food-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .offer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-food{
+        width:300px;
+        height:300px;
+        font-size:130px;
+    }
+}
+
+@media(max-width:700px){
+
+    nav ul{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:60px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-food{
+        width:260px;
+        height:260px;
+        font-size:110px;
+    }
+
+    .food-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .track-steps{
+        font-size:12px;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="grid-bg"></div>
+<div class="particle p1"></div>
+<div class="particle p2"></div>
+<div class="particle p3"></div>
+<div class="particle p4"></div>
+<div class="particle p5"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">🍊 FoodFlow</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#explore">Explore</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#tracking">Track Order</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+    </ul>
+
+    <button class="btn primary nav-btn" onclick="openCart()">
+        🛒 Cart <span id="cartCount">0</span>
+    </button>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <span class="badge">🔥 Fast • Fresh • Delicious</span>
+
+        <h1>
+            Your favorite food,
+            <span class="gradient-text">delivered fast.</span>
+        </h1>
+
+        <p>
+            Discover delicious food from your favorite restaurants,
+            enjoy amazing offers and track your order in real time.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="btn primary"
+                    onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})">
+                🍔 Explore Food →
+            </button>
+
+            <button class="btn secondary"
+                    onclick="document.getElementById('offers').scrollIntoView({behavior:'smooth'})">
+                🎁 View Offers
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-food">
+        🍕
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section>
+
+    <div class="section-title">
+        <h2>Explore Categories</h2>
+        <p>Find something delicious for every mood</p>
+    </div>
+
+    <div class="categories">
+
+        <div class="category">
+            <span>🍕</span>
+            Pizza
+        </div>
+
+        <div class="category">
+            <span>🍔</span>
+            Burgers
+        </div>
+
+        <div class="category">
+            <span>🍜</span>
+            Noodles
+        </div>
+
+        <div class="category">
+            <span>🍛</span>
+            Indian
+        </div>
+
+        <div class="category">
+            <span>🍣</span>
+            Sushi
+        </div>
+
+        <div class="category">
+            <span>🍰</span>
+            Desserts
+        </div>
+
+        <div class="category">
+            <span>🥤</span>
+            Drinks
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPLORE -->
+
+<section id="explore">
+
+    <div class="section-title">
+
+        <h2>Popular Food</h2>
+
+        <p>
+            Customer favorites delivered directly to your door
+        </p>
+
+    </div>
+
+
+    <div class="food-grid">
+
+        <div class="card">
+
+            <div class="food-image">🍕</div>
+
+            <h3>Cheese Pizza</h3>
+
+            <p>Extra cheese • Italian herbs</p>
+
+            <div class="price-row">
+
+                <span class="price">₹249</span>
+
+                <button class="add-btn"
+                        onclick="addCart('Cheese Pizza',249)">
+                    + Add
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">🍔</div>
+
+            <h3>Classic Burger</h3>
+
+            <p>Cheese • Lettuce • Special sauce</p>
+
+            <div class="price-row">
+
+                <span class="price">₹199</span>
+
+                <button class="add-btn"
+                        onclick="addCart('Classic Burger',199)">
+                    + Add
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">🍜</div>
+
+            <h3>Spicy Noodles</h3>
+
+            <p>Vegetables • Chilli • Asian spices</p>
+
+            <div class="price-row">
+
+                <span class="price">₹179</span>
+
+                <button class="add-btn"
+                        onclick="addCart('Spicy Noodles',179)">
+                    + Add
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">🍛</div>
+
+            <h3>Paneer Biryani</h3>
+
+            <p>Fragrant rice • Paneer • Spices</p>
+
+            <div class="price-row">
+
+                <span class="price">₹229</span>
+
+                <button class="add-btn"
+                        onclick="addCart('Paneer Biryani',229)">
+                    + Add
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">🍣</div>
+
+            <h3>Veg Sushi</h3>
+
+            <p>Fresh vegetables • Rice • Soy sauce</p>
+
+            <div class="price-row">
+
+                <span class="price">₹299</span>
+
+                <button class="add-btn"
+                        onclick="addCart('Veg Sushi',299)">
+                    + Add
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">🍗</div>
+
+            <h3>Chicken Grill</h3>
+
+            <p>Grilled chicken • Herbs • Salad</p>
+
+            <div class="price-row">
+
+                <span class="price">₹349</span>
+
+                <button class="add-btn"
+                        onclick="addCart('Chicken Grill',349)">
+                    + Add
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">🍰</div>
+
+            <h3>Chocolate Cake</h3>
+
+            <p>Chocolate cream • Soft sponge</p>
+
+            <div class="price-row">
+
+                <span class="price">₹159</span>
+
+                <button class="add-btn"
+                        onclick="addCart('Chocolate Cake',159)">
+                    + Add
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="food-image">🥤</div>
+
+            <h3>Cold Coffee</h3>
+
+            <p>Coffee • Milk • Chocolate</p>
+
+            <div class="price-row">
+
+                <span class="price">₹129</span>
+
+                <button class="add-btn"
+                        onclick="addCart('Cold Coffee',129)">
+                    + Add
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OFFERS -->
+
+<section id="offers">
+
+    <div class="section-title">
+
+        <h2>Offers & Rewards</h2>
+
+        <p>Save more on every order</p>
+
+    </div>
+
+
+    <div class="offer-grid">
+
+        <div class="offer">
+
+            <div class="offer-icon">🎁</div>
+
+            <h3>50% OFF</h3>
+
+            <p>
+                Get up to 50% off on your first order.
+            </p>
+
+            <button class="btn primary"
+                    onclick="claimOffer('WELCOME50')">
+                Claim Offer
+            </button>
+
+        </div>
+
+
+        <div class="offer">
+
+            <div class="offer-icon">🚀</div>
+
+            <h3>Free Delivery</h3>
+
+            <p>
+                Enjoy free delivery on selected restaurants.
+            </p>
+
+            <button class="btn primary"
+                    onclick="claimOffer('FREEDELIVERY')">
+                Claim Offer
+            </button>
+
+        </div>
+
+
+        <div class="offer">
+
+            <div class="offer-icon">⭐</div>
+
+            <h3>Reward Points</h3>
+
+            <p>
+                Earn points every time you order.
+            </p>
+
+            <button class="btn primary"
+                    onclick="claimOffer('REWARD100')">
+                Claim Offer
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ORDER TRACKING -->
+
+<section id="tracking">
+
+    <div class="section-title">
+
+        <h2>Live Order Tracking</h2>
+
+        <p>Track your food from restaurant to doorstep</p>
+
+    </div>
+
+
+    <div class="tracking">
+
+        <h3>Order #FF2048</h3>
+
+        <p style="color:#999;margin-top:8px;">
+            Your order is on the way 🚴
+        </p>
+
+
+        <div class="track-line">
+
+            <div class="track-progress"></div>
+
+        </div>
+
+
+        <div class="track-steps">
+
+            <div class="step active">
+
+                <div class="step-icon">✓</div>
+
+                Ordered
+
+            </div>
+
+
+            <div class="step active">
+
+                <div class="step-icon">✓</div>
+
+                Preparing
+
+            </div>
+
+
+            <div class="step active">
+
+                <div class="step-icon">🚴</div>
+
+                On the way
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-icon">🏠</div>
+
+                Delivered
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+
+<section id="dashboard">
+
+    <div class="section-title">
+
+        <h2>Analytics Dashboard</h2>
+
+        <p>Modern SaaS-style food delivery analytics</p>
+
+    </div>
+
+
+    <div class="dashboard">
+
+        <div class="stat">
+
+            <small>Total Orders</small>
+
+            <h2>12,480</h2>
+
+            <span style="color:#32d583">↑ 18.4%</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <small>Revenue</small>
+
+            <h2>₹8.4L</h2>
+
+            <span style="color:#32d583">↑ 12.8%</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <small>Customers</small>
+
+            <h2>24,892</h2>
+
+            <span style="color:#32d583">↑ 9.7%</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <small>Avg Rating</small>
+
+            <h2>4.8 ⭐</h2>
+
+            <span style="color:#32d583">Excellent</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="logo">🍊 FoodFlow</div>
+
+    <p>
+        Delicious food. Fast delivery. Happy customers.
+    </p>
+
+    <p style="margin-top:20px;">
+        © 2026 FoodFlow. All rights reserved.
+    </p>
+
+</footer>
+
+
+<!-- CART MODAL -->
+
+<div id="cartModal"
+style="
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(10px);
+z-index:500;
+align-items:center;
+justify-content:center;
+">
+
+    <div style="
+    width:min(500px,90%);
+    background:#111722;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
+    ">
+
+        <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:25px;
+        ">
+
+            <h2>🛒 Your Cart</h2>
+
+            <button onclick="closeCart()"
+            style="
+            background:none;
+            color:white;
+            font-size:25px;
+            ">
+                ×
+            </button>
+
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div style="
+        display:flex;
+        justify-content:space-between;
+        margin-top:25px;
+        padding-top:20px;
+        border-top:1px solid #292f3b;
+        ">
+
+            <strong>Total</strong>
+
+            <strong id="cartTotal"
+            style="color:#ff7b22;font-size:22px;">
+                ₹0
+            </strong>
+
+        </div>
+
+        <button class="btn primary"
+        style="width:100%;margin-top:20px;"
+        onclick="checkout()">
+            Proceed to Checkout →
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ================= CART ================= */
+
+let cart = [];
+
+function addCart(name,price){
+
+    cart.push({
+        name:name,
+        price:price
+    });
+
+    document.getElementById("cartCount").innerText = cart.length;
+
+    showToast(name + " added to cart 🛒");
+}
+
+
+function openCart(){
+
+    const modal =
+    document.getElementById("cartModal");
+
+    modal.style.display="flex";
+
+    renderCart();
+}
+
+
+function closeCart(){
+
+    document.getElementById("cartModal")
+    .style.display="none";
+}
+
+
+function renderCart(){
+
+    const container =
+    document.getElementById("cartItems");
+
+    if(cart.length===0){
+
+        container.innerHTML=`
+        <div style="
+        text-align:center;
+        padding:30px;
+        color:#888;
+        ">
+            Your cart is empty 🍽️
+        </div>
+        `;
+
+        document.getElementById("cartTotal")
+        .innerText="₹0";
+
+        return;
+    }
+
+    let total=0;
+
+    container.innerHTML=cart.map((item,index)=>{
+
+        total+=item.price;
+
+        return `
+        <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:14px 0;
+        border-bottom:1px solid #292f3b;
+        ">
+
+            <div>
+                <strong>${item.name}</strong>
+                <div style="color:#ff7b22;margin-top:5px;">
+                    ₹${item.price}
+                </div>
+            </div>
+
+            <button
+            onclick="removeCart(${index})"
+            style="
+            background:#2b2020;
+            color:#ff6b6b;
+            padding:7px 10px;
+            border-radius:8px;
+            ">
+                Remove
+            </button>
+
+        </div>
+        `;
+
+    }).join("");
+
+    document.getElementById("cartTotal")
+    .innerText="₹"+total;
+}
+
+
+function removeCart(index){
+
+    cart.splice(index,1);
+
+    document.getElementById("cartCount")
+    .innerText=cart.length;
+
+    renderCart();
+}
+
+
+function checkout(){
+
+    if(cart.length===0){
+
+        showToast("Your cart is empty!");
+
+        return;
+    }
+
+    cart=[];
+
+    document.getElementById("cartCount")
+    .innerText="0";
+
+    renderCart();
+
+    showToast("Order placed successfully! 🎉");
+}
+
+
+/* ================= OFFERS ================= */
+
+function claimOffer(code){
+
+    navigator.clipboard?.writeText(code);
+
+    showToast(
+        "Coupon " + code + " copied! 🎁"
+    );
+}
+
+
+/* ================= TOAST ================= */
+
+function showToast(message){
+
+    const toast=document.createElement("div");
+
+    toast.innerText=message;
+
+    toast.style.position="fixed";
+    toast.style.right="25px";
+    toast.style.bottom="25px";
+    toast.style.padding="15px 22px";
+    toast.style.background="#151c29";
+    toast.style.border="1px solid rgba(255,107,0,.4)";
+    toast.style.borderRadius="12px";
+    toast.style.color="white";
+    toast.style.zIndex="1000";
+    toast.style.boxShadow="0 10px 30px rgba(0,0,0,.4)";
+    toast.style.animation="fadeUp .4s ease";
+
+    document.body.appendChild(toast);
+
+    setTimeout(()=>{
+
+        toast.style.opacity="0";
+        toast.style.transform="translateY(20px)";
+
+        setTimeout(()=>{
+            toast.remove();
+        },300);
+
+    },2500);
+}
+
+
+/* ================= RIPPLE EFFECT ================= */
+
+document.addEventListener("click",function(e){
+
+    const button=e.target.closest(".btn");
+
+    if(!button) return;
+
+    const ripple=document.createElement("span");
+
+    const rect=button.getBoundingClientRect();
+
+    const size=Math.max(
+        rect.width,
+        rect.height
+    );
+
+    ripple.style.position="absolute";
+    ripple.style.width=size+"px";
+    ripple.style.height=size+"px";
+    ripple.style.borderRadius="50%";
+    ripple.style.background="rgba(255,255,255,.4)";
+    ripple.style.transform="scale(0)";
+    ripple.style.pointerEvents="none";
+
+    ripple.style.left=
+        e.clientX-rect.left-size/2+"px";
+
+    ripple.style.top=
+        e.clientY-rect.top-size/2+"px";
+
+    ripple.style.animation=
+        "ripple .6s linear";
+
+    button.appendChild(ripple);
+
+    setTimeout(()=>{
+        ripple.remove();
+    },600);
+
+});
+
+
+</script>
+
+
+<style>
+
+@keyframes ripple{
+
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+
+}
+
+</style>
+
+</body>
+</html>

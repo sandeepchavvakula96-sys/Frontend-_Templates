@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify AI Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- MOVING GRADIENT WAVES -->
+<div class="space-background">
+    <div class="gradient-wave wave1"></div>
+    <div class="gradient-wave wave2"></div>
+    <div class="gradient-wave wave3"></div>
+    <div class="gradient-wave wave4"></div>
+
+    <span class="star star1"></span>
+    <span class="star star2"></span>
+    <span class="star star3"></span>
+    <span class="star star4"></span>
+    <span class="star star5"></span>
+    <span class="star star6"></span>
+    <span class="star star7"></span>
+    <span class="star star8"></span>
+</div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="logo">
+        <span class="logo-icon">●</span>
+        <span>SoundAI</span>
+    </div>
+
+    <div class="menu-title">MAIN</div>
+
+    <button class="nav-btn active" onclick="openView('home', this)">
+        🏠 <span>Home</span>
+    </button>
+
+    <button class="nav-btn" onclick="openView('search', this)">
+        🔍 <span>Search</span>
+    </button>
+
+    <button class="nav-btn" onclick="openView('library', this)">
+        📚 <span>Your Library</span>
+    </button>
+
+    <div class="menu-title">AI STUDIO</div>
+
+    <button class="nav-btn" onclick="openView('assistant', this)">
+        ✨ <span>AI Assistant</span>
+    </button>
+
+    <button class="nav-btn" onclick="openView('chat', this)">
+        💬 <span>AI Chat</span>
+    </button>
+
+    <button class="nav-btn" onclick="openView('command', this)">
+        ⌘ <span>Command Bar</span>
+    </button>
+
+    <button class="nav-btn" onclick="openView('aiSearch', this)">
+        🧠 <span>AI Search</span>
+    </button>
+
+    <button class="nav-btn" onclick="openView('copilot', this)">
+        🚀 <span>AI Copilot</span>
+    </button>
+
+    <div class="menu-title">ANALYTICS</div>
+
+    <button class="nav-btn" onclick="openView('dashboard', this)">
+        📊 <span>Dashboard</span>
+    </button>
+
+    <button class="nav-btn" onclick="openView('reports', this)">
+        📄 <span>AI Reports</span>
+    </button>
+
+    <div class="sidebar-bottom">
+        <div class="mini-profile">
+            <div class="avatar">V</div>
+            <div>
+                <strong>Varshini</strong>
+                <small>Premium AI</small>
+            </div>
+        </div>
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+<main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+        <div class="history-buttons">
+            <button onclick="goBack()">‹</button>
+            <button onclick="goForward()">›</button>
+        </div>
+
+        <div class="global-search" onclick="openView('search')">
+            🔍
+            <input
+                type="text"
+                placeholder="What do you want to search?"
+                onclick="event.stopPropagation()"
+                onkeydown="if(event.key==='Enter') performSearch(this.value)"
+            >
+        </div>
+
+        <button class="top-ai" onclick="openView('assistant')">
+            ✨ Ask AI
+        </button>
+
+        <div class="profile">
+            <div class="avatar">V</div>
+        </div>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+    <section id="home" class="view active-view">
+
+        <div class="hero">
+
+            <div>
+                <span class="badge">✨ AI POWERED MUSIC</span>
+
+                <h1>
+                    Your music.<br>
+                    <span>Your intelligence.</span>
+                </h1>
+
+                <p>
+                    Discover music, chat with AI, create playlists,
+                    analyze your listening and ask anything about your data.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn" onclick="openView('assistant')">
+                        ✨ Talk to AI
+                    </button>
+
+                    <button class="secondary-btn" onclick="openView('search')">
+                        🔍 Explore Music
+                    </button>
+                </div>
+            </div>
+
+            <div class="ai-orb">
+                <div class="orb-inner">AI</div>
+            </div>
+
+        </div>
+
+
+        <div class="section-header">
+            <h2>AI Studio</h2>
+            <span>Explore everything</span>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card" onclick="openView('assistant')">
+                <div class="feature-icon green">✨</div>
+                <h3>AI Assistant</h3>
+                <p>Your intelligent music companion.</p>
+                <span>Open Assistant →</span>
+            </div>
+
+            <div class="feature-card" onclick="openView('chat')">
+                <div class="feature-icon purple">💬</div>
+                <h3>AI Chat</h3>
+                <p>Chat naturally about music.</p>
+                <span>Start Chat →</span>
+            </div>
+
+            <div class="feature-card" onclick="openView('command')">
+                <div class="feature-icon blue">⌘</div>
+                <h3>Command Bar</h3>
+                <p>Control your music with commands.</p>
+                <span>Open Commands →</span>
+            </div>
+
+            <div class="feature-card" onclick="openView('aiSearch')">
+                <div class="feature-icon pink">🧠</div>
+                <h3>AI Search</h3>
+                <p>Search using natural language.</p>
+                <span>Search with AI →</span>
+            </div>
+
+            <div class="feature-card" onclick="openView('copilot')">
+                <div class="feature-icon orange">🚀</div>
+                <h3>AI Copilot</h3>
+                <p>Your personal music copilot.</p>
+                <span>Launch Copilot →</span>
+            </div>
+
+            <div class="feature-card" onclick="openView('dashboard')">
+                <div class="feature-icon cyan">📊</div>
+                <h3>AI Analytics</h3>
+                <p>Understand your listening habits.</p>
+                <span>View Dashboard →</span>
+            </div>
+
+        </div>
+
+
+        <div class="section-header">
+            <h2>Recently Played</h2>
+            <span>View all</span>
+        </div>
+
+        <div class="music-grid">
+
+            <div class="music-card">
+                <div class="cover cover1">♪</div>
+                <h3>Midnight Dreams</h3>
+                <p>AI Chill Mix</p>
+                <button onclick="playSong('Midnight Dreams')">▶</button>
+            </div>
+
+            <div class="music-card">
+                <div class="cover cover2">♫</div>
+                <h3>Neon Nights</h3>
+                <p>Electronic Mix</p>
+                <button onclick="playSong('Neon Nights')">▶</button>
+            </div>
+
+            <div class="music-card">
+                <div class="cover cover3">♪</div>
+                <h3>Ocean Waves</h3>
+                <p>Focus Music</p>
+                <button onclick="playSong('Ocean Waves')">▶</button>
+            </div>
+
+            <div class="music-card">
+                <div class="cover cover4">♫</div>
+                <h3>Future Bass</h3>
+                <p>Discover Weekly</p>
+                <button onclick="playSong('Future Bass')">▶</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH ================= -->
+    <section id="search" class="view">
+
+        <div class="page-title">
+            <span>DISCOVER</span>
+            <h1>Search</h1>
+        </div>
+
+        <div class="big-search">
+            🔍
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search songs, artists, albums..."
+                oninput="liveSearch(this.value)"
+            >
+        </div>
+
+        <div id="searchResults">
+
+            <h2>Browse All</h2>
+
+            <div class="browse-grid">
+                <div class="browse-card">🎵 Music</div>
+                <div class="browse-card">🎤 Artists</div>
+                <div class="browse-card">💿 Albums</div>
+                <div class="browse-card">🎧 Playlists</div>
+                <div class="browse-card">🔥 Trending</div>
+                <div class="browse-card">✨ AI Picks</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LIBRARY ================= -->
+    <section id="library" class="view">
+
+        <div class="page-title">
+            <span>YOUR MUSIC</span>
+            <h1>Your Library</h1>
+        </div>
+
+        <div class="library-tabs">
+            <button class="tab active">Playlists</button>
+            <button class="tab">Artists</button>
+            <button class="tab">Albums</button>
+            <button class="tab">Songs</button>
+        </div>
+
+        <div class="library-grid">
+
+            <div class="playlist-card" onclick="playSong('AI Favorites')">
+                <div class="playlist-cover">✨</div>
+                <h3>AI Favorites</h3>
+                <p>AI generated playlist</p>
+            </div>
+
+            <div class="playlist-card">
+                <div class="playlist-cover">🌙</div>
+                <h3>Night Vibes</h3>
+                <p>24 songs</p>
+            </div>
+
+            <div class="playlist-card">
+                <div class="playlist-cover">🚀</div>
+                <h3>Future Sounds</h3>
+                <p>32 songs</p>
+            </div>
+
+            <div class="playlist-card">
+                <div class="playlist-cover">💜</div>
+                <h3>Favorites</h3>
+                <p>56 songs</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= AI ASSISTANT ================= -->
+    <section id="assistant" class="view">
+
+        <div class="ai-header">
+            <div class="large-ai-icon">✨</div>
+            <div>
+                <span>AI MUSIC ASSISTANT</span>
+                <h1>How can I help?</h1>
+                <p>Ask me anything about your music.</p>
+            </div>
+        </div>
+
+        <div class="chat-container">
+
+            <div id="assistantMessages" class="messages">
+
+                <div class="message ai-message">
+                    <div class="message-icon">✨</div>
+                    <div>
+                        <strong>AI Assistant</strong>
+                        <p>
+                            Hey! I can help you discover music,
+                            create playlists, analyze your listening
+                            and much more.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="prompt-suggestions">
+
+                <button onclick="sendPrompt('Create a chill playlist')">
+                    🎧 Create a chill playlist
+                </button>
+
+                <button onclick="sendPrompt('What should I listen to?')">
+                    💡 What should I listen to?
+                </button>
+
+                <button onclick="sendPrompt('Analyze my music taste')">
+                    📊 Analyze my music taste
+                </button>
+
+                <button onclick="sendPrompt('Recommend new artists')">
+                    🎤 Recommend artists
+                </button>
+
+            </div>
+
+            <div class="chat-input">
+                <input
+                    id="assistantInput"
+                    type="text"
+                    placeholder="Ask your AI assistant..."
+                    onkeydown="if(event.key==='Enter') sendAssistantMessage()"
+                >
+                <button onclick="sendAssistantMessage()">➤</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= AI CHAT ================= -->
+    <section id="chat" class="view">
+
+        <div class="page-title">
+            <span>CONVERSATION</span>
+            <h1>AI Chat</h1>
+        </div>
+
+        <div class="chat-window">
+
+            <div class="chat-top">
+                <div class="avatar ai-avatar">✨</div>
+                <div>
+                    <strong>Music AI</strong>
+                    <small>Online • Ready to help</small>
+                </div>
+            </div>
+
+            <div id="chatMessages" class="messages">
+
+                <div class="bubble ai">
+                    Hello! Tell me what kind of music you're looking for.
+                </div>
+
+            </div>
+
+            <div class="chat-bottom">
+                <input
+                    id="chatInput"
+                    placeholder="Message Music AI..."
+                    onkeydown="if(event.key==='Enter') sendChat()"
+                >
+                <button onclick="sendChat()">➤</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COMMAND ================= -->
+    <section id="command" class="view">
+
+        <div class="page-title center-title">
+            <span>AI CONTROL</span>
+            <h1>Command Bar</h1>
+            <p>Type a command and let AI control your experience.</p>
+        </div>
+
+        <div class="command-box">
+
+            <span>⌘</span>
+
+            <input
+                id="commandInput"
+                placeholder="Try: play relaxing music"
+                onkeydown="if(event.key==='Enter') runCommand()"
+            >
+
+            <kbd>ENTER</kbd>
+
+        </div>
+
+        <div class="command-list">
+
+            <button onclick="setCommand('Play my favorite songs')">
+                ▶ Play my favorite songs
+            </button>
+
+            <button onclick="setCommand('Create a workout playlist')">
+                💪 Create a workout playlist
+            </button>
+
+            <button onclick="setCommand('Show my analytics')">
+                📊 Show my analytics
+            </button>
+
+            <button onclick="setCommand('Find new music')">
+                🔍 Find new music
+            </button>
+
+        </div>
+
+        <div id="commandResult" class="response-card">
+            <span>AI RESPONSE</span>
+            <h2>Ready for your command.</h2>
+            <p>Type something above to get started.</p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= AI SEARCH ================= -->
+    <section id="aiSearch" class="view">
+
+        <div class="page-title">
+            <span>NATURAL LANGUAGE</span>
+            <h1>AI Search</h1>
+        </div>
+
+        <div class="ai-search-box">
+
+            <div class="search-ai-icon">🧠</div>
+
+            <input
+                id="aiSearchInput"
+                placeholder="Describe what you want to hear..."
+                onkeydown="if(event.key==='Enter') runAISearch()"
+            >
+
+            <button onclick="runAISearch()">Search</button>
+
+        </div>
+
+        <h2>Try asking</h2>
+
+        <div class="suggestion-grid">
+
+            <button onclick="useAISearch('Songs for a peaceful evening')">
+                🌙 Songs for a peaceful evening
+            </button>
+
+            <button onclick="useAISearch('Energetic music for gym')">
+                ⚡ Energetic music for gym
+            </button>
+
+            <button onclick="useAISearch('Music like my favorite songs')">
+                🎧 Music similar to my favorites
+            </button>
+
+            <button onclick="useAISearch('Best songs for studying')">
+                📚 Best songs for studying
+            </button>
+
+        </div>
+
+        <div id="aiSearchResults" class="ai-results"></div>
+
+    </section>
+
+
+    <!-- ================= COPILOT ================= -->
+    <section id="copilot" class="view">
+
+        <div class="copilot-hero">
+
+            <div class="copilot-icon">🚀</div>
+
+            <span>YOUR MUSIC COPILOT</span>
+
+            <h1>Music Copilot</h1>
+
+            <p>
+                Your intelligent assistant for discovering,
+                organizing and understanding music.
+            </p>
+
+        </div>
+
+        <div class="copilot-grid">
+
+            <div class="copilot-card" onclick="copilotAction('playlist')">
+                <span>🎵</span>
+                <h3>Build a Playlist</h3>
+                <p>Create a playlist based on your mood.</p>
+            </div>
+
+            <div class="copilot-card" onclick="copilotAction('discover')">
+                <span>🔮</span>
+                <h3>Discover Music</h3>
+                <p>Find music you have never heard.</p>
+            </div>
+
+            <div class="copilot-card" onclick="copilotAction('analyze')">
+                <span>📊</span>
+                <h3>Analyze Taste</h3>
+                <p>Understand your listening personality.</p>
+            </div>
+
+            <div class="copilot-card" onclick="copilotAction('recommend')">
+                <span>💡</span>
+                <h3>Get Recommendations</h3>
+                <p>Get personalized recommendations.</p>
+            </div>
+
+        </div>
+
+        <div id="copilotResponse" class="response-card">
+            <span>COPILOT</span>
+            <h2>What should we do?</h2>
+        </div>
+
+    </section>
+
+
+    <!-- ================= DASHBOARD ================= -->
+    <section id="dashboard" class="view">
+
+        <div class="dashboard-heading">
+            <div>
+                <span>AI ANALYTICS</span>
+                <h1>Your Dashboard</h1>
+                <p>Understand your music listening habits.</p>
+            </div>
+
+            <button class="primary-btn" onclick="openView('reports')">
+                📄 Generate Report
+            </button>
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <span>LISTENING TIME</span>
+                <strong>42h 18m</strong>
+                <small>↑ 12.4% this week</small>
+            </div>
+
+            <div class="stat-card">
+                <span>TOP ARTIST</span>
+                <strong>AI Picks</strong>
+                <small>38 plays</small>
+            </div>
+
+            <div class="stat-card">
+                <span>SONGS PLAYED</span>
+                <strong>286</strong>
+                <small>↑ 24 this week</small>
+            </div>
+
+            <div class="stat-card">
+                <span>DISCOVERY SCORE</span>
+                <strong>87%</strong>
+                <small>Excellent</small>
+            </div>
+
+        </div>
+
+
+        <div class="analytics-grid">
+
+            <div class="chart-card">
+
+                <div class="card-heading">
+                    <div>
+                        <span>WEEKLY ACTIVITY</span>
+                        <h2>Listening Hours</h2>
+                    </div>
+                    <span>Last 7 days</span>
+                </div>
+
+                <div class="bar-chart">
+
+                    <div class="bar-item">
+                        <div class="bar" style="height:45%"></div>
+                        <span>Mon</span>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar" style="height:70%"></div>
+                        <span>Tue</span>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar" style="height:55%"></div>
+                        <span>Wed</span>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar" style="height:90%"></div>
+                        <span>Thu</span>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar" style="height:75%"></div>
+                        <span>Fri</span>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar" style="height:95%"></div>
+                        <span>Sat</span>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar" style="height:65%"></div>
+                        <span>Sun</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="insight-card">
+
+                <span>✨ AI INSIGHT</span>
+
+                <h2>Your listening mood is changing.</h2>
+
+                <p>
+                    You have been listening to more energetic
+                    music during the evenings this week.
+                </p>
+
+                <button onclick="openView('assistant')">
+                    Ask AI about this →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="data-section">
+
+            <h2>Top Genres</h2>
+
+            <div class="genre-list">
+
+                <div>
+                    <span>Electronic</span>
+                    <div class="progress">
+                        <i style="width:82%"></i>
+                    </div>
+                    <b>82%</b>
+                </div>
+
+                <div>
+                    <span>Pop</span>
+                    <div class="progress">
+                        <i style="width:67%"></i>
+                    </div>
+                    <b>67%</b>
+                </div>
+
+                <div>
+                    <span>Hip Hop</span>
+                    <div class="progress">
+                        <i style="width:52%"></i>
+                    </div>
+                    <b>52%</b>
+                </div>
+
+                <div>
+                    <span>Lo-Fi</span>
+                    <div class="progress">
+                        <i style="width:44%"></i>
+                    </div>
+                    <b>44%</b>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REPORTS ================= -->
+    <section id="reports" class="view">
+
+        <div class="page-title">
+            <span>AI GENERATED</span>
+            <h1>Music Report</h1>
+        </div>
+
+        <div class="report-card">
+
+            <div class="report-top">
+                <div>
+                    <span>WEEKLY MUSIC INTELLIGENCE</span>
+                    <h2>Your Music Summary</h2>
+                </div>
+
+                <button onclick="downloadReport()">
+                    ↓ Export
+                </button>
+            </div>
+
+            <div class="report-summary">
+
+                <div class="report-icon">✨</div>
+
+                <p>
+                    This week you listened to <strong>42 hours</strong>
+                    of music across <strong>286 songs</strong>.
+                    Your listening activity increased compared with
+                    last week and your music discovery score reached
+                    <strong>87%</strong>.
+                </p>
+
+            </div>
+
+            <div class="report-metrics">
+
+                <div>
+                    <span>TOP GENRE</span>
+                    <strong>Electronic</strong>
+                </div>
+
+                <div>
+                    <span>TOP MOOD</span>
+                    <strong>Energetic</strong>
+                </div>
+
+                <div>
+                    <span>DISCOVERY</span>
+                    <strong>87%</strong>
+                </div>
+
+                <div>
+                    <span>AI SCORE</span>
+                    <strong>9.2/10</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- MUSIC PLAYER -->
+<footer class="player">
+
+    <div class="now-playing">
+
+        <div class="mini-cover">♪</div>
+
+        <div>
+            <strong id="currentSong">Midnight Dreams</strong>
+            <span>AI Music</span>
+        </div>
+
+    </div>
+
+
+    <div class="player-controls">
+
+        <div class="control-buttons">
+            <button>🔀</button>
+            <button>⏮</button>
+            <button id="playButton" class="play-button" onclick="togglePlay()">▶</button>
+            <button>⏭</button>
+            <button>🔁</button>
+        </div>
+
+        <div class="progress-container">
+            <span>1:24</span>
+            <div class="player-progress">
+                <i id="playerProgress"></i>
+            </div>
+            <span>3:42</span>
+        </div>
+
+    </div>
+
+
+    <div class="player-extra">
+        🔊
+        <div class="volume">
+            <i></i>
+        </div>
+    </div>
+
+</footer>
+
+
+<script>
+
+let currentView = "home";
+let historyStack = ["home"];
+let historyIndex = 0;
+
+
+/* =========================
+   OPEN SPECIFIC VIEW
+========================= */
+
+function openView(viewId, button = null) {
+
+    document.querySelectorAll(".view").forEach(view => {
+        view.classList.remove("active-view");
+    });
+
+    const target = document.getElementById(viewId);
+
+    if (target) {
+        target.classList.add("active-view");
+    }
+
+    document.querySelectorAll(".nav-btn").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    if (button) {
+        button.classList.add("active");
+    } else {
+
+        document.querySelectorAll(".nav-btn").forEach(btn => {
+
+            if (btn.getAttribute("onclick") &&
+                btn.getAttribute("onclick").includes("'" + viewId + "'")) {
+
+                btn.classList.add("active");
+            }
+
+        });
+
+    }
+
+    if (currentView !== viewId) {
+
+        historyStack = historyStack.slice(0, historyIndex + 1);
+        historyStack.push(viewId);
+        historyIndex++;
+
+        currentView = viewId;
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* =========================
+   BACK / FORWARD
+========================= */
+
+function goBack() {
+
+    if (historyIndex > 0) {
+
+        historyIndex--;
+
+        const view = historyStack[historyIndex];
+
+        currentView = view;
+
+        document.querySelectorAll(".view").forEach(v => {
+            v.classList.remove("active-view");
+        });
+
+        document.getElementById(view).classList.add("active-view");
+    }
+}
+
+
+function goForward() {
+
+    if (historyIndex < historyStack.length - 1) {
+
+        historyIndex++;
+
+        const view = historyStack[historyIndex];
+
+        currentView = view;
+
+        document.querySelectorAll(".view").forEach(v => {
+            v.classList.remove("active-view");
+        });
+
+        document.getElementById(view).classList.add("active-view");
+    }
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function performSearch(value) {
+
+    if (!value.trim()) {
+        openView("search");
+        return;
+    }
+
+    openView("search");
+
+    document.getElementById("searchInput").value = value;
+
+    liveSearch(value);
+}
+
+
+function liveSearch(value) {
+
+    const results = document.getElementById("searchResults");
+
+    if (!value.trim()) {
+
+        results.innerHTML = `
+            <h2>Browse All</h2>
+
+            <div class="browse-grid">
+                <div class="browse-card">🎵 Music</div>
+                <div class="browse-card">🎤 Artists</div>
+                <div class="browse-card">💿 Albums</div>
+                <div class="browse-card">🎧 Playlists</div>
+                <div class="browse-card">🔥 Trending</div>
+                <div class="browse-card">✨ AI Picks</div>
+            </div>
+        `;
+
+        return;
+    }
+
+    results.innerHTML = `
+        <h2>Search Results</h2>
+
+        <div class="search-result-list">
+
+            <div class="result-item">
+                <div class="result-cover">♪</div>
+                <div>
+                    <strong>${value} Dreams</strong>
+                    <span>Song • AI Music</span>
+                </div>
+                <button onclick="playSong('${value} Dreams')">▶</button>
+            </div>
+
+            <div class="result-item">
+                <div class="result-cover">♫</div>
+                <div>
+                    <strong>${value} Nights</strong>
+                    <span>Album • SoundAI</span>
+                </div>
+                <button onclick="playSong('${value} Nights')">▶</button>
+            </div>
+
+            <div class="result-item">
+                <div class="result-cover">♪</div>
+                <div>
+                    <strong>${value} Mix</strong>
+                    <span>Playlist • AI Generated</span>
+                </div>
+                <button onclick="playSong('${value} Mix')">▶</button>
+            </div>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   AI ASSISTANT
+========================= */
+
+function sendPrompt(text) {
+
+    document.getElementById("assistantInput").value = text;
+
+    sendAssistantMessage();
+}
+
+
+function sendAssistantMessage() {
+
+    const input = document.getElementById("assistantInput");
+
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    const messages = document.getElementById("assistantMessages");
+
+    messages.innerHTML += `
+        <div class="message user-message">
+            <div class="message-user-icon">V</div>
+            <div>
+                <strong>You</strong>
+                <p>${text}</p>
+            </div>
+        </div>
+    `;
+
+    input.value = "";
+
+    setTimeout(() => {
+
+        messages.innerHTML += `
+            <div class="message ai-message">
+                <div class="message-icon">✨</div>
+                <div>
+                    <strong>AI Assistant</strong>
+                    <p>
+                        I understand. I can help you discover songs,
+                        build playlists, analyze your music taste,
+                        or find recommendations based on your request.
+                    </p>
+                </div>
+            </div>
+        `;
+
+        messages.scrollTop = messages.scrollHeight;
+
+    }, 600);
+}
+
+
+/* =========================
+   AI CHAT
+========================= */
+
+function sendChat() {
+
+    const input = document.getElementById("chatInput");
+
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    const messages = document.getElementById("chatMessages");
+
+    messages.innerHTML += `
+        <div class="bubble user">
+            ${text}
+        </div>
+    `;
+
+    input.value = "";
+
+    setTimeout(() => {
+
+        messages.innerHTML += `
+            <div class="bubble ai">
+                Great choice! I can help you find music,
+                create a playlist or explore something new.
+            </div>
+        `;
+
+        messages.scrollTop = messages.scrollHeight;
+
+    }, 500);
+}
+
+
+/* =========================
+   COMMAND BAR
+========================= */
+
+function setCommand(command) {
+
+    document.getElementById("commandInput").value = command;
+
+    runCommand();
+}
+
+
+function runCommand() {
+
+    const input = document.getElementById("commandInput");
+
+    const command = input.value.trim();
+
+    if (!command) return;
+
+    document.getElementById("commandResult").innerHTML = `
+        <span>AI RESPONSE</span>
+        <h2>Command received ✓</h2>
+        <p>
+            AI is ready to execute:
+            <strong>${command}</strong>
+        </p>
+    `;
+}
+
+
+/* =========================
+   AI SEARCH
+========================= */
+
+function useAISearch(text) {
+
+    document.getElementById("aiSearchInput").value = text;
+
+    runAISearch();
+}
+
+
+function runAISearch() {
+
+    const input = document.getElementById("aiSearchInput");
+
+    const query = input.value.trim();
+
+    if (!query) return;
+
+    const results = document.getElementById("aiSearchResults");
+
+    results.innerHTML = `
+        <h2>AI Search Results</h2>
+
+        <div class="ai-result-card">
+
+            <div class="result-cover">✨</div>
+
+            <div>
+                <h3>AI Recommendation</h3>
+                <p>
+                    Based on "${query}", these songs match
+                    the mood and description you requested.
+                </p>
+
+                <div class="song-tags">
+                    <span>Chill</span>
+                    <span>Recommended</span>
+                    <span>AI Match 94%</span>
+                </div>
+            </div>
+
+            <button onclick="playSong('AI Recommendation')">
+                ▶
+            </button>
+
+        </div>
+
+        <div class="ai-result-card">
+
+            <div class="result-cover">🎧</div>
+
+            <div>
+                <h3>Personalized Mix</h3>
+                <p>AI generated mix based on your listening history.</p>
+
+                <div class="song-tags">
+                    <span>Personalized</span>
+                    <span>AI Mix</span>
+                </div>
+            </div>
+
+            <button onclick="playSong('Personalized Mix')">
+                ▶
+            </button>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   COPILOT
+========================= */
+
+function copilotAction(type) {
+
+    const response = document.getElementById("copilotResponse");
+
+    const data = {
+
+        playlist: [
+            "BUILD PLAYLIST",
+            "I can create a playlist based on your current mood and listening history."
+        ],
+
+        discover: [
+            "DISCOVER MUSIC",
+            "I found new music that matches your listening profile."
+        ],
+
+        analyze: [
+            "MUSIC ANALYSIS",
+            "Your listening profile shows a strong preference for electronic and energetic music."
+        ],
+
+        recommend: [
+            "RECOMMENDATIONS",
+            "Here are personalized recommendations selected by your AI Copilot."
+        ]
+
+    };
+
+    response.innerHTML = `
+        <span>${data[type][0]}</span>
+        <h2>${data[type][1]}</h2>
+        <button onclick="openView('assistant')">
+            Continue with AI →
+        </button>
+    `;
+}
+
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+let playing = false;
+
+function togglePlay() {
+
+    playing = !playing;
+
+    const button = document.getElementById("playButton");
+
+    button.textContent = playing ? "❚❚" : "▶";
+
+    if (playing) {
+
+        document.getElementById("playerProgress").style.animation =
+            "progressAnimation 20s linear infinite";
+
+    } else {
+
+        document.getElementById("playerProgress").style.animation = "none";
+
+    }
+}
+
+
+function playSong(song) {
+
+    document.getElementById("currentSong").textContent = song;
+
+    playing = true;
+
+    document.getElementById("playButton").textContent = "❚❚";
+
+    document.getElementById("playerProgress").style.animation =
+        "progressAnimation 20s linear infinite";
+}
+
+
+/* =========================
+   REPORT
+========================= */
+
+function downloadReport() {
+
+    const report = `
+SOUNDAI MUSIC REPORT
+
+Listening Time: 42h 18m
+Songs Played: 286
+Discovery Score: 87%
+Top Genre: Electronic
+Top Mood: Energetic
+AI Score: 9.2/10
+
+Generated by SoundAI.
+    `;
+
+    const blob = new Blob([report], {
+        type: "text/plain"
+    });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+
+    a.href = url;
+    a.download = "SoundAI-Music-Report.txt";
+
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
+</script>
+
+</body>
+</html>
