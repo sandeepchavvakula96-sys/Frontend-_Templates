@@ -1,1558 +1,1300 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SAI TEAM | Main Index</title>
+    <title>SAI TEAM | Project Hub</title>
 
-<style>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-* {
-    box-sizing: border-box;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #070912;
+            color: #f7f8fc;
+            font-family: Arial, "Segoe UI", sans-serif;
+            overflow-x: hidden;
+        }
 
-body {
-    margin: 0;
-    background: #070912;
-    color: #f7f8fc;
-    font-family: Arial, "Segoe UI", sans-serif;
-    overflow-x: hidden;
-}
+        /* Background grid */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
 
-/* Background grid */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -2;
+            background-image:
+                linear-gradient(#ffffff06 1px, transparent 1px),
+                linear-gradient(90deg, #ffffff06 1px, transparent 1px);
 
-    background-image:
-        linear-gradient(#ffffff06 1px, transparent 1px),
-        linear-gradient(90deg, #ffffff06 1px, transparent 1px);
+            background-size: 52px 52px;
+        }
 
-    background-size: 52px 52px;
-}
+        /* Background glow */
+        body::after {
+            content: "";
+            position: fixed;
 
-/* Glow */
-body::after {
-    content: "";
-    position: fixed;
+            width: 500px;
+            height: 500px;
 
-    width: 500px;
-    height: 500px;
+            left: -180px;
+            top: -180px;
 
-    left: -180px;
-    top: -180px;
+            border-radius: 50%;
 
-    border-radius: 50%;
+            background: #7c3aed22;
 
-    background: #7c3aed22;
+            filter: blur(100px);
 
-    filter: blur(100px);
+            z-index: -1;
+        }
 
-    z-index: -1;
-}
+        /* NAVIGATION */
 
+        nav {
+            height: 72px;
 
-/* ================= NAV ================= */
+            position: sticky;
+            top: 0;
+            z-index: 100;
 
-nav {
-    height: 72px;
+            padding: 0 7%;
 
-    position: sticky;
-    top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-    z-index: 100;
+            background: #070912df;
 
-    padding: 0 7%;
+            backdrop-filter: blur(18px);
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+            border-bottom: 1px solid #ffffff12;
+        }
 
-    background: #070912df;
+        .logo {
+            color: white;
+            text-decoration: none;
 
-    backdrop-filter: blur(18px);
+            font-weight: 800;
+            letter-spacing: 1.5px;
 
-    border-bottom: 1px solid #ffffff12;
-}
+            display: flex;
+            align-items: center;
 
-.logo {
-    color: white;
+            gap: 10px;
+        }
 
-    text-decoration: none;
+        .logo b {
+            width: 35px;
+            height: 35px;
 
-    font-weight: 800;
+            display: grid;
+            place-items: center;
 
-    letter-spacing: 1.5px;
+            border-radius: 10px;
 
-    display: flex;
-    align-items: center;
+            background: linear-gradient(
+                135deg,
+                #8b5cf6,
+                #22d3ee
+            );
+        }
 
-    gap: 10px;
-}
+        nav small {
+            color: #6f788b;
+            letter-spacing: 1.5px;
+        }
 
-.logo b {
-    width: 35px;
-    height: 35px;
+        /* HERO */
 
-    display: grid;
-    place-items: center;
+        .hero {
+            padding: 85px 7% 65px;
+        }
 
-    border-radius: 10px;
+        .eyebrow {
+            color: #a78bfa;
 
-    background:
-        linear-gradient(
-            135deg,
-            #8b5cf6,
-            #22d3ee
-        );
-}
+            font-size: 10px;
+            font-weight: 800;
 
-nav small {
-    color: #6f788b;
+            letter-spacing: 2px;
+        }
 
-    letter-spacing: 1.5px;
-}
+        h1 {
+            font-size: clamp(50px, 7vw, 88px);
 
+            line-height: .92;
 
-/* ================= HERO ================= */
+            letter-spacing: -4px;
 
-.hero {
-    padding: 85px 7% 65px;
-}
+            margin: 18px 0;
+        }
 
-.eyebrow {
-    color: #a78bfa;
+        h1 span {
+            background: linear-gradient(
+                90deg,
+                #a78bfa,
+                #22d3ee
+            );
 
-    font-size: 10px;
+            -webkit-background-clip: text;
+            background-clip: text;
 
-    font-weight: 800;
+            color: transparent;
+        }
 
-    letter-spacing: 2px;
-}
+        .hero p {
+            max-width: 650px;
 
-h1 {
-    font-size: clamp(50px, 7vw, 88px);
+            color: #929bad;
 
-    line-height: .92;
+            line-height: 1.8;
 
-    letter-spacing: -4px;
+            font-size: 14px;
+        }
 
-    margin: 18px 0;
-}
+        /* STATS */
 
-h1 span {
-    background:
-        linear-gradient(
-            90deg,
-            #a78bfa,
-            #22d3ee
-        );
+        .stats {
+            display: flex;
 
-    -webkit-background-clip: text;
-    background-clip: text;
+            gap: 35px;
 
-    color: transparent;
-}
+            margin-top: 30px;
+        }
 
-.hero p {
-    max-width: 650px;
+        .stats b {
+            display: block;
 
-    color: #929bad;
+            font-size: 24px;
+        }
 
-    line-height: 1.8;
+        .stats small {
+            font-size: 9px;
 
-    font-size: 14px;
-}
+            color: #687184;
 
+            text-transform: uppercase;
 
-/* ================= STATS ================= */
+            letter-spacing: 1px;
+        }
 
-.stats {
-    display: flex;
+        /* SECTION */
 
-    gap: 35px;
+        .section {
+            padding: 30px 7% 90px;
+        }
 
-    margin-top: 30px;
-}
+        .head {
+            display: flex;
 
-.stats b {
-    display: block;
+            justify-content: space-between;
 
-    font-size: 24px;
-}
+            align-items: end;
 
-.stats small {
-    font-size: 9px;
+            gap: 20px;
 
-    color: #687184;
+            margin-bottom: 30px;
+        }
 
-    text-transform: uppercase;
+        .head h2 {
+            font-size: 40px;
 
-    letter-spacing: 1px;
-}
+            margin: 7px 0;
+        }
 
+        .kicker {
+            font-size: 10px;
 
-/* ================= SECTION ================= */
+            color: #a78bfa;
 
-.section {
-    padding: 30px 7% 90px;
-}
+            font-weight: 800;
 
-.head {
-    display: flex;
+            letter-spacing: 2px;
+        }
 
-    justify-content: space-between;
+        /* SEARCH */
 
-    align-items: end;
+        .tools {
+            display: flex;
 
-    gap: 20px;
+            gap: 8px;
+        }
 
-    margin-bottom: 30px;
-}
+        input,
+        select {
+            height: 42px;
 
-.head h2 {
-    font-size: 40px;
+            border: 1px solid #ffffff15;
 
-    margin: 7px 0;
-}
+            border-radius: 9px;
 
-.kicker {
-    font-size: 10px;
+            background: #0d121d;
 
-    color: #a78bfa;
+            color: white;
 
-    font-weight: 800;
+            padding: 0 12px;
 
-    letter-spacing: 2px;
-}
+            outline: none;
 
+            font-size: 11px;
+        }
 
-/* ================= SEARCH ================= */
+        input {
+            width: 220px;
+        }
 
-.tools {
-    display: flex;
+        input:focus,
+        select:focus {
+            border-color: #8b5cf6;
+        }
 
-    gap: 8px;
-}
+        /* CARDS */
 
-input,
-select {
-    height: 42px;
+        .cards {
+            display: grid;
 
-    border: 1px solid #ffffff15;
+            grid-template-columns:
+                repeat(4, 1fr);
 
-    border-radius: 9px;
+            gap: 14px;
+        }
 
-    background: #0d121d;
+        .card {
+            min-height: 255px;
 
-    color: white;
+            padding: 18px;
 
-    padding: 0 12px;
+            border: 1px solid #ffffff10;
 
-    outline: none;
+            border-radius: 17px;
 
-    font-size: 11px;
-}
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff0a,
+                    #ffffff02
+                );
 
-input {
-    width: 220px;
-}
+            display: flex;
 
-input:focus,
-select:focus {
-    border-color: #8b5cf6;
-}
+            flex-direction: column;
 
+            position: relative;
 
-/* ================= CARDS ================= */
+            overflow: hidden;
 
-.cards {
-    display: grid;
+            transition: .25s;
+        }
 
-    grid-template-columns:
-        repeat(4, 1fr);
+        .card::before {
+            content: "";
 
-    gap: 14px;
-}
+            position: absolute;
 
-.card {
-    min-height: 245px;
+            width: 150px;
+            height: 150px;
 
-    padding: 18px;
+            right: -80px;
+            top: -80px;
 
-    border: 1px solid #ffffff10;
+            border-radius: 50%;
 
-    border-radius: 17px;
+            background: #8b5cf622;
 
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff0a,
-            #ffffff02
-        );
+            filter: blur(30px);
+        }
 
-    display: flex;
+        .card:hover {
+            transform: translateY(-6px);
 
-    flex-direction: column;
+            border-color: #8b5cf655;
 
-    position: relative;
+            box-shadow:
+                0 20px 45px #0007;
+        }
 
-    overflow: hidden;
+        .member {
+            font-size: 8px;
 
-    transition: .25s;
-}
+            color: #8d98ac;
 
-.card::before {
-    content: "";
+            letter-spacing: 1.2px;
+        }
 
-    position: absolute;
+        .icon {
+            width: 43px;
+            height: 43px;
 
-    width: 150px;
-    height: 150px;
+            margin: 22px 0 15px;
 
-    right: -80px;
-    top: -80px;
+            border-radius: 12px;
 
-    border-radius: 50%;
+            display: grid;
+            place-items: center;
 
-    background: #8b5cf622;
+            background:
+                linear-gradient(
+                    135deg,
+                    #8b5cf633,
+                    #22d3ee1a
+                );
 
-    filter: blur(30px);
-}
+            color: #c4b5fd;
 
-.card:hover {
-    transform: translateY(-6px);
+            font-size: 18px;
+        }
 
-    border-color: #8b5cf655;
+        .card h2 {
+            font-size: 17px;
 
-    box-shadow:
-        0 20px 45px #0007;
-}
+            line-height: 1.25;
 
-.member {
-    font-size: 8px;
+            margin: 0 0 8px;
+        }
 
-    color: #8d98ac;
+        .card p {
+            font-size: 10px;
 
-    letter-spacing: 1.2px;
-}
+            color: #737e91;
 
-.icon {
-    width: 43px;
-    height: 43px;
+            line-height: 1.6;
 
-    margin: 22px 0 15px;
+            margin: 0;
+        }
 
-    border-radius: 12px;
+        .open {
+            margin-top: auto;
 
-    display: grid;
-    place-items: center;
+            padding-top: 15px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #8b5cf633,
-            #22d3ee1a
-        );
+            border-top:
+                1px solid #ffffff10;
 
-    color: #c4b5fd;
+            display: flex;
 
-    font-size: 18px;
-}
+            justify-content: space-between;
 
-.card h2 {
-    font-size: 17px;
+            align-items: center;
 
-    line-height: 1.25;
+            font-size: 10px;
 
-    margin: 0 0 8px;
-}
+            font-weight: 800;
 
-.card p {
-    font-size: 10px;
+            color: white;
 
-    color: #737e91;
+            text-decoration: none;
+        }
 
-    line-height: 1.6;
+        .open b {
+            width: 28px;
+            height: 28px;
 
-    margin: 0;
-}
+            display: grid;
+            place-items: center;
 
-.open {
-    margin-top: auto;
+            border-radius: 8px;
 
-    padding-top: 15px;
+            background: #ffffff09;
 
-    border-top:
-        1px solid #ffffff10;
+            transition: .25s;
+        }
 
-    display: flex;
+        .card:hover .open b {
+            background: #7c3aed;
 
-    justify-content: space-between;
+            transform: rotate(45deg);
+        }
 
-    align-items: center;
+        /* FOOTER */
 
-    font-size: 10px;
+        footer {
+            padding: 25px 7%;
 
-    font-weight: 800;
+            border-top:
+                1px solid #ffffff10;
 
-    color: white;
+            color: #586174;
 
-    text-decoration: none;
-}
+            font-size: 9px;
 
-.open b {
-    width: 28px;
-    height: 28px;
+            letter-spacing: 2px;
 
-    display: grid;
-    place-items: center;
+            display: flex;
 
-    border-radius: 8px;
+            justify-content: space-between;
+        }
 
-    background: #ffffff09;
+        /* TABLET */
 
-    transition: .25s;
-}
+        @media (max-width: 1050px) {
+            .cards {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+        }
 
-.card:hover .open b {
-    background: #7c3aed;
+        /* MOBILE */
 
-    transform: rotate(45deg);
-}
+        @media (max-width: 800px) {
+            .cards {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
 
+            .head {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-/* ================= FOOTER ================= */
+            .tools {
+                width: 100%;
+            }
 
-footer {
-    padding: 25px 7%;
+            .tools input {
+                flex: 1;
+            }
+        }
 
-    border-top:
-        1px solid #ffffff10;
+        /* SMALL MOBILE */
 
-    color: #586174;
+        @media (max-width: 520px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
 
-    font-size: 9px;
+            .hero,
+            .section {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
 
-    letter-spacing: 2px;
+            .tools {
+                flex-direction: column;
+                width: 100%;
+            }
 
-    display: flex;
+            .tools input,
+            .tools select {
+                width: 100%;
+            }
 
-    justify-content: space-between;
-}
+            nav {
+                padding: 0 6%;
+            }
 
+            nav small {
+                display: none;
+            }
 
-/* ================= TABLET ================= */
-
-@media (max-width: 1050px) {
-
-    .cards {
-        grid-template-columns:
-            repeat(3, 1fr);
-    }
-
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 800px) {
-
-    .cards {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .head {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-    .tools {
-        width: 100%;
-    }
-
-    .tools input {
-        flex: 1;
-    }
-
-}
-
-
-/* ================= SMALL MOBILE ================= */
-
-@media (max-width: 520px) {
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .hero,
-    .section {
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-    .tools {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-    .tools input,
-    .tools select {
-        width: 100%;
-    }
-
-    nav {
-        padding: 0 6%;
-    }
-
-    nav small {
-        display: none;
-    }
-
-    footer {
-        flex-direction: column;
-
-        gap: 10px;
-    }
-
-}
-
-</style>
-
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+    <!-- NAVIGATION -->
 
-<!-- ================= NAVIGATION ================= -->
+    <nav>
 
-<nav>
+        <a class="logo" href="./index.html">
+            <b>S</b>
+            SAI TEAM
+        </a>
 
-    <a class="logo" href="./index.html">
+        <small>
+            MAIN PROJECT INDEX
+        </small>
 
-        <b>S</b>
-
-        SAI TEAM
-
-    </a>
-
-    <small>
-        MAIN INDEX
-    </small>
-
-</nav>
+    </nav>
 
 
+    <!-- HERO -->
 
-<!-- ================= HERO ================= -->
+    <header class="hero">
 
-<header class="hero">
+        <div class="eyebrow">
+            TEAM PROJECT HUB / 2026
+        </div>
 
-    <div class="eyebrow">
-        TEAM PROJECT HUB / 2026
-    </div>
+        <h1>
+            Build.
+            <span>Design.</span>
+            <br>
+            Launch.
+        </h1>
+
+        <p>
+            All major team projects in one place.
+            Select a project below to open the application.
+        </p>
+
+        <div class="stats">
+
+            <div>
+                <b>16</b>
+                <small>Main Projects</small>
+            </div>
+
+            <div>
+                <b>4</b>
+                <small>Members</small>
+            </div>
+
+            <div>
+                <b>LIVE</b>
+                <small>GitHub Pages</small>
+            </div>
+
+        </div>
+
+    </header>
 
 
-    <h1>
+    <!-- PROJECT SECTION -->
 
-        Build.
+    <section class="section">
+
+        <div class="head">
+
+            <div>
+
+                <div class="kicker">
+                    01 / PROJECTS
+                </div>
+
+                <h2>
+                    Explore the work.
+                </h2>
+
+            </div>
+
+            <div class="tools">
+
+                <input
+                    type="text"
+                    id="q"
+                    placeholder="Search projects..."
+                >
+
+                <select id="m">
+
+                    <option value="">
+                        All Members
+                    </option>
+
+                    <option value="mem1">
+                        MEM 1
+                    </option>
+
+                    <option value="mem2">
+                        MEM 2
+                    </option>
+
+                    <option value="mem3">
+                        MEM 3
+                    </option>
+
+                    <option value="mem4">
+                        MEM 4
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <!-- ================================================= -->
+            <!-- MEM 1 -->
+            <!-- ================================================= -->
+
+
+            <!-- AI AGENT GAMER DASHBOARD -->
+
+            <article
+                class="card"
+                data-member="mem1"
+                data-search="ai agent gamer dashboard sandeep"
+            >
+
+                <span class="member">
+                    MEM 1
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    AI Agent Gamer Dashboard
+                </h2>
+
+                <p>
+                    AI agent dashboard with
+                    monitoring, workflows,
+                    tasks and automation.
+                </p>
+
+                <!-- CORRECT PATH FROM YOUR SCREENSHOT -->
+
+                <a
+                    class="open"
+                    href="./AI_Agent_Gamer_Dashboard_Sandeep_FIXED/AI_Agent_Gamer_Dashboard_Sandeep/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <!-- ROYAL ENFIELD -->
+
+            <article
+                class="card"
+                data-member="mem1"
+                data-search="royal enfield analytics complete"
+            >
+
+                <span class="member">
+                    MEM 1
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    Royal Enfield Analytics
+                </h2>
+
+                <p>
+                    Royal Enfield sales,
+                    customers, models and
+                    analytics dashboard.
+                </p>
+
+                <a
+                    class="open"
+                    href="./Royal_Enfield_Analytics_Complete%20prj/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <!-- SHIPMENT TRACKING -->
+
+            <article
+                class="card"
+                data-member="mem1"
+                data-search="sandeep ai shipment tracking"
+            >
+
+                <span class="member">
+                    MEM 1
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    AI Shipment Tracking
+                </h2>
+
+                <p>
+                    AI-powered shipment tracking
+                    and logistics dashboard.
+                </p>
+
+                <a
+                    class="open"
+                    href="./Sandeep_AI_Shipment_Tracking_FINAL_WORKING/Sandeep_AI_Shipment_Tracking_FINAL_WORKING/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <!-- TTD -->
+
+            <article
+                class="card"
+                data-member="mem1"
+                data-search="ttd booking seva"
+            >
+
+                <span class="member">
+                    MEM 1
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    TTD Booking Seva
+                </h2>
+
+                <p>
+                    Devotional TTD booking
+                    and temple information
+                    website.
+                </p>
+
+                <a
+                    class="open"
+                    href="./TTD_Booking_Seva_FINAL_POLISHED%281%29/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <!-- ================================================= -->
+            <!-- MEM 2 -->
+            <!-- ================================================= -->
+
+
+            <article
+                class="card"
+                data-member="mem2"
+                data-search="first app mem2"
+            >
+
+                <span class="member">
+                    MEM 2
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    First App
+                </h2>
+
+                <p>
+                    Member 2 project application.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem2/first%20app/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <article
+                class="card"
+                data-member="mem2"
+                data-search="second app mem2"
+            >
+
+                <span class="member">
+                    MEM 2
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    Second App
+                </h2>
+
+                <p>
+                    Member 2 project application.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem2/second%20app/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <article
+                class="card"
+                data-member="mem2"
+                data-search="third app mem2"
+            >
+
+                <span class="member">
+                    MEM 2
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    Third App
+                </h2>
+
+                <p>
+                    Member 2 project application.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem2/third%20app/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <article
+                class="card"
+                data-member="mem2"
+                data-search="fourth app mem2"
+            >
+
+                <span class="member">
+                    MEM 2
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    Fourth App
+                </h2>
+
+                <p>
+                    Member 2 project application.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem2/fourth%20app/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <!-- ================================================= -->
+            <!-- MEM 3 -->
+            <!-- ================================================= -->
+
+
+            <article
+                class="card"
+                data-member="mem3"
+                data-search="climate dashboard sohni"
+            >
+
+                <span class="member">
+                    MEM 3
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    Climate Dashboard
+                </h2>
+
+                <p>
+                    Climate monitoring and
+                    visualization dashboard.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem3/Climate-Dashboard-Sohni/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <article
+                class="card"
+                data-member="mem3"
+                data-search="medinova sohni advanced"
+            >
+
+                <span class="member">
+                    MEM 3
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    MediNova Advanced
+                </h2>
+
+                <p>
+                    Healthcare and medical
+                    management application.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem3/MediNova-Sohni-Advanced/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <article
+                class="card"
+                data-member="mem3"
+                data-search="sbi sohni banking"
+            >
+
+                <span class="member">
+                    MEM 3
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    SBI Banking
+                </h2>
+
+                <p>
+                    Banking interface and
+                    financial dashboard.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem3/SBI-Sohni-Banking-Background-Enhanced/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <article
+                class="card"
+                data-member="mem3"
+                data-search="sohnihire recruitment"
+            >
+
+                <span class="member">
+                    MEM 3
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    Sohnihire
+                </h2>
+
+                <p>
+                    Hiring and recruitment
+                    application.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem3/sohnihire/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <!-- ================================================= -->
+            <!-- MEM 4 -->
+            <!-- ================================================= -->
+
+
+            <article
+                class="card"
+                data-member="mem4"
+                data-search="ceo executive dashboard"
+            >
+
+                <span class="member">
+                    MEM 4
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    CEO Executive Dashboard
+                </h2>
+
+                <p>
+                    Executive business
+                    analytics dashboard.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem4/CEO-Executive-Dashboard/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <article
+                class="card"
+                data-member="mem4"
+                data-search="crop monitoring gopi"
+            >
+
+                <span class="member">
+                    MEM 4
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    Crop Monitoring
+                </h2>
+
+                <p>
+                    Agricultural crop
+                    monitoring dashboard.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem4/Crop-Monitoring-Gopi/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <article
+                class="card"
+                data-member="mem4"
+                data-search="saas calendar gopi"
+            >
+
+                <span class="member">
+                    MEM 4
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    SaaS Calendar
+                </h2>
+
+                <p>
+                    SaaS calendar and
+                    scheduling application.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem4/SaaS-Calendar-Gopi/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+            <article
+                class="card"
+                data-member="mem4"
+                data-search="startup investor dashboard"
+            >
+
+                <span class="member">
+                    MEM 4
+                </span>
+
+                <div class="icon">
+                    ✦
+                </div>
+
+                <h2>
+                    Startup Investor Dashboard
+                </h2>
+
+                <p>
+                    Startup investment and
+                    financial analytics dashboard.
+                </p>
+
+                <a
+                    class="open"
+                    href="./mem4/Startup-Investor-Dashboard-Gopi/index.html"
+                >
+                    OPEN PROJECT
+                    <b>↗</b>
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
 
         <span>
-            Design.
+            SAI TEAM
         </span>
 
-        <br>
+        <span>
+            PROJECT HUB
+        </span>
 
-        Launch.
+    </footer>
 
-    </h1>
 
+    <!-- SEARCH / FILTER -->
 
-    <p>
-        All 16 main team projects in one place.
-        Select a project below to open the application.
-    </p>
+    <script>
 
+        const searchBox =
+            document.getElementById("q");
 
-    <div class="stats">
+        const memberFilter =
+            document.getElementById("m");
 
-        <div>
+        const cards =
+            document.querySelectorAll(".card");
 
-            <b>
-                16
-            </b>
 
-            <small>
-                Main Projects
-            </small>
+        function filterProjects() {
 
-        </div>
+            const search =
+                searchBox.value
+                    .toLowerCase()
+                    .trim();
 
+            const member =
+                memberFilter.value;
 
-        <div>
 
-            <b>
-                4
-            </b>
+            cards.forEach(function(card) {
 
-            <small>
-                Members
-            </small>
+                const searchData =
+                    (
+                        card.dataset.search || ""
+                    ).toLowerCase();
 
-        </div>
 
+                const cardMember =
+                    card.dataset.member;
 
-        <div>
 
-            <b>
-                LIVE
-            </b>
+                const searchMatch =
+                    search === "" ||
+                    searchData.includes(search);
 
-            <small>
-                GitHub Pages
-            </small>
 
-        </div>
+                const memberMatch =
+                    member === "" ||
+                    cardMember === member;
 
-    </div>
 
-</header>
+                if (
+                    searchMatch &&
+                    memberMatch
+                ) {
 
+                    card.style.display =
+                        "flex";
 
+                } else {
 
-<!-- ================= PROJECTS ================= -->
+                    card.style.display =
+                        "none";
 
-<section class="section">
+                }
 
-
-    <div class="head">
-
-
-        <div>
-
-            <div class="kicker">
-                01 / PROJECTS
-            </div>
-
-            <h2>
-                Explore the work.
-            </h2>
-
-        </div>
-
-
-        <div class="tools">
-
-
-            <input
-                type="text"
-                id="q"
-                placeholder="Search projects..."
-            >
-
-
-            <select id="m">
-
-                <option value="">
-                    All Members
-                </option>
-
-                <option value="mem1">
-                    MEM 1
-                </option>
-
-                <option value="mem2">
-                    MEM 2
-                </option>
-
-                <option value="mem3">
-                    MEM 3
-                </option>
-
-                <option value="mem4">
-                    MEM 4
-                </option>
-
-            </select>
-
-
-        </div>
-
-    </div>
-
-
-
-    <div class="cards">
-
-
-
-        <!-- ================================================= -->
-        <!-- MEM 1 -->
-        <!-- ================================================= -->
-
-
-        <!-- AI AGENT -->
-
-        <article
-            class="card"
-            data-member="mem1"
-            data-search="ai agent gamer dashboard sandeep fixed"
-        >
-
-            <span class="member">
-                MEM 1
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                AI Agent Gamer Dashboard Sandeep
-            </h2>
-
-
-            <p>
-                AI agent dashboard with
-                monitoring, workflows,
-                tasks and automation.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem1/AI_Agent_Gamer_Dashboard_Sandeep_FIXED/AI_Agent_Gamer_Dashboard_Sandeep/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- ROYAL ENFIELD -->
-
-        <article
-            class="card"
-            data-member="mem1"
-            data-search="royal enfield analytics complete prj"
-        >
-
-            <span class="member">
-                MEM 1
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                Royal Enfield Analytics
-            </h2>
-
-
-            <p>
-                Royal Enfield sales,
-                customers, models and
-                analytics dashboard.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem1/Royal_Enfield_Analytics_Complete%20prj/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- SHIPMENT -->
-
-        <article
-            class="card"
-            data-member="mem1"
-            data-search="sandeep ai shipment tracking final working"
-        >
-
-            <span class="member">
-                MEM 1
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                Sandeep AI Shipment Tracking
-            </h2>
-
-
-            <p>
-                AI-powered shipment tracking
-                and logistics dashboard.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem1/Sandeep_AI_Shipment_Tracking_FINAL_WORKING/Sandeep_AI_Shipment_Tracking_FINAL_WORKING/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- TTD -->
-
-        <article
-            class="card"
-            data-member="mem1"
-            data-search="ttd booking seva final polished"
-        >
-
-            <span class="member">
-                MEM 1
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                TTD Booking Seva
-            </h2>
-
-
-            <p>
-                Devotional TTD booking
-                and temple information
-                website.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem1/TTD_Booking_Seva_FINAL_POLISHED%281%29/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- ================================================= -->
-        <!-- MEM 2 -->
-        <!-- ================================================= -->
-
-
-        <!-- FIRST APP -->
-
-        <article
-            class="card"
-            data-member="mem2"
-            data-search="first app mem2"
-        >
-
-            <span class="member">
-                MEM 2
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                First App
-            </h2>
-
-
-            <p>
-                Main project application.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem2/first%20app/Index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- SECOND APP -->
-
-        <article
-            class="card"
-            data-member="mem2"
-            data-search="second app mem2"
-        >
-
-            <span class="member">
-                MEM 2
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                Second App
-            </h2>
-
-
-            <p>
-                Main project application.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem2/second%20app/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- THIRD APP -->
-
-        <article
-            class="card"
-            data-member="mem2"
-            data-search="third app mem2"
-        >
-
-            <span class="member">
-                MEM 2
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                Third App
-            </h2>
-
-
-            <p>
-                Main project application.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem2/third%20app/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- FOURTH APP -->
-
-        <article
-            class="card"
-            data-member="mem2"
-            data-search="fourth app mem2"
-        >
-
-            <span class="member">
-                MEM 2
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                Fourth App
-            </h2>
-
-
-            <p>
-                Main project application.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem2/fourth%20app/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- ================================================= -->
-        <!-- MEM 3 -->
-        <!-- ================================================= -->
-
-
-        <!-- CLIMATE -->
-
-        <article
-            class="card"
-            data-member="mem3"
-            data-search="climate dashboard sohni"
-        >
-
-            <span class="member">
-                MEM 3
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                Climate Dashboard Sohni
-            </h2>
-
-
-            <p>
-                Climate monitoring and
-                visualization dashboard.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem3/Climate-Dashboard-Sohni/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- MEDINOVA -->
-
-        <article
-            class="card"
-            data-member="mem3"
-            data-search="medinova sohni advanced"
-        >
-
-            <span class="member">
-                MEM 3
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                Medinova Sohni Advanced
-            </h2>
-
-
-            <p>
-                Healthcare and medical
-                management application.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem3/MediNova-Sohni-Advanced/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- SBI -->
-
-        <article
-            class="card"
-            data-member="mem3"
-            data-search="sbi sohni banking background enhanced"
-        >
-
-            <span class="member">
-                MEM 3
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                SBI Sohni Banking
-            </h2>
-
-
-            <p>
-                Banking interface and
-                financial dashboard.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem3/SBI-Sohni-Banking-Background-Enhanced/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- SOHNIHIRE -->
-
-        <article
-            class="card"
-            data-member="mem3"
-            data-search="sohnihire hiring recruitment"
-        >
-
-            <span class="member">
-                MEM 3
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                Sohnihire
-            </h2>
-
-
-            <p>
-                Hiring and recruitment
-                application.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem3/sohnihire/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- ================================================= -->
-        <!-- MEM 4 -->
-        <!-- ================================================= -->
-
-
-        <!-- CEO -->
-
-        <article
-            class="card"
-            data-member="mem4"
-            data-search="ceo executive dashboard"
-        >
-
-            <span class="member">
-                MEM 4
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                CEO Executive Dashboard
-            </h2>
-
-
-            <p>
-                Executive business
-                analytics dashboard.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem4/CEO-Executive-Dashboard/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- CROP -->
-
-        <article
-            class="card"
-            data-member="mem4"
-            data-search="crop monitoring gopi"
-        >
-
-            <span class="member">
-                MEM 4
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                Crop Monitoring Gopi
-            </h2>
-
-
-            <p>
-                Agricultural crop
-                monitoring dashboard.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem4/Crop-Monitoring-Gopi/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- CALENDAR -->
-
-        <article
-            class="card"
-            data-member="mem4"
-            data-search="saas calendar gopi"
-        >
-
-            <span class="member">
-                MEM 4
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                SaaS Calendar Gopi
-            </h2>
-
-
-            <p>
-                SaaS calendar and
-                scheduling application.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem4/SaaS-Calendar-Gopi/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-
-        <!-- STARTUP -->
-
-        <article
-            class="card"
-            data-member="mem4"
-            data-search="startup investor dashboard gopi"
-        >
-
-            <span class="member">
-                MEM 4
-            </span>
-
-
-            <div class="icon">
-                ✦
-            </div>
-
-
-            <h2>
-                Startup Investor Dashboard
-            </h2>
-
-
-            <p>
-                Startup investment and
-                financial analytics dashboard.
-            </p>
-
-
-            <a
-                class="open"
-                href="./mem4/Startup-Investor-Dashboard-Gopi/index.html"
-            >
-
-                OPEN PROJECT
-
-                <b>
-                    ↗
-                </b>
-
-            </a>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <span>
-        SAI TEAM
-    </span>
-
-    <span>
-        16 MAIN PROJECTS ONLY
-    </span>
-
-</footer>
-
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-const searchBox =
-    document.getElementById("q");
-
-const memberFilter =
-    document.getElementById("m");
-
-const cards =
-    document.querySelectorAll(".card");
-
-
-function filterProjects() {
-
-    const search =
-        searchBox.value
-        .toLowerCase()
-        .trim();
-
-    const member =
-        memberFilter.value;
-
-
-    cards.forEach(function(card) {
-
-        const searchData =
-            card.dataset.search
-            .toLowerCase();
-
-        const cardMember =
-            card.dataset.member;
-
-
-        const searchMatch =
-            search === "" ||
-            searchData.includes(search);
-
-
-        const memberMatch =
-            member === "" ||
-            cardMember === member;
-
-
-        if (
-            searchMatch &&
-            memberMatch
-        ) {
-
-            card.style.display =
-                "flex";
-
-        } else {
-
-            card.style.display =
-                "none";
+            });
 
         }
 
-    });
 
-}
-
-
-searchBox.addEventListener(
-    "input",
-    filterProjects
-);
+        searchBox.addEventListener(
+            "input",
+            filterProjects
+        );
 
 
-memberFilter.addEventListener(
-    "change",
-    filterProjects
-);
+        memberFilter.addEventListener(
+            "change",
+            filterProjects
+        );
 
-</script>
-
+    </script>
 
 </body>
 
