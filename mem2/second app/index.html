@@ -1,0 +1,2588 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>OLA Analytics Pro</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+<div class="dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                O
+            </div>
+
+            <h2>
+                OLA<span>Analytics</span>
+            </h2>
+
+        </div>
+
+
+        <div class="menu-title">
+            OVERVIEW
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="#dashboard" class="active">
+
+                <span class="icon">
+                    <i class="fa-solid fa-house"></i>
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="#revenue">
+
+                <span class="icon">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </span>
+
+                Revenue
+
+            </a>
+
+
+            <a href="#sales">
+
+                <span class="icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </span>
+
+                Sales Analytics
+
+            </a>
+
+
+            <a href="#rides">
+
+                <span class="icon">
+                    <i class="fa-solid fa-car"></i>
+                </span>
+
+                Ride Analytics
+
+            </a>
+
+
+            <div class="menu-title">
+                USERS
+            </div>
+
+
+            <a href="#customers">
+
+                <span class="icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                Customers
+
+            </a>
+
+
+            <a href="#drivers">
+
+                <span class="icon">
+                    <i class="fa-solid fa-id-card"></i>
+                </span>
+
+                Drivers
+
+            </a>
+
+
+            <a href="#ratings">
+
+                <span class="icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                Ratings
+
+            </a>
+
+
+            <div class="menu-title">
+                ANALYTICS
+            </div>
+
+
+            <a href="#marketing">
+
+                <span class="icon">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </span>
+
+                Marketing
+
+            </a>
+
+
+            <a href="#conversion">
+
+                <span class="icon">
+                    <i class="fa-solid fa-filter"></i>
+                </span>
+
+                Conversion Funnel
+
+            </a>
+
+
+            <a href="#retention">
+
+                <span class="icon">
+                    <i class="fa-solid fa-repeat"></i>
+                </span>
+
+                Retention
+
+            </a>
+
+
+            <a href="#realtime">
+
+                <span class="icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </span>
+
+                Real-time
+
+            </a>
+
+
+            <div class="menu-title">
+                TOOLS
+            </div>
+
+
+            <a href="#reports">
+
+                <span class="icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </span>
+
+                Reports
+
+            </a>
+
+
+            <a href="#settings">
+
+                <span class="icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                Settings
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <div class="page-title">
+
+                <h1>
+                    OLA Analytics
+                </h1>
+
+                <p>
+                    Smart mobility intelligence dashboard
+                </p>
+
+            </div>
+
+
+
+            <div class="topbar-right">
+
+
+                <button class="menu-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search drivers, rides, users..."
+                    >
+
+                </div>
+
+
+
+                <button
+                    class="filter-btn"
+                    title="Notifications">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </button>
+
+
+
+                <div class="live-status">
+
+                    <span class="live-dot"></span>
+
+                    LIVE
+
+                </div>
+
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        V
+                    </div>
+
+                    <span>
+                        Varshini
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             QUICK FILTERS
+        ================================================== -->
+
+        <div class="filters">
+
+
+            <button class="filter-btn active">
+                Today
+            </button>
+
+
+            <button class="filter-btn">
+                Yesterday
+            </button>
+
+
+            <button class="filter-btn">
+                7 Days
+            </button>
+
+
+            <button class="filter-btn">
+                30 Days
+            </button>
+
+
+            <button class="filter-btn">
+                3 Months
+            </button>
+
+
+            <select class="select-box">
+
+                <option>
+                    All Cities
+                </option>
+
+                <option>
+                    Chennai
+                </option>
+
+                <option>
+                    Hyderabad
+                </option>
+
+                <option>
+                    Bengaluru
+                </option>
+
+                <option>
+                    Mumbai
+                </option>
+
+                <option>
+                    Delhi
+                </option>
+
+            </select>
+
+
+            <button class="report-btn">
+
+                <i class="fa-solid fa-download"></i>
+
+                Export Report
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             KPI CARDS
+        ================================================== -->
+
+        <section class="kpi-grid"
+                 id="dashboard">
+
+
+            <!-- Revenue -->
+
+            <div class="glass-card kpi-card glow-green">
+
+                <div class="kpi-header">
+
+                    <div class="kpi-icon green">
+
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                    </div>
+
+                    <span class="kpi-change positive">
+                        +14.8%
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    ₹28.6L
+                </h3>
+
+
+                <p>
+                    Today's Revenue
+                </p>
+
+            </div>
+
+
+
+            <!-- Rides -->
+
+            <div class="glass-card kpi-card glow-blue">
+
+                <div class="kpi-header">
+
+                    <div class="kpi-icon blue">
+
+                        <i class="fa-solid fa-car"></i>
+
+                    </div>
+
+                    <span class="kpi-change positive">
+                        +11.2%
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    24,862
+                </h3>
+
+
+                <p>
+                    Completed Rides
+                </p>
+
+            </div>
+
+
+
+            <!-- Drivers -->
+
+            <div class="glass-card kpi-card glow-purple">
+
+                <div class="kpi-header">
+
+                    <div class="kpi-icon purple">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                    </div>
+
+                    <span class="kpi-change positive">
+                        +8.6%
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    8,420
+                </h3>
+
+
+                <p>
+                    Active Drivers
+                </p>
+
+            </div>
+
+
+
+            <!-- Customers -->
+
+            <div class="glass-card kpi-card">
+
+                <div class="kpi-header">
+
+                    <div class="kpi-icon orange">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <span class="kpi-change positive">
+                        +19.4%
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    62,840
+                </h3>
+
+
+                <p>
+                    Active Customers
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LIVE OPERATIONS
+        ================================================== -->
+
+        <section class="full-grid"
+                 id="realtime">
+
+
+            <div class="glass-card visual-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Live Rides
+                        </h2>
+
+                        <p>
+                            Currently active rides
+                        </p>
+
+                    </div>
+
+                    <div class="live-status">
+
+                        <span class="live-dot"></span>
+
+                        LIVE
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-number">
+                    3,842
+                </div>
+
+
+                <div class="visual-description">
+                    Rides currently in progress
+                </div>
+
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Fleet Utilization
+                        </span>
+
+                        <span>
+                            78%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:78%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="glass-card visual-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Available Drivers
+                        </h2>
+
+                        <p>
+                            Drivers ready for rides
+                        </p>
+
+                    </div>
+
+                    <div class="kpi-icon green">
+
+                        <i class="fa-solid fa-car-side"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-number">
+                    2,486
+                </div>
+
+
+                <div class="visual-description">
+                    Drivers currently available
+                </div>
+
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Availability
+                        </span>
+
+                        <span>
+                            64%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:64%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="glass-card visual-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Avg. Ride Time
+                        </h2>
+
+                        <p>
+                            Average trip duration
+                        </p>
+
+                    </div>
+
+                    <div class="kpi-icon blue">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-number">
+                    24 min
+                </div>
+
+
+                <div class="visual-description">
+                    Average trip duration
+                </div>
+
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Efficiency
+                        </span>
+
+                        <span>
+                            86%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:86%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             REVENUE ANALYTICS
+        ================================================== -->
+
+        <section class="analytics-grid"
+                 id="revenue">
+
+
+            <div class="glass-card chart-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Revenue Analytics
+                        </h2>
+
+                        <p>
+                            Monthly revenue trend
+                        </p>
+
+                    </div>
+
+
+                    <select class="select-box">
+
+                        <option>
+                            2026
+                        </option>
+
+                        <option>
+                            2025
+                        </option>
+
+                        <option>
+                            2024
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="chart-container">
+
+                    <div class="bar-chart">
+
+                        <div class="bar"
+                             style="height:42%;"></div>
+
+                        <div class="bar"
+                             style="height:55%;"></div>
+
+                        <div class="bar"
+                             style="height:48%;"></div>
+
+                        <div class="bar"
+                             style="height:63%;"></div>
+
+                        <div class="bar"
+                             style="height:72%;"></div>
+
+                        <div class="bar"
+                             style="height:67%;"></div>
+
+                        <div class="bar"
+                             style="height:78%;"></div>
+
+                        <div class="bar"
+                             style="height:73%;"></div>
+
+                        <div class="bar"
+                             style="height:86%;"></div>
+
+                        <div class="bar"
+                             style="height:82%;"></div>
+
+                        <div class="bar"
+                             style="height:94%;"></div>
+
+                        <div class="bar"
+                             style="height:100%;"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Revenue Breakdown -->
+
+            <div class="glass-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Revenue Breakdown
+                        </h2>
+
+                        <p>
+                            By ride category
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-list">
+
+
+                    <div class="stat-item">
+
+                        <div class="stat-info">
+
+                            <span class="stat-dot"></span>
+
+                            <span class="stat-name">
+                                Prime
+                            </span>
+
+                        </div>
+
+                        <span class="stat-value">
+                            ₹9.8L
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-item">
+
+                        <div class="stat-info">
+
+                            <span class="stat-dot"></span>
+
+                            <span class="stat-name">
+                                Mini
+                            </span>
+
+                        </div>
+
+                        <span class="stat-value">
+                            ₹7.2L
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-item">
+
+                        <div class="stat-info">
+
+                            <span class="stat-dot"></span>
+
+                            <span class="stat-name">
+                                Auto
+                            </span>
+
+                        </div>
+
+                        <span class="stat-value">
+                            ₹5.6L
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-item">
+
+                        <div class="stat-info">
+
+                            <span class="stat-dot"></span>
+
+                            <span class="stat-name">
+                                Rentals
+                            </span>
+
+                        </div>
+
+                        <span class="stat-value">
+                            ₹3.8L
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-item">
+
+                        <div class="stat-info">
+
+                            <span class="stat-dot"></span>
+
+                            <span class="stat-name">
+                                Outstation
+                            </span>
+
+                        </div>
+
+                        <span class="stat-value">
+                            ₹2.2L
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIDE ANALYTICS
+        ================================================== -->
+
+        <section class="analytics-grid"
+                 id="rides">
+
+
+            <div class="glass-card chart-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Ride Performance
+                        </h2>
+
+                        <p>
+                            Daily completed rides
+                        </p>
+
+                    </div>
+
+                    <span class="kpi-change positive">
+                        +18.5%
+                    </span>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <div class="bar-chart">
+
+                        <div class="bar"
+                             style="height:40%;"></div>
+
+                        <div class="bar"
+                             style="height:52%;"></div>
+
+                        <div class="bar"
+                             style="height:46%;"></div>
+
+                        <div class="bar"
+                             style="height:70%;"></div>
+
+                        <div class="bar"
+                             style="height:61%;"></div>
+
+                        <div class="bar"
+                             style="height:78%;"></div>
+
+                        <div class="bar"
+                             style="height:90%;"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Ride Statistics -->
+
+            <div class="glass-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Ride Statistics
+                        </h2>
+
+                        <p>
+                            Today's ride summary
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-list">
+
+
+                    <div class="stat-item">
+
+                        <div class="stat-info">
+
+                            <span class="stat-dot"></span>
+
+                            <span class="stat-name">
+                                Completed
+                            </span>
+
+                        </div>
+
+                        <span class="stat-value">
+                            24,862
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-item">
+
+                        <div class="stat-info">
+
+                            <span class="stat-dot"></span>
+
+                            <span class="stat-name">
+                                Cancelled
+                            </span>
+
+                        </div>
+
+                        <span class="stat-value">
+                            1,284
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-item">
+
+                        <div class="stat-info">
+
+                            <span class="stat-dot"></span>
+
+                            <span class="stat-name">
+                                Pending
+                            </span>
+
+                        </div>
+
+                        <span class="stat-value">
+                            642
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-item">
+
+                        <div class="stat-info">
+
+                            <span class="stat-dot"></span>
+
+                            <span class="stat-name">
+                                Average Fare
+                            </span>
+
+                        </div>
+
+                        <span class="stat-value">
+                            ₹186
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DRIVER + CUSTOMER ANALYTICS
+        ================================================== -->
+
+        <section class="full-grid">
+
+
+            <div class="glass-card visual-card"
+                 id="drivers">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Driver Analytics
+                        </h2>
+
+                        <p>
+                            Driver performance
+                        </p>
+
+                    </div>
+
+                    <div class="kpi-icon purple">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-number">
+                    8,420
+                </div>
+
+
+                <div class="visual-description">
+                    Active drivers
+                </div>
+
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Driver Satisfaction
+                        </span>
+
+                        <span>
+                            91%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:91%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="glass-card visual-card"
+                 id="customers">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Customer Analytics
+                        </h2>
+
+                        <p>
+                            Customer engagement
+                        </p>
+
+                    </div>
+
+                    <div class="kpi-icon blue">
+
+                        <i class="fa-solid fa-user-group"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-number">
+                    62,840
+                </div>
+
+
+                <div class="visual-description">
+                    Active customers
+                </div>
+
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Customer Retention
+                        </span>
+
+                        <span>
+                            84%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:84%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="glass-card visual-card"
+                 id="ratings">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Driver Ratings
+                        </h2>
+
+                        <p>
+                            Average customer rating
+                        </p>
+
+                    </div>
+
+                    <div class="kpi-icon orange">
+
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-number">
+                    4.8 ★
+                </div>
+
+
+                <div class="visual-description">
+                    Average driver rating
+                </div>
+
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Rating Quality
+                        </span>
+
+                        <span>
+                            96%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:96%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TOP DRIVERS
+        ================================================== -->
+
+        <section class="glass-card"
+                 style="margin-bottom:20px;">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Top Performing Drivers
+                    </h2>
+
+                    <p>
+                        Drivers with highest performance
+                    </p>
+
+                </div>
+
+                <button class="report-btn">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                    View All
+
+                </button>
+
+            </div>
+
+
+            <div style="overflow-x:auto;">
+
+                <table class="data-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Rank
+                            </th>
+
+                            <th>
+                                Driver
+                            </th>
+
+                            <th>
+                                Rides
+                            </th>
+
+                            <th>
+                                Revenue
+                            </th>
+
+                            <th>
+                                Rating
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                #01
+                            </td>
+
+                            <td>
+                                Arjun Kumar
+                            </td>
+
+                            <td>
+                                248
+                            </td>
+
+                            <td>
+                                ₹48,620
+                            </td>
+
+                            <td>
+                                ⭐ 4.9
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-success">
+                                    Excellent
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                #02
+                            </td>
+
+                            <td>
+                                Rahul Sharma
+                            </td>
+
+                            <td>
+                                226
+                            </td>
+
+                            <td>
+                                ₹44,850
+                            </td>
+
+                            <td>
+                                ⭐ 4.9
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-success">
+                                    Excellent
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                #03
+                            </td>
+
+                            <td>
+                                Karthik R
+                            </td>
+
+                            <td>
+                                214
+                            </td>
+
+                            <td>
+                                ₹42,480
+                            </td>
+
+                            <td>
+                                ⭐ 4.8
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-success">
+                                    Excellent
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                #04
+                            </td>
+
+                            <td>
+                                Naveen Kumar
+                            </td>
+
+                            <td>
+                                198
+                            </td>
+
+                            <td>
+                                ₹38,920
+                            </td>
+
+                            <td>
+                                ⭐ 4.7
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-warning">
+                                    Good
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                #05
+                            </td>
+
+                            <td>
+                                Rohit Singh
+                            </td>
+
+                            <td>
+                                184
+                            </td>
+
+                            <td>
+                                ₹35,640
+                            </td>
+
+                            <td>
+                                ⭐ 4.7
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-warning">
+                                    Good
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONVERSION FUNNEL
+        ================================================== -->
+
+        <section class="analytics-grid"
+                 id="conversion">
+
+
+            <div class="glass-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Ride Conversion Funnel
+                        </h2>
+
+                        <p>
+                            Customer booking journey
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-filter"></i>
+
+                </div>
+
+
+                <div class="funnel">
+
+
+                    <div class="funnel-step">
+                        App Visitors — 100%
+                    </div>
+
+
+                    <div class="funnel-step">
+                        Search Ride — 84%
+                    </div>
+
+
+                    <div class="funnel-step">
+                        Fare Viewed — 68%
+                    </div>
+
+
+                    <div class="funnel-step">
+                        Ride Booked — 52%
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Retention -->
+
+            <div class="glass-card"
+                 id="retention">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Customer Retention
+                        </h2>
+
+                        <p>
+                            Returning customers
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-repeat"></i>
+
+                </div>
+
+
+                <div class="visual-number">
+                    84%
+                </div>
+
+
+                <div class="visual-description">
+                    Customers returning within 30 days
+                </div>
+
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Retention Goal
+                        </span>
+
+                        <span>
+                            84%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:84%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CITY ANALYTICS
+        ================================================== -->
+
+        <section class="glass-card"
+                 style="margin-bottom:20px;">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        City Performance
+                    </h2>
+
+                    <p>
+                        Ride activity by city
+                    </p>
+
+                </div>
+
+                <select class="select-box">
+
+                    <option>
+                        Today
+                    </option>
+
+                    <option>
+                        This Week
+                    </option>
+
+                    <option>
+                        This Month
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div style="overflow-x:auto;">
+
+                <table class="data-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                City
+                            </th>
+
+                            <th>
+                                Rides
+                            </th>
+
+                            <th>
+                                Revenue
+                            </th>
+
+                            <th>
+                                Drivers
+                            </th>
+
+                            <th>
+                                Rating
+                            </th>
+
+                            <th>
+                                Growth
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Chennai
+                            </td>
+
+                            <td>
+                                8,420
+                            </td>
+
+                            <td>
+                                ₹9.8L
+                            </td>
+
+                            <td>
+                                2,840
+                            </td>
+
+                            <td>
+                                ⭐ 4.8
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-success">
+                                    +18%
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Bengaluru
+                            </td>
+
+                            <td>
+                                7,820
+                            </td>
+
+                            <td>
+                                ₹8.7L
+                            </td>
+
+                            <td>
+                                2,420
+                            </td>
+
+                            <td>
+                                ⭐ 4.7
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-success">
+                                    +15%
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Hyderabad
+                            </td>
+
+                            <td>
+                                6,240
+                            </td>
+
+                            <td>
+                                ₹6.8L
+                            </td>
+
+                            <td>
+                                1,980
+                            </td>
+
+                            <td>
+                                ⭐ 4.8
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-success">
+                                    +12%
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Mumbai
+                            </td>
+
+                            <td>
+                                5,840
+                            </td>
+
+                            <td>
+                                ₹6.4L
+                            </td>
+
+                            <td>
+                                1,820
+                            </td>
+
+                            <td>
+                                ⭐ 4.6
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-warning">
+                                    +7%
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Delhi
+                            </td>
+
+                            <td>
+                                5,420
+                            </td>
+
+                            <td>
+                                ₹5.9L
+                            </td>
+
+                            <td>
+                                1,760
+                            </td>
+
+                            <td>
+                                ⭐ 4.7
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-success">
+                                    +10%
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RECENT RIDES
+        ================================================== -->
+
+        <section class="glass-card"
+                 id="sales"
+                 style="margin-bottom:20px;">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Recent Rides
+                    </h2>
+
+                    <p>
+                        Latest ride transactions
+                    </p>
+
+                </div>
+
+                <button class="report-btn">
+
+                    <i class="fa-solid fa-file-export"></i>
+
+                    Export
+
+                </button>
+
+            </div>
+
+
+            <div style="overflow-x:auto;">
+
+                <table class="data-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Ride ID
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Driver
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Fare
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                #OLA10284
+                            </td>
+
+                            <td>
+                                Ananya
+                            </td>
+
+                            <td>
+                                Arjun Kumar
+                            </td>
+
+                            <td>
+                                Prime
+                            </td>
+
+                            <td>
+                                ₹420
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-success">
+                                    Completed
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                #OLA10283
+                            </td>
+
+                            <td>
+                                Rahul
+                            </td>
+
+                            <td>
+                                Karthik R
+                            </td>
+
+                            <td>
+                                Mini
+                            </td>
+
+                            <td>
+                                ₹280
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-success">
+                                    Completed
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                #OLA10282
+                            </td>
+
+                            <td>
+                                Priya
+                            </td>
+
+                            <td>
+                                Naveen Kumar
+                            </td>
+
+                            <td>
+                                Auto
+                            </td>
+
+                            <td>
+                                ₹190
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-warning">
+                                    Processing
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                #OLA10281
+                            </td>
+
+                            <td>
+                                Sneha
+                            </td>
+
+                            <td>
+                                Rohit Singh
+                            </td>
+
+                            <td>
+                                Prime
+                            </td>
+
+                            <td>
+                                ₹540
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-success">
+                                    Completed
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                #OLA10280
+                            </td>
+
+                            <td>
+                                Varun
+                            </td>
+
+                            <td>
+                                Arjun Kumar
+                            </td>
+
+                            <td>
+                                Outstation
+                            </td>
+
+                            <td>
+                                ₹1,850
+                            </td>
+
+                            <td>
+
+                                <span class="badge badge-danger">
+                                    Cancelled
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MARKETING ANALYTICS
+        ================================================== -->
+
+        <section class="full-grid"
+                 id="marketing">
+
+
+            <div class="glass-card visual-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Marketing Campaign
+                        </h2>
+
+                        <p>
+                            Campaign conversion
+                        </p>
+
+                    </div>
+
+                    <div class="kpi-icon orange">
+
+                        <i class="fa-solid fa-bullhorn"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-number">
+                    68.4%
+                </div>
+
+
+                <div class="visual-description">
+                    Campaign conversion rate
+                </div>
+
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Campaign Goal
+                        </span>
+
+                        <span>
+                            68%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:68%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="glass-card visual-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            App Engagement
+                        </h2>
+
+                        <p>
+                            User engagement score
+                        </p>
+
+                    </div>
+
+                    <div class="kpi-icon blue">
+
+                        <i class="fa-solid fa-mobile-screen"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-number">
+                    82.6%
+                </div>
+
+
+                <div class="visual-description">
+                    Daily active engagement
+                </div>
+
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Engagement Goal
+                        </span>
+
+                        <span>
+                            83%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:83%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="glass-card visual-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Financial Health
+                        </h2>
+
+                        <p>
+                            Business profitability
+                        </p>
+
+                    </div>
+
+                    <div class="kpi-icon green">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-number">
+                    ₹8.42L
+                </div>
+
+
+                <div class="visual-description">
+                    Net profit generated
+                </div>
+
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Profit Margin
+                        </span>
+
+                        <span>
+                            34%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width:34%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer
+            style="
+            text-align:center;
+            padding:30px 0;
+            color:#737d96;
+            font-size:11px;
+            ">
+
+            OLA Analytics Dashboard
+            •
+            Smart Mobility Intelligence
+            •
+            2026
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* ===============================
+   MOBILE SIDEBAR
+================================ */
+
+const menuToggle =
+    document.querySelector(".menu-toggle");
+
+const sidebar =
+    document.querySelector(".sidebar");
+
+
+if (menuToggle) {
+
+    menuToggle.addEventListener(
+        "click",
+        () => {
+
+            sidebar.classList.toggle("open");
+
+        }
+    );
+
+}
+
+
+
+/* ===============================
+   FILTER BUTTONS
+================================ */
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+
+filterButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            button.classList.add("active");
+
+        }
+    );
+
+});
+
+
+
+/* ===============================
+   SIDEBAR LINK ACTIVE STATE
+================================ */
+
+const sidebarLinks =
+    document.querySelectorAll(
+        ".sidebar-menu a"
+    );
+
+
+sidebarLinks.forEach(link => {
+
+    link.addEventListener(
+        "click",
+        () => {
+
+            sidebarLinks.forEach(item => {
+
+                item.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            link.classList.add(
+                "active"
+            );
+
+        }
+    );
+
+});
+
+
+
+/* ===============================
+   SEARCH
+================================ */
+
+const searchInput =
+    document.querySelector(
+        ".search-box input"
+    );
+
+
+if (searchInput) {
+
+    searchInput.addEventListener(
+        "input",
+        function () {
+
+            const searchValue =
+                this.value.toLowerCase();
+
+
+            const rows =
+                document.querySelectorAll(
+                    ".data-table tbody tr"
+                );
+
+
+            rows.forEach(row => {
+
+                const text =
+                    row.innerText.toLowerCase();
+
+
+                if (
+                    text.includes(
+                        searchValue
+                    )
+                ) {
+
+                    row.style.display = "";
+
+                } else {
+
+                    row.style.display =
+                        "none";
+
+                }
+
+            });
+
+        }
+    );
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
+```
