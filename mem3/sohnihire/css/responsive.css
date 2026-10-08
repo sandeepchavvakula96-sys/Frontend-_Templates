@@ -1,0 +1,8 @@
+/* SohniHire responsive enhancements */
+@media(max-width:480px){
+  .container{width:min(94%,1180px)}
+  .nav{height:68px}.brand{font-size:18px}.brand-mark{width:34px;height:34px}
+  .hero p{font-size:16px}.section{padding:50px 0}
+  .card{padding:17px}.dash-main{padding:15px}
+  .btn{padding:10px 13px}
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"><head><title>Applications · SohniHire</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SohniHire — modern job search UI template collection">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/animations.css"></head><body><div class="topbar">✨ SohniHire UI Collection · Hackathon Template</div>
+<nav class="nav"><div class="container nav-inner">
+<a class="brand" href="../index.html"><span class="brand-mark">S</span>SohniHire</a>
+<div class="nav-links">
+<a class="" href="jobs.html">Find Jobs</a>
+<a class="" href="companies.html">Companies</a>
+<a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume</a><a href="dashboard.html">Dashboard</a>
+</div>
+<div class="nav-actions"><button class="icon-btn" data-theme-toggle title="Toggle theme · Ctrl/⌘ K opens quick navigation">☾</button><a class="btn btn-primary hide-mobile" href="dashboard.html">My workspace</a><button class="icon-btn mobile-menu">☰</button></div>
+</div></nav>
+<section class="page-head"><div class="container"><span class="eyebrow">Application tracker</span><h1>Keep every application moving.</h1><p class="meta">A clean pipeline from first click to offer.</p></div></section>
+<main class="section" style="padding-top:25px"><div class="container"><div class="grid grid-4"><div class="stat"><small>Applied</small><strong>24</strong></div><div class="stat"><small>Screening</small><strong>12</strong></div><div class="stat"><small>Interview</small><strong>6</strong></div><div class="stat"><small>Offers</small><strong>2</strong></div></div>
+<div class="card" style="margin-top:20px"><div class="table-wrap"><table class="table"><thead><tr><th>Role</th><th>Company</th><th>Applied</th><th>Status</th><th>Action</th></tr></thead><tbody>
+<tr><td><b>Product Designer</b></td><td>Nova Labs</td><td>Oct 2</td><td><span class="badge green">Interview</span></td><td><button class="btn btn-soft" data-application-status>Advance</button></td></tr>
+<tr><td><b>Frontend Engineer</b></td><td>PixelStack</td><td>Sep 30</td><td><span class="badge yellow">Screening</span></td><td><button class="btn btn-soft" data-application-status>Advance</button></td></tr>
+<tr><td><b>AI Product Intern</b></td><td>MindForge AI</td><td>Sep 27</td><td><span class="badge yellow">Applied</span></td><td><button class="btn btn-soft" data-application-status>Advance</button></td></tr>
+<tr><td><b>UX Researcher</b></td><td>Careloop</td><td>Sep 24</td><td><span class="badge red">Rejected</span></td><td><button class="btn btn-soft" data-application-status>Review</button></td></tr>
+</tbody></table></div></div>
+<div class="card" style="margin-top:20px"><h2>Application timeline</h2><p class="meta" id="localAppNote"></p><div class="timeline"><div class="timeline-item"><h4>Interview scheduled · Nova Labs</h4><p>Tomorrow · 11:00 AM</p></div><div class="timeline-item"><h4>Screening · PixelStack</h4><p>Recruiter viewed your profile</p></div><div class="timeline-item"><h4>Application sent · MindForge AI</h4><p>Sep 27 · Remote</p></div></div></div></div></main>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+ const apps=JSON.parse(localStorage.getItem("applications")||"[]");
+ const n=document.querySelector("#localAppNote");
+ if(n && apps.length)n.textContent=`${apps.length} application${apps.length>1?"s":""} submitted from this browser demo.`;
+});
+</script>
+<footer class="footer"><div class="container footer-grid">
+<div><div class="brand"><span class="brand-mark">S</span>SohniHire</div><p>Modern job search interfaces designed for the UI Template Collection Hackathon.</p></div>
+<div><h4>Explore</h4><a href="jobs.html">Jobs</a><a href="companies.html">Companies</a><a href="job-alerts.html">Alerts</a></div>
+<div><h4>Career</h4><a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume Builder</a><a href="dashboard.html">Dashboard</a></div>
+<div><h4>Project</h4><a href="../README.md">Research</a><a href="../index.html#templates">Templates</a><a href="../index.html#github">GitHub Workflow</a></div>
+</div></footer><div class="toast"></div><script src="../js/data.js"></script><script src="../js/app.js"></script><script src="../js/dashboard.js"></script></body></html>

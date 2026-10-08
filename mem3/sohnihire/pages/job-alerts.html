@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><title>Job Alerts · SohniHire</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SohniHire — modern job search UI template collection">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/animations.css"></head><body><div class="topbar">✨ SohniHire UI Collection · Hackathon Template</div>
+<nav class="nav"><div class="container nav-inner">
+<a class="brand" href="../index.html"><span class="brand-mark">S</span>SohniHire</a>
+<div class="nav-links">
+<a class="" href="jobs.html">Find Jobs</a>
+<a class="" href="companies.html">Companies</a>
+<a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume</a><a href="dashboard.html">Dashboard</a>
+</div>
+<div class="nav-actions"><button class="icon-btn" data-theme-toggle title="Toggle theme · Ctrl/⌘ K opens quick navigation">☾</button><a class="btn btn-primary hide-mobile" href="dashboard.html">My workspace</a><button class="icon-btn mobile-menu">☰</button></div>
+</div></nav>
+<section class="page-head"><div class="container"><span class="eyebrow">Job alerts</span><h1>Let great roles come to you.</h1><p class="meta">Create smart alerts around the roles and locations you care about.</p></div></section>
+<main class="section" style="padding-top:25px"><div class="container detail-grid"><div><div class="card"><div class="section-head"><div><h2 style="font-size:23px">Create an alert</h2><p>We'll notify you when matching jobs appear.</p></div><span class="pill green">Email + in-app</span></div><div class="form-grid"><div class="field"><label>Keywords</label><input placeholder="e.g. Product Designer"></div><div class="field"><label>Location</label><input placeholder="e.g. Bengaluru / Remote"></div><div class="field"><label>Minimum salary</label><select><option>Any salary</option><option>₹8 LPA+</option><option>₹12 LPA+</option><option>₹18 LPA+</option></select></div><div class="field"><label>Frequency</label><select><option>Daily</option><option>Weekly</option><option>Instant</option></select></div><div class="field full"><label>Job types</label><div class="tags"><span class="filter">Full-time</span><span class="filter">Internship</span><span class="filter">Contract</span></div></div></div><button class="btn btn-primary" style="margin-top:18px" id="createAlert">Create alert</button></div>
+<div class="card" style="margin-top:18px"><div class="section-head"><div><h2 style="font-size:22px">Active alerts</h2></div><span class="pill">3 active</span></div><div class="card" style="margin:10px 0"><b>Product Designer · Bengaluru</b><div class="meta">Daily · ₹10 LPA+ · 12 new matches</div></div><div class="card" style="margin:10px 0"><b>AI Product · Remote India</b><div class="meta">Instant · 5 new matches</div></div><div class="card" style="margin:10px 0"><b>Frontend Engineer · Hyderabad</b><div class="meta">Weekly · 8 new matches</div></div></div></div>
+<aside class="card"><h3>Alert intelligence</h3><div class="stat" style="margin-top:15px"><small>Matches this week</small><strong>25</strong></div><div class="stat" style="margin-top:10px"><small>Best match</small><strong>96%</strong><span class="badge green">Product Designer</span></div><p class="meta" style="margin-top:20px">Tip: Narrow alerts to 1–3 target roles to avoid notification fatigue.</p></aside></div></main>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+ const b=document.querySelector("#createAlert");if(!b)return;
+ b.addEventListener("click",()=>{
+   const fields=[...document.querySelectorAll(".field input")].map(x=>x.value.trim());
+   if(!fields[0]){toast("Add at least one keyword for the alert");return}
+   localStorage.setItem("lastAlert",JSON.stringify({keyword:fields[0],location:fields[1]||"Any location"}));
+   toast("Job alert created 🔔");
+ });
+});
+</script>
+<footer class="footer"><div class="container footer-grid">
+<div><div class="brand"><span class="brand-mark">S</span>SohniHire</div><p>Modern job search interfaces designed for the UI Template Collection Hackathon.</p></div>
+<div><h4>Explore</h4><a href="jobs.html">Jobs</a><a href="companies.html">Companies</a><a href="job-alerts.html">Alerts</a></div>
+<div><h4>Career</h4><a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume Builder</a><a href="dashboard.html">Dashboard</a></div>
+<div><h4>Project</h4><a href="../README.md">Research</a><a href="../index.html#templates">Templates</a><a href="../index.html#github">GitHub Workflow</a></div>
+</div></footer><div class="toast"></div><script src="../js/data.js"></script><script src="../js/app.js"></script></body></html>

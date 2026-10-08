@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><title>Companies · SohniHire</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SohniHire — modern job search UI template collection">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/animations.css"></head><body><div class="topbar">✨ SohniHire UI Collection · Hackathon Template</div>
+<nav class="nav"><div class="container nav-inner">
+<a class="brand" href="../index.html"><span class="brand-mark">S</span>SohniHire</a>
+<div class="nav-links">
+<a class="" href="jobs.html">Find Jobs</a>
+<a class="active" href="companies.html">Companies</a>
+<a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume</a><a href="dashboard.html">Dashboard</a>
+</div>
+<div class="nav-actions"><button class="icon-btn" data-theme-toggle title="Toggle theme · Ctrl/⌘ K opens quick navigation">☾</button><a class="btn btn-primary hide-mobile" href="dashboard.html">My workspace</a><button class="icon-btn mobile-menu">☰</button></div>
+</div></nav>
+<section class="page-head"><div class="container"><span class="eyebrow">Company explorer</span><h1>Discover teams you'll love.</h1><p class="meta">Explore hiring companies by industry, size, and culture.</p></div></section>
+<main class="section" style="padding-top:25px"><div class="container"><div class="search-box" style="margin:0 0 25px"><div class="search-field">⌕ <input id="companySearch" placeholder="Search companies"></div><select class="filter"><option>All industries</option><option>Technology</option><option>Finance</option><option>AI</option></select><button class="btn btn-primary" id="companySearchBtn">Search</button></div>
+<div class="grid grid-3" id="companyGrid">
+<div class="card reveal"><div class="company-logo">NL</div><h3>Nova Labs</h3><p class="meta">Product Technology · 120 employees</p><div class="tags"><span class="pill">18 open roles</span><span class="pill green">4.8 ★</span></div><a class="btn btn-soft" href="company-details.html">Explore company →</a></div>
+<div class="card reveal"><div class="company-logo">PS</div><h3>PixelStack</h3><p class="meta">Developer Tools · 240 employees</p><div class="tags"><span class="pill">24 open roles</span><span class="pill green">4.6 ★</span></div><a class="btn btn-soft" href="company-details.html">Explore company →</a></div>
+<div class="card reveal"><div class="company-logo">MA</div><h3>MindForge AI</h3><p class="meta">Artificial Intelligence · 85 employees</p><div class="tags"><span class="pill">11 open roles</span><span class="pill green">4.9 ★</span></div><a class="btn btn-soft" href="company-details.html">Explore company →</a></div>
+<div class="card reveal"><div class="company-logo">FV</div><h3>Finverse</h3><p class="meta">Fintech · 310 employees</p><div class="tags"><span class="pill">31 open roles</span><span class="pill green">4.5 ★</span></div><a class="btn btn-soft" href="company-details.html">Explore company →</a></div>
+<div class="card reveal"><div class="company-logo">CN</div><h3>CloudNest</h3><p class="meta">Cloud Infrastructure · 190 employees</p><div class="tags"><span class="pill">16 open roles</span><span class="pill green">4.7 ★</span></div><a class="btn btn-soft" href="company-details.html">Explore company →</a></div>
+<div class="card reveal"><div class="company-logo">CL</div><h3>Careloop</h3><p class="meta">Health Technology · 145 employees</p><div class="tags"><span class="pill">13 open roles</span><span class="pill green">4.6 ★</span></div><a class="btn btn-soft" href="company-details.html">Explore company →</a></div>
+</div></div></main>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+ const input=document.querySelector("#companySearch"),grid=document.querySelector("#companyGrid");
+ if(!input||!grid)return;
+ const cards=[...grid.children];
+ const run=()=>{const q=input.value.toLowerCase().trim();cards.forEach(c=>c.style.display=c.textContent.toLowerCase().includes(q)?"":"none")};
+ input.addEventListener("input",run);document.querySelector("#companySearchBtn")?.addEventListener("click",run);
+});
+</script>
+<footer class="footer"><div class="container footer-grid">
+<div><div class="brand"><span class="brand-mark">S</span>SohniHire</div><p>Modern job search interfaces designed for the UI Template Collection Hackathon.</p></div>
+<div><h4>Explore</h4><a href="jobs.html">Jobs</a><a href="companies.html">Companies</a><a href="job-alerts.html">Alerts</a></div>
+<div><h4>Career</h4><a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume Builder</a><a href="dashboard.html">Dashboard</a></div>
+<div><h4>Project</h4><a href="../README.md">Research</a><a href="../index.html#templates">Templates</a><a href="../index.html#github">GitHub Workflow</a></div>
+</div></footer><div class="toast"></div><script src="../js/data.js"></script><script src="../js/app.js"></script></body></html>

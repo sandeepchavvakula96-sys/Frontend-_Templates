@@ -1,0 +1,23 @@
+{
+  "project": "SohniHire",
+  "version": "1.0.0",
+  "author": "Sohni",
+  "technologies": [
+    "HTML5",
+    "CSS3",
+    "Vanilla JavaScript"
+  ],
+  "templates": [
+    "Job Search Landing",
+    "Advanced Job Search",
+    "Job Details",
+    "Company Explorer",
+    "Company Details",
+    "Candidate Dashboard",
+    "Application Tracker",
+    "AI Career Assistant",
+    "Resume Builder",
+    "Career Analytics",
+    "Job Alert Center"
+  ]
+}

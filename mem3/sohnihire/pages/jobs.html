@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><title>Find Jobs · SohniHire</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SohniHire — modern job search UI template collection">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/animations.css"></head><body><div class="topbar">✨ SohniHire UI Collection · Hackathon Template</div>
+<nav class="nav"><div class="container nav-inner">
+<a class="brand" href="../index.html"><span class="brand-mark">S</span>SohniHire</a>
+<div class="nav-links">
+<a class="active" href="jobs.html">Find Jobs</a>
+<a class="" href="companies.html">Companies</a>
+<a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume</a><a href="dashboard.html">Dashboard</a>
+</div>
+<div class="nav-actions"><button class="icon-btn" data-theme-toggle title="Toggle theme · Ctrl/⌘ K opens quick navigation">☾</button><a class="btn btn-primary hide-mobile" href="dashboard.html">My workspace</a><button class="icon-btn mobile-menu">☰</button></div>
+</div></nav>
+<section class="page-head"><div class="container"><span class="eyebrow">Job discovery</span><h1>Find your next opportunity.</h1><p class="meta">Search across roles, skills, companies, and locations.</p></div></section>
+<main class="section" style="padding-top:25px"><div class="container"><div class="card" style="margin-bottom:20px"><div class="search-box" style="margin:0;box-shadow:none"><div class="search-field">⌕ <input id="jobQuery" placeholder="Role, skill, company"></div><div class="search-field">⌖ <input id="jobLocation" placeholder="Location / Remote"></div><div class="search-field"><select id="jobType"><option value="">All job types</option><option>Full-time</option><option>Internship</option></select></div><button class="btn btn-primary" id="searchBtn">Search</button></div></div>
+<div class="filters"><span class="filter">Salary ▾</span><span class="filter">Experience ▾</span><span class="filter">Remote ▾</span><span class="filter">Date posted ▾</span><span class="filter">Skills ▾</span></div>
+<div class="section-head"><div><h2 style="font-size:24px" id="resultCount">8 jobs found</h2></div><select class="filter"><option>Best match</option><option>Newest</option><option>Salary high to low</option></select></div>
+<div class="layout-2"><aside class="sidebar card"><h4>Refine results</h4><p class="meta">Employment</p><label class="check"><input type="checkbox"> Full-time</label><label class="check"><input type="checkbox"> Internship</label><p class="meta">Workplace</p><label class="check"><input type="checkbox"> Remote</label><label class="check"><input type="checkbox"> Hybrid</label><label class="check"><input type="checkbox"> On-site</label><p class="meta">Experience</p><label class="check"><input type="checkbox"> Entry level</label><label class="check"><input type="checkbox"> Mid level</label><label class="check"><input type="checkbox"> Senior</label></aside>
+<section class="grid grid-3" id="jobResults"></section></div></div></main>
+<footer class="footer"><div class="container footer-grid">
+<div><div class="brand"><span class="brand-mark">S</span>SohniHire</div><p>Modern job search interfaces designed for the UI Template Collection Hackathon.</p></div>
+<div><h4>Explore</h4><a href="jobs.html">Jobs</a><a href="companies.html">Companies</a><a href="job-alerts.html">Alerts</a></div>
+<div><h4>Career</h4><a href="ai-career-assistant.html">AI Career</a><a href="resume-builder.html">Resume Builder</a><a href="dashboard.html">Dashboard</a></div>
+<div><h4>Project</h4><a href="../README.md">Research</a><a href="../index.html#templates">Templates</a><a href="../index.html#github">GitHub Workflow</a></div>
+</div></footer><div class="toast"></div><script src="../js/data.js"></script><script src="../js/app.js"></script><script>document.addEventListener("DOMContentLoaded",()=>renderJobs("#jobResults"))</script></body></html>
